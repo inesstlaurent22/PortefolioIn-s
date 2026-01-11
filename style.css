@@ -1,4 +1,4 @@
-/* RESET */
+/* ================= RESET ================= */
 * {
   margin: 0;
   padding: 0;
@@ -12,14 +12,14 @@ html, body {
   font-family: Arial, sans-serif;
 }
 
-/* CONTENEUR */
+/* ================= CONTENEUR ================= */
 .FondPortefolio {
   position: relative;
   width: 100vw;
   height: 100vh;
 }
 
-/* FOND */
+/* ================= FOND ================= */
 .fondindex {
   position: absolute;
   inset: 0;
@@ -29,29 +29,48 @@ html, body {
   z-index: 1;
 }
 
-/* BLOCS */
+/* ================= BOUTONS ================= */
 .bloc {
   position: absolute;
   z-index: 2;
   cursor: pointer;
-  object-fit: cover;
+
+  /* reset bouton */
+  background: none;
+  border: none;
+  padding: 0;
+
   transition: transform 0.6s ease;
 }
 
-/* ROTATION AU CLIC */
+/* image dans le bouton */
+.bloc img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+}
+
+/* supprime contour focus navigateur */
+.bloc:focus {
+  outline: none;
+}
+
+/* ================= ANIMATION ================= */
 .bloc.active {
   transform: rotate(360deg) scale(1.1);
 }
 
-/* POSITIONS */
-.bleu1   { left:650px; top:2px;   width:400px; height:327px; }
+/* ================= POSITIONS ================= */
+.bleu1   { left:650px;  top:2px;   width:400px; height:327px; }
 .rose1   { left:1050px; top:0;    width:391px; height:327px; }
-.violet1 { left:650px; top:327px; width:401px; height:327px; }
-.violet2 { left:650px; top:654px; width:402px; height:328px; }
+.violet1 { left:650px;  top:327px; width:401px; height:327px; }
+.violet2 { left:650px;  top:654px; width:402px; height:328px; }
 .orange1 { left:1050px; top:327px;width:392px; height:327px; }
 .jaune1  { left:1050px; top:654px;width:393px; height:328px; }
 
-/* OVERLAY */
+/* ================= OVERLAY ================= */
 #overlay {
   position: fixed;
   inset: 0;
@@ -70,7 +89,7 @@ html, body {
   pointer-events: auto;
 }
 
-/* ENCASTREMENT CENTRAL */
+/* ================= ENCASTREMENT ================= */
 #colorBox {
   width: 60vw;
   height: 60vh;
