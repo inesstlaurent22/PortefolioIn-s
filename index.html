@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>KIT IN – Quête du coffre</title>
+  <title>KIT IN – Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -14,15 +14,21 @@
   <!-- Image de fond -->
   <img src="images/Portefolioin.jpg" class="fondindex" alt="">
 
-  <!-- Images positionnées -->
-  <img src="images/Bleu1.png"   class="bloc bleu1"   alt="">
-  <img src="images/Rose1.png"   class="bloc rose1"   alt="">
-  <img src="images/Violet1.png" class="bloc violet1" alt="">
-  <img src="images/Violet2.png" class="bloc violet2" alt="">
-  <img src="images/Orange1.png" class="bloc orange1" alt="">
-  <img src="images/Jaune1.png"  class="bloc jaune1"  alt="">
+  <!-- Images interactives -->
+  <img src="images/Bleu1.png"   class="bloc bleu1"   data-color="#3A6EFF">
+  <img src="images/Rose1.png"   class="bloc rose1"   data-color="#FF4FD8">
+  <img src="images/Violet1.png" class="bloc violet1" data-color="#7C4DFF">
+  <img src="images/Violet2.png" class="bloc violet2" data-color="#9C6BFF">
+  <img src="images/Orange1.png" class="bloc orange1" data-color="#FF8A00">
+  <img src="images/Jaune1.png"  class="bloc jaune1"  data-color="#FFD400">
 
 </div>
 
+<!-- Overlay -->
+<div id="overlay">
+  <div id="colorBox"></div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
