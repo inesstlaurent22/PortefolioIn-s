@@ -34,16 +34,12 @@ html, body {
   position: absolute;
   z-index: 2;
   cursor: pointer;
-
-  /* reset bouton */
   background: none;
   border: none;
   padding: 0;
-
   transition: transform 0.6s ease;
 }
 
-/* image dans le bouton */
 .bloc img {
   width: 100%;
   height: 100%;
@@ -52,7 +48,6 @@ html, body {
   pointer-events: none;
 }
 
-/* supprime contour focus navigateur */
 .bloc:focus {
   outline: none;
 }
@@ -62,13 +57,49 @@ html, body {
   transform: rotate(360deg) scale(1.1);
 }
 
-/* ================= POSITIONS ================= */
-.bleu1   { left:650px;  top:2px;   width:400px; height:327px; }
-.rose1   { left:1050px; top:0;    width:391px; height:327px; }
-.violet1 { left:650px;  top:327px; width:401px; height:327px; }
-.violet2 { left:650px;  top:654px; width:402px; height:328px; }
-.orange1 { left:1050px; top:327px;width:392px; height:327px; }
-.jaune1  { left:1050px; top:654px;width:393px; height:328px; }
+/* ================= DESKTOP ================= */
+@media (min-width: 1025px) {
+  .bleu1   { left:650px;  top:2px;   width:400px; height:327px; }
+  .rose1   { left:1050px; top:0;    width:391px; height:327px; }
+  .violet1 { left:650px;  top:327px; width:401px; height:327px; }
+  .violet2 { left:650px;  top:654px; width:402px; height:328px; }
+  .orange1 { left:1050px; top:327px;width:392px; height:327px; }
+  .jaune1  { left:1050px; top:654px;width:393px; height:328px; }
+}
+
+/* ================= IPAD ================= */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .bloc {
+    position: relative;
+    width: 40vw;
+    height: 28vh;
+    margin: 2vh;
+  }
+
+  .FondPortefolio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+  }
+}
+
+/* ================= IPHONE ================= */
+@media (max-width: 767px) {
+  .FondPortefolio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .bloc {
+    position: relative;
+    width: 85vw;
+    height: 18vh;
+  }
+}
 
 /* ================= OVERLAY ================= */
 #overlay {
@@ -91,7 +122,7 @@ html, body {
 
 /* ================= ENCASTREMENT ================= */
 #colorBox {
-  width: 60vw;
+  width: 80vw;
   height: 60vh;
   border-radius: 20px;
   transform: scale(0.7);
