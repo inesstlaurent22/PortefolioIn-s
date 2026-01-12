@@ -198,6 +198,46 @@ html, body {
   padding-left: 0;
 }
 
+/* ================= TIMELINE VIOLET ================= */
+
+.center-title {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 32px;
+}
+
+/* conteneur timeline */
+.timeline {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+/* gauche */
+.timeline.left {
+  text-align: left;
+}
+
+/* droite */
+.timeline.right {
+  text-align: right;
+}
+
+/* espacement texte */
+.timeline p {
+  margin-bottom: 12px;
+}
+
+/* mobile : tout centré pour lisibilité */
+@media (max-width: 767px) {
+  .timeline.left,
+  .timeline.right {
+    text-align: center;
+  }
+}
+
 /* ================= JAUNE – RÉSEAUX ================= */
 #colorBox.jaune {
   width: auto;
