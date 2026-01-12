@@ -84,22 +84,44 @@ const contents = {
   violet1: `
     <h2 class="competences-title">✦ Parcours professionnel — Timeline</h2>
 
-    <div class="competences-intro text-left">
-      <p><strong>Gearbooker</strong> — <em>Audiovisuel</em></p>
-      <p><strong>Pachamamaï</strong> — <em>Cosmétique solide</em></p>
-      <p><strong>PUFFRAP</strong> — <em>Média musique</em></p>
-      <p><strong>KIT IN</strong> — <em>Formation pour la création d’entreprise pour les jeunes à partir de 10 ans</em></p>
-      <p><strong>Pages Jaunes</strong> — <em>Annuaire en ligne</em></p>
-      <p><strong>Galeries Lafayette, Le Perchoir, Le Paradis du Fruit</strong> — <em>Retail & Restauration</em></p>
-    </div>
-
     <div class="competences-buttons">
-      <button class="competence-btn" data-comp="1">Consultante en développement d’activité</button>
-      <button class="competence-btn" data-comp="2">Commerciale Marketing</button>
-      <button class="competence-btn" data-comp="3">CEO & Community Manager</button>
-      <button class="competence-btn" data-comp="4">CEO & Développeuse Web</button>
-      <button class="competence-btn" data-comp="5">Stagiaire Comptable</button>
-      <button class="competence-btn" data-comp="6">Vendeuse & Ambassadrice de marque</button>
+
+      <button class="competence-btn" data-comp="1">
+        <span class="competence-title-big">Consultante en développement d’activité</span>
+        <span class="competence-company"><strong>Gearbooker</strong></span>
+        <span class="competence-sector"><em>Audiovisuel</em></span>
+      </button>
+
+      <button class="competence-btn" data-comp="2">
+        <span class="competence-title-big">Commerciale Marketing</span>
+        <span class="competence-company"><strong>Pachamamaï</strong></span>
+        <span class="competence-sector"><em>Cosmétique solide</em></span>
+      </button>
+
+      <button class="competence-btn" data-comp="3">
+        <span class="competence-title-big">CEO & Community Manager</span>
+        <span class="competence-company"><strong>PUFFRAP</strong></span>
+        <span class="competence-sector"><em>Média musique</em></span>
+      </button>
+
+      <button class="competence-btn" data-comp="4">
+        <span class="competence-title-big">CEO & Développeuse Web</span>
+        <span class="competence-company"><strong>KIT IN</strong></span>
+        <span class="competence-sector"><em>Formation à la création d’entreprise pour les jeunes dès 10 ans</em></span>
+      </button>
+
+      <button class="competence-btn" data-comp="5">
+        <span class="competence-title-big">Stagiaire Comptable</span>
+        <span class="competence-company"><strong>Pages Jaunes</strong></span>
+        <span class="competence-sector"><em>Annuaire en ligne</em></span>
+      </button>
+
+      <button class="competence-btn" data-comp="6">
+        <span class="competence-title-big">Vendeuse & Ambassadrice de marque</span>
+        <span class="competence-company"><strong>Galeries Lafayette, Le Perchoir, Le Paradis du Fruit</strong></span>
+        <span class="competence-sector"><em>Retail & Restauration</em></span>
+      </button>
+
     </div>
   `,
 
@@ -260,9 +282,10 @@ contentBox.addEventListener("click", e => {
     showFloatingBubble(programmeTexts[e.target.dataset.step], "rose");
   }
 
-  if (e.target.classList.contains("competence-btn")) {
+  if (e.target.closest(".competence-btn")) {
     e.stopPropagation();
-    showFloatingBubble(competencesTexts[e.target.dataset.comp], "violet");
+    const btn = e.target.closest(".competence-btn");
+    showFloatingBubble(competencesTexts[btn.dataset.comp], "violet");
   }
 });
 
