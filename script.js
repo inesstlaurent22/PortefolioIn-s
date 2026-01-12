@@ -31,8 +31,7 @@ const contents = {
     <p><strong>
       J’interviens sur des missions stratégiques telles que le lancement de nouveaux produits,
       l’implantation sur de nouveaux marchés, la structuration de l’offre,
-      ainsi que le développement de la visibilité et des performances commerciales,
-      notamment via les réseaux sociaux.
+      ainsi que le développement de la visibilité et des performances commerciales.
     </strong></p>
 
     <p><strong>
@@ -61,49 +60,73 @@ const contents = {
   violet1: `
     <h2 class="competences-title">✦ Parcours professionnel — Timeline</h2>
 
-    <div class="competences-list">
+    <div class="iphone-cards">
 
-      <button class="competence-btn" data-comp="1">
-        <div class="competence-role">Consultante en développement d’activité</div>
-        <div class="competence-meta"><strong>Gearbooker</strong> — <em>Audiovisuel</em></div>
-      </button>
-      <div class="competence-content" data-content="1"></div>
+      <div class="iphone-card">
+        <button class="competence-btn" data-comp="1">
+          <div class="competence-role">Consultante en développement d’activité</div>
+          <div class="competence-meta">
+            <strong>Gearbooker</strong><br>
+            <em>Audiovisuel</em>
+          </div>
+        </button>
+        <div class="competence-content" data-content="1"></div>
+      </div>
 
-      <button class="competence-btn" data-comp="2">
-        <div class="competence-role">Commerciale Marketing</div>
-        <div class="competence-meta"><strong>Pachamamaï</strong> — <em>Cosmétique solide</em></div>
-      </button>
-      <div class="competence-content" data-content="2"></div>
+      <div class="iphone-card">
+        <button class="competence-btn" data-comp="2">
+          <div class="competence-role">Commerciale Marketing</div>
+          <div class="competence-meta">
+            <strong>Pachamamaï</strong><br>
+            <em>Cosmétique solide</em>
+          </div>
+        </button>
+        <div class="competence-content" data-content="2"></div>
+      </div>
 
-      <button class="competence-btn" data-comp="3">
-        <div class="competence-role">CEO & Community Manager</div>
-        <div class="competence-meta"><strong>PUFFRAP</strong> — <em>Média musique</em></div>
-      </button>
-      <div class="competence-content" data-content="3"></div>
+      <div class="iphone-card">
+        <button class="competence-btn" data-comp="3">
+          <div class="competence-role">CEO & Community Manager</div>
+          <div class="competence-meta">
+            <strong>PUFFRAP</strong><br>
+            <em>Média musique</em>
+          </div>
+        </button>
+        <div class="competence-content" data-content="3"></div>
+      </div>
 
-      <button class="competence-btn" data-comp="4">
-        <div class="competence-role">CEO & Développeuse Web</div>
-        <div class="competence-meta">
-          <strong>KIT IN</strong> —
-          <em>Formation à la création d’entreprise pour les jeunes dès 10 ans</em>
-        </div>
-      </button>
-      <div class="competence-content" data-content="4"></div>
+      <div class="iphone-card">
+        <button class="competence-btn" data-comp="4">
+          <div class="competence-role">CEO & Développeuse Web</div>
+          <div class="competence-meta">
+            <strong>KIT IN</strong><br>
+            <em>Formation à la création d’entreprise dès 10 ans</em>
+          </div>
+        </button>
+        <div class="competence-content" data-content="4"></div>
+      </div>
 
-      <button class="competence-btn" data-comp="5">
-        <div class="competence-role">Stagiaire Comptable</div>
-        <div class="competence-meta"><strong>Pages Jaunes</strong> — <em>Annuaire en ligne</em></div>
-      </button>
-      <div class="competence-content" data-content="5"></div>
+      <div class="iphone-card">
+        <button class="competence-btn" data-comp="5">
+          <div class="competence-role">Stagiaire Comptable</div>
+          <div class="competence-meta">
+            <strong>Pages Jaunes</strong><br>
+            <em>Annuaire en ligne</em>
+          </div>
+        </button>
+        <div class="competence-content" data-content="5"></div>
+      </div>
 
-      <button class="competence-btn" data-comp="6">
-        <div class="competence-role">Vendeuse & Ambassadrice de marque</div>
-        <div class="competence-meta">
-          <strong>Galeries Lafayette, Le Perchoir, Le Paradis du Fruit</strong> —
-          <em>Retail & Restauration</em>
-        </div>
-      </button>
-      <div class="competence-content" data-content="6"></div>
+      <div class="iphone-card">
+        <button class="competence-btn" data-comp="6">
+          <div class="competence-role">Vendeuse & Ambassadrice de marque</div>
+          <div class="competence-meta">
+            <strong>Galeries Lafayette, Le Perchoir, Le Paradis du Fruit</strong><br>
+            <em>Retail & Restauration</em>
+          </div>
+        </button>
+        <div class="competence-content" data-content="6"></div>
+      </div>
 
     </div>
   `,
@@ -126,37 +149,6 @@ const contents = {
       <a href="#"><img src="images/Linkedin.PNG"></a>
       <a href="#"><img src="images/Mail.PNG"></a>
     </div>
-  `
-};
-
-/* ===========================
-   TEXTES PROGRAMME
-=========================== */
-const programmeTexts = {
-  1: `
-    <ul>
-      <li>Analyse approfondie de votre vision long terme et de vos ambitions</li>
-      <li>Définition précise du marché ou du pays cible</li>
-      <li>Clarification des objectifs business prioritaires</li>
-      <li>Mise en place des indicateurs de performance</li>
-    </ul>
-  `,
-  2: `
-    <ul>
-      <li>Études de marché approfondies</li>
-      <li>Analyse concurrentielle et positionnement stratégique</li>
-      <li>Identification des opportunités business</li>
-      <li>Construction de la stratégie commerciale et marketing</li>
-      <li>Plan d’action structuré</li>
-    </ul>
-  `,
-  3: `
-    <ul>
-      <li>Mise en œuvre opérationnelle de la stratégie</li>
-      <li>Suivi des performances et des KPI</li>
-      <li>Ajustements stratégiques continus</li>
-      <li>Croissance maîtrisée et durable</li>
-    </ul>
   `
 };
 
@@ -230,42 +222,24 @@ buttons.forEach(button => {
 =========================== */
 contentBox.addEventListener("click", e => {
 
-  /* OBJECTIF */
   if (e.target.id === "openObjectif") {
     objectifOverlay.classList.add("active");
     return;
   }
 
-  /* PROGRAMME */
-  const stepBtn = e.target.closest(".step-btn");
-  if (stepBtn) {
-    document.getElementById("programmeResult").innerHTML =
-      programmeTexts[stepBtn.dataset.step];
-    return;
-  }
-
-  /* COMPÉTENCES — ACCORDÉON */
   const compBtn = e.target.closest(".competence-btn");
   if (compBtn) {
     const key = compBtn.dataset.comp;
 
-    document.querySelectorAll(".competence-content").forEach(el => {
-      if (el.dataset.content === key && el.innerHTML !== "") {
-        el.innerHTML = "";
-      } else {
-        el.innerHTML = "";
-      }
-    });
+    document.querySelectorAll(".competence-content").forEach(c => c.innerHTML = "");
 
-    const target = document.querySelector(
-      `.competence-content[data-content="${key}"]`
-    );
+    const target = compBtn.parentElement.querySelector(".competence-content");
     target.innerHTML = competencesTexts[key];
   }
 });
 
 /* ===========================
-   FERMETURE
+   FERMETURES
 =========================== */
 overlay.addEventListener("click", () => {
   overlay.classList.remove("active");
