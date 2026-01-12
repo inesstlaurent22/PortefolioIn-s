@@ -6,6 +6,7 @@ const overlay = document.getElementById("overlay");
 const colorBox = document.getElementById("colorBox");
 const contentBox = document.getElementById("contentBox");
 const objectifOverlay = document.getElementById("objectifOverlay");
+const iphoneBox = document.querySelector(".iphoneBox");
 
 /* ===========================
    CONTENU PAR BOUTON
@@ -168,7 +169,7 @@ const contents = {
     École Nationale de Commerce — Paris</p>
   `,
 
-  /* ================= JAUNE : RÉSEAUX SOCIAUX ================= */
+  /* ================= JAUNE : RÉSEAUX ================= */
   jaune1: `
     <div class="socials">
       <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
@@ -217,31 +218,30 @@ buttons.forEach(button => {
 overlay.addEventListener("click", () => {
   overlay.classList.remove("active");
   objectifOverlay.classList.remove("active");
-  buttons.forEach(b => b.classList.remove("active"));
   contentBox.innerHTML = "";
+  buttons.forEach(b => b.classList.remove("active"));
 });
 
 colorBox.addEventListener("click", e => e.stopPropagation());
 
 /* ===========================
-   OBJECTIF – MODAL IPHONE
+   OBJECTIF – MODAL IPHONE (FIX FINAL)
 =========================== */
 
-// ouverture
-document.addEventListener("click", e => {
+// clic sur le bouton injecté
+contentBox.addEventListener("click", e => {
   if (e.target && e.target.id === "openObjectif") {
     e.stopPropagation();
     objectifOverlay.classList.add("active");
   }
 });
 
-// empêche la fermeture au clic dans la bulle
-const iphoneBox = document.querySelector(".iphoneBox");
+// clic dans la bulle = ne ferme pas
 iphoneBox.addEventListener("click", e => {
   e.stopPropagation();
 });
 
-// fermeture en cliquant autour
+// clic autour = fermeture
 objectifOverlay.addEventListener("click", () => {
   objectifOverlay.classList.remove("active");
 });
