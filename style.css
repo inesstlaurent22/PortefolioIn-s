@@ -31,7 +31,7 @@ html, body {
   height: 100%;
   object-fit: cover;
   z-index: 1;
-  pointer-events: none; /* IMPORTANT : laisse passer les clics */
+  pointer-events: none;
 }
 
 /* ================= BLOCS ================= */
@@ -47,7 +47,11 @@ html, body {
   align-items: center;
   justify-content: center;
 
-  transition: transform 0.6s ease;
+  transition: transform 0.4s ease;
+}
+
+.bloc:hover {
+  transform: scale(1.04);
 }
 
 .bloc img {
@@ -55,10 +59,6 @@ html, body {
   height: 100%;
   object-fit: cover;
   pointer-events: none;
-}
-
-.bloc.active {
-  transform: scale(1.08);
 }
 
 /* ================= LABEL ================= */
@@ -81,7 +81,7 @@ html, body {
   .jaune1  { left:1000px; top:654px; width:393px; height:328px; }
 }
 
-/* ================= MOBILE / TABLET ================= */
+/* ================= MOBILE ================= */
 @media (max-width: 1024px) {
   .FondPortefolio {
     display: flex;
@@ -102,10 +102,10 @@ html, body {
 #overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.65);
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 
   opacity: 0;
   pointer-events: none;
@@ -122,7 +122,7 @@ html, body {
 #colorBox {
   width: 88vw;
   max-height: 85vh;
-  padding: 28px;
+  padding: 30px;
   border-radius: 28px;
   overflow-y: auto;
   transform: scale(0.92);
@@ -137,7 +137,7 @@ html, body {
 #contentBox {
   color: #fff;
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 /* ================= TITRES ================= */
@@ -145,20 +145,20 @@ html, body {
 .programme-title,
 .scolaire-title {
   font-size: 26px;
-  margin-bottom: 24px;
   font-weight: 700;
+  margin-bottom: 26px;
   text-align: center;
 }
 
 /* ================= TITRES ANIMÉS ================= */
 .animated-title {
-  animation: fadeSlide 0.8s ease forwards;
+  animation: fadeSlide 0.7s ease forwards;
 }
 
 @keyframes fadeSlide {
   from {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(14px);
   }
   to {
     opacity: 1;
@@ -166,22 +166,46 @@ html, body {
   }
 }
 
-/* ================= TEXTE CENTRÉ ================= */
+/* ================= TEXTE ================= */
 .centered-text {
   text-align: center;
+}
+
+.centered-text p {
+  margin-bottom: 18px;
+}
+
+/* ================= BOUTON MON OBJECTIF ================= */
+.objectif-btn-large {
+  margin: 32px auto 0;
+  display: inline-block;
+  padding: 16px 38px;
+  border-radius: 999px;
+  border: none;
+  font-size: 16px;
+  font-weight: 700;
+  background: #fff;
+  color: #3A6EFF;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.objectif-btn-large:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
 }
 
 /* ================= PROGRAMME ================= */
 .programme-buttons {
   display: flex;
   justify-content: center;
-  gap: 16px;
-  margin-bottom: 20px;
+  gap: 18px;
+  margin-bottom: 26px;
 }
 
 .step-btn {
-  width: 54px;
-  height: 54px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   border: none;
   background: #fff;
@@ -192,14 +216,14 @@ html, body {
 }
 
 .step-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  transform: scale(1.1);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.3);
 }
 
 .programme-result {
   opacity: 0;
   transform: translateY(10px);
-  transition: all 0.4s ease;
+  transition: all 0.35s ease;
   text-align: left;
 }
 
@@ -208,41 +232,40 @@ html, body {
   transform: translateY(0);
 }
 
+.programme-result ul {
+  padding-left: 20px;
+}
+
+.programme-result li {
+  margin-bottom: 10px;
+}
+
 /* ================= PARCOURS ACADÉMIQUE ================= */
-.scolaire-title {
-  margin-bottom: 20px;
+.scolaire-list p {
+  margin-bottom: 22px;
 }
 
 /* ================= RÉSEAUX SOCIAUX ================= */
-.socials-card {
-  display: inline-flex;
-  gap: 20px;
-  padding: 20px;
-  background: rgba(255,255,255,0.15);
-  border-radius: 20px;
+.socials-card.square {
+  width: 240px;
+  height: 240px;
+  display: flex;
   justify-content: center;
   align-items: center;
+  gap: 26px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 26px;
 }
 
-.socials-card img {
-  width: 48px;
-  height: 48px;
+.socials-card.square img {
+  width: 72px;
+  height: 72px;
   object-fit: contain;
+  transition: transform 0.25s ease;
 }
 
-/* ================= SWITCH LANGUE ================= */
-.lang-switch {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 100;
-  background: #fff;
-  color: #000;
-  border: none;
-  padding: 10px 16px;
-  border-radius: 999px;
-  font-weight: 700;
-  cursor: pointer;
+.socials-card.square img:hover {
+  transform: scale(1.12);
 }
 
 /* ================= RESPONSIVE TEXTE ================= */
