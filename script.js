@@ -64,19 +64,80 @@ const contents = {
       ✦ CV & Compétences
     </h2>
 
-    <div class="centered-text">
-      <p>
-        Mon parcours professionnel s’est construit à travers des expériences
-        en entreprise, en entrepreneuriat et en accompagnement stratégique,
-        me permettant de développer une vision globale des enjeux business,
-        marketing et opérationnels.
-      </p>
+    <div class="jobs-list">
 
-      <p>
-        J’ai évolué dans des secteurs variés tels que l’audiovisuel,
-        le cosmétique, le retail, la restauration, la musique,
-        ainsi que dans des environnements internationaux et digitaux.
-      </p>
+      <button class="job-btn" data-job="consultante">
+        Consultante en développement d’activité<br>
+        <small><strong>Gearbooker</strong> — <em>Audiovisuel & international</em></small>
+      </button>
+      <div class="job-content" id="consultante">
+        <ul>
+          <li>Accompagnement stratégique d’une entreprise audiovisuelle internationale</li>
+          <li>Développement commercial et prospection BtoB / BtoC</li>
+          <li>Analyse des performances et pilotage des actions</li>
+        </ul>
+      </div>
+
+      <button class="job-btn" data-job="commerciale">
+        Commerciale Marketing<br>
+        <small><strong>Pachamamaï</strong> — <em>Cosmétique solide</em></small>
+      </button>
+      <div class="job-content" id="commerciale">
+        <ul>
+          <li>Lancement de nouveaux produits sur des marchés internationaux</li>
+          <li>Réalisation d’études de marché et analyses concurrentielles</li>
+          <li>Suivi, développement et fidélisation de la clientèle</li>
+        </ul>
+      </div>
+
+      <button class="job-btn" data-job="ceo-media">
+        CEO & Community Manager<br>
+        <small><strong>PUFFRAP</strong> — <em>Média musique</em></small>
+      </button>
+      <div class="job-content" id="ceo-media">
+        <ul>
+          <li>Création et développement d’un média digital dédié à la culture musicale</li>
+          <li>Gestion et croissance des réseaux sociaux (Instagram, TikTok)</li>
+          <li>Optimisation du SEO et de la visibilité digitale</li>
+        </ul>
+      </div>
+
+      <button class="job-btn" data-job="ceo-web">
+        CEO & Développeuse Web<br>
+        <small><strong>KIT IN</strong> — <em>Formation entrepreneuriale (jeunes dès 10 ans)</em></small>
+      </button>
+      <div class="job-content" id="ceo-web">
+        <ul>
+          <li>Conception et développement d’une formation dédiée à la création d’entreprise</li>
+          <li>Vision globale : produit, pédagogie, business et technologie</li>
+          <li>Développement web en HTML, CSS et JavaScript</li>
+        </ul>
+      </div>
+
+      <button class="job-btn" data-job="comptable">
+        Stagiaire Comptable<br>
+        <small><strong>Pages Jaunes</strong> — <em>Annuaire en ligne</em></small>
+      </button>
+      <div class="job-content" id="comptable">
+        <ul>
+          <li>Comptabilité clients et fournisseurs</li>
+          <li>Analyse et compréhension des flux financiers</li>
+          <li>Rigueur, organisation et vision analytique</li>
+        </ul>
+      </div>
+
+      <button class="job-btn" data-job="vendeuse">
+        Vendeuse & Ambassadrice de marque<br>
+        <small><strong>Galeries Lafayette, Le Perchoir, Le Paradis du Fruit</strong> — <em>Retail & restauration</em></small>
+      </button>
+      <div class="job-content" id="vendeuse">
+        <ul>
+          <li>Représentation et valorisation de l’image de marque</li>
+          <li>Relation client premium et expérience terrain</li>
+          <li>Contribution directe à la notoriété des enseignes</li>
+        </ul>
+      </div>
+
     </div>
   `,
 
@@ -88,125 +149,33 @@ const contents = {
 
     <div class="logiciels-list">
 
-      <button class="logiciel-btn" data-tool="crm">
-        CRM
-      </button>
-      <div class="logiciel-content" id="crm">
-        Notion, HubSpot, Salesforce
-      </div>
+      <button class="logiciel-btn" data-tool="crm">CRM</button>
+      <div class="logiciel-content" id="crm">Notion, HubSpot, Salesforce</div>
 
-      <button class="logiciel-btn" data-tool="gestion">
-        Gestion de projet
-      </button>
-      <div class="logiciel-content" id="gestion">
-        Trello, Google Workspace
-      </div>
+      <button class="logiciel-btn" data-tool="gestion">Gestion de projet</button>
+      <div class="logiciel-content" id="gestion">Trello, Google Workspace</div>
 
-      <button class="logiciel-btn" data-tool="communication">
-        Communication
-      </button>
-      <div class="logiciel-content" id="communication">
-        Mailchimp, Zapier, Make
-      </div>
+      <button class="logiciel-btn" data-tool="communication">Communication</button>
+      <div class="logiciel-content" id="communication">Mailchimp, Zapier, Make</div>
 
-      <button class="logiciel-btn" data-tool="etude">
-        Étude de marché
-      </button>
-      <div class="logiciel-content" id="etude">
-        TradeMap, Kompass, Euromonitor, World Bank Data
-      </div>
+      <button class="logiciel-btn" data-tool="etude">Étude de marché</button>
+      <div class="logiciel-content" id="etude">TradeMap, Kompass, Euromonitor, World Bank Data</div>
 
-      <button class="logiciel-btn" data-tool="analyse">
-        Analyse
-      </button>
-      <div class="logiciel-content" id="analyse">
-        LinkedIn Sales Navigator, Google Analytics, Google Search Console
-      </div>
+      <button class="logiciel-btn" data-tool="analyse">Analyse</button>
+      <div class="logiciel-content" id="analyse">LinkedIn Sales Navigator, Google Analytics, Google Search Console</div>
 
-      <button class="logiciel-btn" data-tool="ia">
-        Intelligence artificielle
-      </button>
-      <div class="logiciel-content" id="ia">
-        ChatGPT, Claude, MidJourney, Perplexity, Manus
-      </div>
+      <button class="logiciel-btn" data-tool="ia">IA</button>
+      <div class="logiciel-content" id="ia">ChatGPT, Claude, MidJourney, Perplexity, Manus</div>
 
-      <button class="logiciel-btn" data-tool="microsoft">
-        Microsoft
-      </button>
-      <div class="logiciel-content" id="microsoft">
-        Azure, Copilot, OneNote
-      </div>
-
-      <button class="logiciel-btn" data-tool="social">
-        Réseaux sociaux & CMS
-      </button>
-      <div class="logiciel-content" id="social">
-        Meta Business Suite, Webflow, Wix, WordPress, Shopify
-      </div>
-
-      <button class="logiciel-btn" data-tool="design">
-        Design & création
-      </button>
-      <div class="logiciel-content" id="design">
-        Canva, Figma, CapCut, Photoshop
-      </div>
-
-      <button class="logiciel-btn" data-tool="dev">
-        Développement web
-      </button>
-      <div class="logiciel-content" id="dev">
-        GitHub
-      </div>
-
-    </div>
-  `,
-
-  /* ================= PARCOURS ACADÉMIQUE ================= */
-  orange1: `
-    <h2 class="scolaire-title animated-title">
-      ✦ Parcours académique
-    </h2>
-
-    <div class="centered-text scolaire-list">
-      <p>
-        <strong>Master Import-Export</strong><br>
-        KEDGE Business School — Marseille
-      </p>
-
-      <p>
-        <strong>Bachelor International Business</strong><br>
-        INSEEC Paris Business School — Paris
-      </p>
-
-      <p>
-        <strong>BTS Commerce International</strong><br>
-        Lycée Jean Lurçat — Paris
-      </p>
-
-      <p>
-        <strong>Licence de Gestion</strong><br>
-        Université Paris 1 Panthéon-Sorbonne
-      </p>
-
-      <p>
-        <strong>Diplôme de Comptabilité et de Gestion (DCG)</strong><br>
-        École Nationale de Commerce — Paris
-      </p>
     </div>
   `,
 
   /* ================= RÉSEAUX SOCIAUX ================= */
   jaune1: `
-    <div class="socials-card square">
-      <a href="#" aria-label="Instagram">
-        <img src="images/Instagram.PNG" alt="Instagram">
-      </a>
-      <a href="#" aria-label="LinkedIn">
-        <img src="images/Linkedin.PNG" alt="LinkedIn">
-      </a>
-      <a href="#" aria-label="Email">
-        <img src="images/Mail.PNG" alt="Email">
-      </a>
+    <div class="socials-card small">
+      <a href="#"><img src="images/Instagram.PNG" alt="Instagram"></a>
+      <a href="#"><img src="images/Linkedin.PNG" alt="LinkedIn"></a>
+      <a href="mailto:contact@tonmail.com"><img src="images/Mail.PNG" alt="Email"></a>
     </div>
   `
 };
@@ -221,7 +190,7 @@ const colorBox   = document.getElementById("colorBox");
 const contentBox = document.getElementById("contentBox");
 
 /* =====================================================
-   OUVERTURE DES BLOCS
+   OUVERTURE BLOCS
 ===================================================== */
 
 buttons.forEach(button => {
@@ -246,60 +215,32 @@ buttons.forEach(button => {
 
 contentBox.addEventListener("click", e => {
 
-  /* ----- Programme ----- */
-  if (e.target.classList.contains("step-btn")) {
-    const step = e.target.dataset.step;
-    const result = document.getElementById("programmeResult");
+  /* Jobs */
+  if (e.target.closest(".job-btn")) {
+    const btn = e.target.closest(".job-btn");
+    const id = btn.dataset.job;
 
-    const programmeTexts = {
-      1: `
-        <p><strong>Diagnostic & Vision</strong></p>
-        <ul>
-          <li>Analyse approfondie de l’activité existante</li>
-          <li>Clarification de la vision long terme</li>
-          <li>Définition des objectifs business prioritaires</li>
-          <li>Identification du marché ou pays cible</li>
-        </ul>
-      `,
-      2: `
-        <p><strong>Intelligence marché & stratégie sur mesure</strong></p>
-        <ul>
-          <li>Études de marché approfondies</li>
-          <li>Analyse concurrentielle</li>
-          <li>Positionnement stratégique</li>
-          <li>Recommandations commerciales et marketing</li>
-        </ul>
-      `,
-      3: `
-        <p><strong>Déploiement & pilotage stratégique</strong></p>
-        <ul>
-          <li>Mise en œuvre du plan d’action</li>
-          <li>Suivi des indicateurs de performance</li>
-          <li>Ajustements stratégiques continus</li>
-          <li>Accompagnement dans la durée</li>
-        </ul>
-      `
-    };
-
-    result.innerHTML = programmeTexts[step];
-    result.classList.add("active");
-  }
-
-  /* ----- Logiciels acquis ----- */
-  if (e.target.classList.contains("logiciel-btn")) {
-    const id = e.target.dataset.tool;
-    const content = document.getElementById(id);
-
-    document.querySelectorAll(".logiciel-content").forEach(el => {
-      if (el !== content) el.classList.remove("active");
+    document.querySelectorAll(".job-content").forEach(el => {
+      if (el.id !== id) el.classList.remove("active");
     });
 
-    content.classList.toggle("active");
+    document.getElementById(id).classList.toggle("active");
+  }
+
+  /* Logiciels */
+  if (e.target.classList.contains("logiciel-btn")) {
+    const id = e.target.dataset.tool;
+
+    document.querySelectorAll(".logiciel-content").forEach(el => {
+      if (el.id !== id) el.classList.remove("active");
+    });
+
+    document.getElementById(id).classList.toggle("active");
   }
 });
 
 /* =====================================================
-   FERMETURE OVERLAY
+   FERMETURE
 ===================================================== */
 
 overlay.addEventListener("click", () => {
