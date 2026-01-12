@@ -176,11 +176,11 @@ buttons.forEach(button => {
     colorBox.style.background = button.dataset.color || "transparent";
 
     /* adaptation spéciale bloc jaune */
-    if (key === "jaune1") {
-      colorBox.classList.add("jaune");
-    } else {
-      colorBox.classList.remove("jaune");
-    }
+if (key === "jaune1") {
+  colorBox.classList.add("jaune");
+} else {
+  colorBox.classList.remove("jaune");
+}
 
     /* ouverture */
     overlay.classList.add("active");
