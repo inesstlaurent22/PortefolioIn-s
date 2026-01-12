@@ -157,3 +157,36 @@ html, body {
   font-size: clamp(14px, 1.4vw, 22px);
   padding: 0 10px;
 }
+
+/* ================= CONTENU ENCASTREMENT ================= */
+
+#colorBox {
+  padding: 30px;
+  overflow: hidden;
+}
+
+#contentBox {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  color: white;
+  font-size: clamp(14px, 1.2vw, 18px);
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+/* titres et mise en valeur */
+#contentBox strong {
+  font-weight: 700;
+}
+
+#contentBox p {
+  margin-bottom: 16px;
+}
+
+/* mobile confort */
+@media (max-width: 767px) {
+  #colorBox {
+    padding: 20px;
+  }
+}
