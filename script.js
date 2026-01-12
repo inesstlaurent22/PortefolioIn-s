@@ -79,45 +79,75 @@ rose1: `
 `
 
   /* ================= VIOLET : PARCOURS PRO ================= */
-  violet1: `
-    <p><strong>✦ Parcours professionnel — Timeline</strong></p>
+violet1: `
+  <p class="center-title"><strong>✦ Parcours professionnel — Timeline</strong></p>
 
+  <div class="timeline left">
     <p><strong>◉ Consultante en développement d’activité</strong><br>
-    Gearbooker — Audiovisuel & international</p>
-    <ul>
-      <li>Implantation sur le marché français</li>
-      <li>Stratégies de développement commercial</li>
-      <li>Prospection BtoB & BtoC</li>
-      <li>Analyse des performances & pilotage stratégique</li>
-    </ul>
+    Gearbooker<br>
+    Audiovisuel & international</p>
 
+    <p>→ Accompagnement d’une entreprise néerlandaise dans son implantation sur le marché français<br>
+    → Élaboration de stratégies de développement commercial<br>
+    → Prospection BtoB & BtoC<br>
+    → Analyse des performances et réunions de pilotage avec les associés</p>
+  </div>
+
+  <div class="timeline right">
     <p><strong>◉ Commerciale Marketing</strong><br>
-    Pachamamai — Cosmétique & marchés internationaux</p>
-    <ul>
-      <li>Lancement de nouveaux produits</li>
-      <li>Études de marché (Portugal, Espagne, Asie)</li>
-      <li>Fidélisation & développement clientèle</li>
-    </ul>
+    Pachamamai<br>
+    Cosmétique & marchés internationaux</p>
 
+    <p>→ Prospection commerciale et lancement de nouveaux produits<br>
+    → Réalisation d’études de marché (Portugal, Espagne, Asie)<br>
+    → Suivi et fidélisation de la clientèle<br>
+    → Participation à des salons internationaux</p>
+  </div>
+
+  <div class="timeline left">
     <p><strong>◉ CEO & Community Manager</strong><br>
-    PUFFRAP — Média & culture musicale</p>
-    <ul>
-      <li>Création et développement du média</li>
-      <li>Gestion Instagram & TikTok</li>
-      <li>SEO & visibilité digitale</li>
-    </ul>
+    PUFFRAP<br>
+    Média & culture musicale</p>
 
+    <p>→ Création et développement du magazine en ligne<br>
+    → Gestion et croissance des réseaux sociaux (Instagram & TikTok)<br>
+    → Optimisation du SEO et de la visibilité digitale<br>
+    → Mise en place de partenariats stratégiques</p>
+  </div>
+
+  <div class="timeline right">
     <p><strong>◉ CEO & Développeuse Web</strong><br>
-    KIT IN — Entrepreneuriat & digital</p>
-    <ul>
-      <li>Création d’une formation entrepreneuriale</li>
-      <li>Développement HTML, CSS, JavaScript</li>
-      <li>Vision produit, business & pédagogie</li>
-    </ul>
+    KIT IN<br>
+    Entrepreneuriat & digital</p>
 
+    <p>→ Conception et développement d’une formation en ligne dédiée à la création d’entreprise<br>
+    → Projet éducatif destiné aux jeunes de 10 à 17 ans<br>
+    → Développement technique en HTML, CSS et JavaScript<br>
+    → Vision globale : produit, pédagogie, business et technologie</p>
+  </div>
+
+  <div class="timeline left">
     <p><strong>◉ Stagiaire Comptable</strong><br>
-    Pages Jaunes — Finance</p>
-  `,
+    Pages Jaunes<br>
+    Finance & structure d’entreprise</p>
+
+    <p>→ Comptabilité clients et fournisseurs<br>
+    → Compréhension des flux financiers<br>
+    → Rigueur, organisation et vision analytique</p>
+  </div>
+
+  <div class="timeline right">
+    <p><strong>◉ Vendeuse & Ambassadrice de marque</strong><br>
+    Le Perchoir<br>
+    Galeries Lafayette<br>
+    Le Paradis du Fruit<br>
+    Retail, restauration & expérience client</p>
+
+    <p>→ Représentation et valorisation de l’image de marque<br>
+    → Relation client premium et expérience terrain<br>
+    → Contribution directe à la notoriété des enseignes</p>
+  </div>
+`
 
   /* ================= ORANGE : PARCOURS ACADÉMIQUE ================= */
   orange1: `
