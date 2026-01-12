@@ -169,6 +169,40 @@ const contents = {
     </ul>
   `
 };
+  /* ===== ORANGE : CV SCOLAIRE ===== */
+  orange1: `
+    <p><strong>✦ Parcours académique</strong></p>
+
+    <p><strong>◉ Master Import-Export</strong><br>
+    KEDGE Business School — Marseille<br>
+    Spécialisation en commerce international, stratégie d’implantation et développement des échanges internationaux.</p>
+
+    <hr>
+
+    <p><strong>◉ Bachelor International Business</strong><br>
+    INSEEC Paris Business School — Paris<br>
+    Formation axée sur le management international, le marketing et le développement commercial.</p>
+
+    <hr>
+
+    <p><strong>◉ BTS Commerce International</strong><br>
+    Lycée Jean Lurçat — Paris<br>
+    Fondamentaux du commerce international, logistique, négociation et opérations import-export.</p>
+
+    <hr>
+
+    <p><strong>◉ Licence de Gestion</strong><br>
+    Université Paris 1 Panthéon-Sorbonne — Paris<br>
+    Approche analytique du management, de la finance et de la gestion d’entreprise.</p>
+
+    <hr>
+
+    <p><strong>◉ Diplôme de Comptabilité et de Gestion (DCG)</strong><br>
+    École Nationale de Commerce — Paris<br>
+    Formation en comptabilité, finance d’entreprise et contrôle de gestion.</p>
+  `
+};
+
 
 /* ===========================
    OUVERTURE AU CLIC
