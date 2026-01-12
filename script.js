@@ -1,225 +1,154 @@
-/* =====================================================
-   DEBUG – CONFIRMATION CHARGEMENT
-===================================================== */
 console.log("SCRIPT JS CHARGÉ");
 
-/* =====================================================
-   LANGUE
-===================================================== */
-let currentLang = "fr";
+/* ===========================
+   CONTENU DES BLOCS
+=========================== */
 
-/* =====================================================
-   TEXTES COMPLETS
-===================================================== */
-const translations = {
-  fr: {
-    presentation: {
-      title: "Présentation",
-      text: `
-        <p><strong>
-          Je m’appelle Inès Saint Laurent, freelance spécialisée dans le développement
-          d’activités commerciales, aussi bien sur les marchés locaux qu’internationaux.
-        </strong></p>
+const contents = {
 
-        <p><strong>
-          Forte de plus de cinq années d’expérience en commerce international et marketing,
-          j’accompagne les entreprises — de la startup à la grande structure —
-          dans leurs phases clés de structuration, de croissance et de positionnement.
-        </strong></p>
+  /* ================= MON OFFRE ================= */
+  bleu1: `
+    <h2 class="presentation-title animated-title">Présentation</h2>
 
-        <p><strong>
-          J’interviens sur des missions stratégiques telles que le lancement de nouveaux produits,
-          l’implantation sur de nouveaux marchés, la structuration d’offres,
-          ainsi que le développement de la visibilité et des performances commerciales.
-        </strong></p>
+    <div class="centered-text">
+      <p>
+        Je m’appelle Inès Saint Laurent,
+        <strong>freelance spécialisée dans le développement d’activités</strong>
+        commerciales, aussi bien sur les marchés locaux qu’internationaux.
+      </p>
 
-        <p><strong>
-          Mon approche est humaine, stratégique et orientée résultats,
-          avec une vision globale mêlant business, marketing et digital.
-        </strong></p>
-      `
-    },
+      <p>
+        Forte de <strong>cinq années d’expérience</strong> en commerce international
+        et marketing, j’accompagne les entreprises — de la startup à la grande structure —
+        <strong>dans leurs phases clés de structuration, de croissance et de positionnement stratégique.</strong>
+      </p>
 
-    programme: {
-      title: "Processus d’accompagnement stratégique",
-      steps: {
-        1: `
-          <p><strong>01 — Diagnostic & Vision</strong></p>
-          <ul>
-            <li>Analyse approfondie de votre activité et de votre vision</li>
-            <li>Définition des objectifs business prioritaires</li>
-            <li>Identification du marché ou pays cible</li>
-            <li>Clarification du positionnement stratégique</li>
-          </ul>
-        `,
-        2: `
-          <p><strong>02 — Intelligence marché & Stratégie sur mesure</strong></p>
-          <ul>
-            <li>Études de marché détaillées</li>
-            <li>Analyse concurrentielle et opportunités</li>
-            <li>Recommandations produits et offres</li>
-            <li>Construction de la stratégie commerciale et marketing</li>
-            <li>Projection budgétaire et plan d’action</li>
-          </ul>
-        `,
-        3: `
-          <p><strong>03 — Déploiement & Pilotage stratégique</strong></p>
-          <ul>
-            <li>Mise en œuvre de la stratégie définie</li>
-            <li>Réunions de pilotage régulières</li>
-            <li>Analyse des performances et KPI</li>
-            <li>Ajustements stratégiques continus</li>
-            <li>Suivi des priorités et des actions</li>
-          </ul>
-        `
-      }
-    },
+      <p>
+        J’interviens sur des missions stratégiques telles que
+        <strong>le lancement de nouveaux produits</strong>,
+        <strong>l’implantation sur de nouveaux marchés</strong>,
+        <strong>la structuration d’offres</strong>,
+        ainsi que le
+        <strong>développement de la visibilité et des performances commerciales.</strong>
+      </p>
 
-    academic: {
-      title: "✦ Parcours académique",
-      text: `
-        <p><strong>Master Import-Export</strong><br>KEDGE Business School — Marseille</p>
-        <p><strong>Bachelor International Business</strong><br>INSEEC Paris Business School — Paris</p>
-        <p><strong>BTS Commerce International</strong><br>Lycée Jean Lurçat — Paris</p>
-        <p><strong>Licence de Gestion</strong><br>Université Paris 1 Panthéon-Sorbonne</p>
-        <p><strong>Diplôme de Comptabilité et de Gestion (DCG)</strong><br>École Nationale de Commerce — Paris</p>
-      `
-    }
-  },
+      <p>
+        Mon approche est humaine, stratégique et orientée résultats,
+        avec une vision globale mêlant business, marketing et digital.
+      </p>
 
-  en: {
-    presentation: {
-      title: "Presentation",
-      text: `
-        <p><strong>
-          My name is Inès Saint Laurent, a freelance consultant specialized in business
-          development for both local and international markets.
-        </strong></p>
+      <button class="objectif-btn-large" id="openObjectif">
+        Mon objectif
+      </button>
+    </div>
+  `,
 
-        <p><strong>
-          With over five years of experience in international trade and marketing,
-          I support companies — from startups to large organizations —
-          during key phases of growth, structuring, and strategic positioning.
-        </strong></p>
+  /* ================= MON PROGRAMME ================= */
+  rose1: `
+    <h2 class="programme-title animated-title">
+      Processus d’accompagnement stratégique
+    </h2>
 
-        <p><strong>
-          I work on missions such as product launches, international market expansion,
-          offer structuring, and the development of brand visibility and commercial performance.
-        </strong></p>
+    <div class="programme-buttons">
+      <button class="step-btn" data-step="1">01</button>
+      <button class="step-btn" data-step="2">02</button>
+      <button class="step-btn" data-step="3">03</button>
+    </div>
 
-        <p><strong>
-          My approach is human-centered, strategic, and results-oriented,
-          combining business, marketing, and digital expertise.
-        </strong></p>
-      `
-    },
+    <div id="programmeResult" class="programme-result"></div>
+  `,
 
-    programme: {
-      title: "Strategic Support Process",
-      steps: {
-        1: `
-          <p><strong>01 — Diagnosis & Vision</strong></p>
-          <ul>
-            <li>In-depth analysis of your activity and vision</li>
-            <li>Definition of key business objectives</li>
-            <li>Identification of target markets or countries</li>
-            <li>Clarification of strategic positioning</li>
-          </ul>
-        `,
-        2: `
-          <p><strong>02 — Market Intelligence & Custom Strategy</strong></p>
-          <ul>
-            <li>Detailed market research</li>
-            <li>Competitive analysis and opportunities</li>
-            <li>Product and offer recommendations</li>
-            <li>Commercial and marketing strategy development</li>
-            <li>Budget projection and action plan</li>
-          </ul>
-        `,
-        3: `
-          <p><strong>03 — Deployment & Strategic Monitoring</strong></p>
-          <ul>
-            <li>Implementation of the defined strategy</li>
-            <li>Regular steering meetings</li>
-            <li>Performance and KPI analysis</li>
-            <li>Continuous strategic adjustments</li>
-            <li>Monitoring of priorities and actions</li>
-          </ul>
-        `
-      }
-    },
+  /* ================= CV / COMPÉTENCES ================= */
+  violet1: `
+    <h2 class="programme-title animated-title">
+      ✦ CV & Compétences
+    </h2>
 
-    academic: {
-      title: "✦ Academic Background",
-      text: `
-        <p><strong>Master’s Degree in Import-Export</strong><br>KEDGE Business School — Marseille</p>
-        <p><strong>Bachelor in International Business</strong><br>INSEEC Paris Business School — Paris</p>
-        <p><strong>International Trade Diploma</strong><br>Lycée Jean Lurçat — Paris</p>
-        <p><strong>Bachelor’s Degree in Management</strong><br>Paris 1 Panthéon-Sorbonne University</p>
-        <p><strong>Accounting & Management Diploma (DCG)</strong><br>National School of Commerce — Paris</p>
-      `
-    }
-  }
+    <div class="centered-text">
+      <p>
+        Ce bloc présente mon parcours professionnel et mes compétences clés,
+        acquises au fil de mes expériences en entreprise, en entrepreneuriat
+        et en accompagnement stratégique.
+      </p>
+
+      <p>
+        Il est conçu pour évoluer et accueillir des présentations détaillées
+        par poste, secteur et missions.
+      </p>
+    </div>
+  `,
+
+  /* ================= PARCOURS ACADÉMIQUE ================= */
+  orange1: `
+    <h2 class="scolaire-title animated-title">
+      ✦ Parcours académique
+    </h2>
+
+    <div class="centered-text scolaire-list">
+      <p>
+        <strong>Master Import-Export</strong><br>
+        KEDGE Business School — Marseille
+      </p>
+
+      <p>
+        <strong>Bachelor International Business</strong><br>
+        INSEEC Paris Business School — Paris
+      </p>
+
+      <p>
+        <strong>BTS Commerce International</strong><br>
+        Lycée Jean Lurçat — Paris
+      </p>
+
+      <p>
+        <strong>Licence de Gestion</strong><br>
+        Université Paris 1 Panthéon-Sorbonne
+      </p>
+
+      <p>
+        <strong>Diplôme de Comptabilité et de Gestion (DCG)</strong><br>
+        École Nationale de Commerce — Paris
+      </p>
+    </div>
+  `,
+
+  /* ================= RÉSEAUX SOCIAUX ================= */
+  jaune1: `
+    <div class="socials-card square">
+      <a href="#" aria-label="Instagram">
+        <img src="images/Instagram.PNG" alt="Instagram">
+      </a>
+      <a href="#" aria-label="LinkedIn">
+        <img src="images/Linkedin.PNG" alt="LinkedIn">
+      </a>
+      <a href="#" aria-label="Email">
+        <img src="images/Mail.PNG" alt="Email">
+      </a>
+    </div>
+  `
 };
 
-/* =====================================================
+/* ===========================
    SÉLECTION DES ÉLÉMENTS
-===================================================== */
-const buttons = document.querySelectorAll(".bloc");
-const overlay = document.getElementById("overlay");
-const colorBox = document.getElementById("colorBox");
+=========================== */
+
+const buttons   = document.querySelectorAll(".bloc");
+const overlay   = document.getElementById("overlay");
+const colorBox  = document.getElementById("colorBox");
 const contentBox = document.getElementById("contentBox");
 
-/* =====================================================
-   GÉNÉRATION CONTENU
-===================================================== */
-function getContents() {
-  const t = translations[currentLang];
+/* ===========================
+   OUVERTURE DES BLOCS
+=========================== */
 
-  return {
-    bleu1: `
-      <h2 class="presentation-title animated-title">${t.presentation.title}</h2>
-      <div class="centered-text">${t.presentation.text}</div>
-    `,
-
-    rose1: `
-      <h2 class="programme-title animated-title">${t.programme.title}</h2>
-
-      <div class="programme-buttons">
-        <button class="step-btn" data-step="1">01</button>
-        <button class="step-btn" data-step="2">02</button>
-        <button class="step-btn" data-step="3">03</button>
-      </div>
-
-      <div id="programmeResult" class="programme-result"></div>
-    `,
-
-    orange1: `
-      <h2 class="scolaire-title animated-title">${t.academic.title}</h2>
-      <div class="centered-text">${t.academic.text}</div>
-    `,
-
-    jaune1: `
-      <div class="socials-card">
-        <a href="#"><img src="images/Instagram.PNG" alt="Instagram"></a>
-        <a href="#"><img src="images/Linkedin.PNG" alt="LinkedIn"></a>
-        <a href="#"><img src="images/Mail.PNG" alt="Email"></a>
-      </div>
-    `
-  };
-}
-
-/* =====================================================
-   OUVERTURE DES BLOCS (GARANTIE)
-===================================================== */
 buttons.forEach(button => {
   button.addEventListener("click", e => {
     e.stopPropagation();
 
-    const key = [...button.classList].find(c => getContents()[c]);
+    const key = [...button.classList].find(c => contents[c]);
     if (!key) return;
 
-    contentBox.innerHTML = getContents()[key];
+    contentBox.innerHTML = contents[key];
     colorBox.style.background = button.dataset.color || "#111";
 
     overlay.classList.add("active");
@@ -228,21 +157,54 @@ buttons.forEach(button => {
   });
 });
 
-/* =====================================================
-   INTERACTIONS PROGRAMME
-===================================================== */
+/* ===========================
+   INTERACTIONS MON PROGRAMME
+=========================== */
+
 contentBox.addEventListener("click", e => {
   if (e.target.classList.contains("step-btn")) {
     const step = e.target.dataset.step;
     const result = document.getElementById("programmeResult");
-    result.innerHTML = translations[currentLang].programme.steps[step];
+
+    const programmeTexts = {
+      1: `
+        <p><strong>Diagnostic & Vision</strong></p>
+        <ul>
+          <li>Analyse approfondie de l’activité existante</li>
+          <li>Clarification de la vision long terme</li>
+          <li>Définition des objectifs business prioritaires</li>
+          <li>Identification du marché ou pays cible</li>
+        </ul>
+      `,
+      2: `
+        <p><strong>Intelligence marché & stratégie sur mesure</strong></p>
+        <ul>
+          <li>Études de marché approfondies</li>
+          <li>Analyse concurrentielle</li>
+          <li>Positionnement stratégique</li>
+          <li>Recommandations commerciales et marketing</li>
+        </ul>
+      `,
+      3: `
+        <p><strong>Déploiement & pilotage stratégique</strong></p>
+        <ul>
+          <li>Mise en œuvre du plan d’action</li>
+          <li>Suivi des indicateurs de performance</li>
+          <li>Ajustements stratégiques continus</li>
+          <li>Accompagnement dans la durée</li>
+        </ul>
+      `
+    };
+
+    result.innerHTML = programmeTexts[step];
     result.classList.add("active");
   }
 });
 
-/* =====================================================
-   FERMETURE
-===================================================== */
+/* ===========================
+   FERMETURE OVERLAY
+=========================== */
+
 overlay.addEventListener("click", () => {
   overlay.classList.remove("active");
   overlay.style.opacity = "0";
@@ -251,20 +213,3 @@ overlay.addEventListener("click", () => {
 });
 
 colorBox.addEventListener("click", e => e.stopPropagation());
-
-/* =====================================================
-   SWITCH LANGUE
-===================================================== */
-const langBtn = document.createElement("button");
-langBtn.className = "lang-switch";
-langBtn.textContent = "EN";
-document.body.appendChild(langBtn);
-
-langBtn.addEventListener("click", () => {
-  currentLang = currentLang === "fr" ? "en" : "fr";
-  langBtn.textContent = currentLang === "fr" ? "EN" : "FR";
-
-  if (overlay.classList.contains("active")) {
-    contentBox.innerHTML = "";
-  }
-});
