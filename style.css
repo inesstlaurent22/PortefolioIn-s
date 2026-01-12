@@ -37,6 +37,11 @@ html, body {
   background: none;
   border: none;
   padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   transition: transform 0.6s ease;
 }
 
@@ -63,24 +68,24 @@ html, body {
   .rose1   { left:1000px; top:0;    width:391px; height:327px; }
   .violet1 { left:600px;  top:327px; width:401px; height:327px; }
   .violet2 { left:600px;  top:654px; width:402px; height:328px; }
-  .orange1 { left:1000px; top:327px;width:392px; height:327px; }
-  .jaune1  { left:1000px; top:654px;width:393px; height:328px; }
+  .orange1 { left:1000px; top:327px; width:392px; height:327px; }
+  .jaune1  { left:1000px; top:654px; width:393px; height:328px; }
 }
 
 /* ================= IPAD ================= */
 @media (min-width: 768px) and (max-width: 1024px) {
-  .bloc {
-    position: relative;
-    width: 40vw;
-    height: 28vh;
-    margin: 2vh;
-  }
-
   .FondPortefolio {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
+  }
+
+  .bloc {
+    position: relative;
+    width: 40vw;
+    height: 28vh;
+    margin: 2vh;
   }
 }
 
@@ -125,44 +130,14 @@ html, body {
   width: 80vw;
   height: 60vh;
   border-radius: 20px;
+  padding: 30px;
+  overflow: hidden;
   transform: scale(0.7);
   transition: transform 0.4s ease;
 }
 
 #overlay.active #colorBox {
   transform: scale(1);
-}
-
-/* ================= TEXTE CENTRÉ DANS LES BOUTONS ================= */
-
-.bloc {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* texte */
-.bloc .label {
-  position: absolute;
-  z-index: 3;
-  color: #ffffff;
-  font-weight: bold;
-  text-align: center;
-  pointer-events: none;
-
-  /* lisibilité */
-  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
-
-  /* taille responsive */
-  font-size: clamp(14px, 1.4vw, 22px);
-  padding: 0 10px;
-}
-
-/* ================= CONTENU ENCASTREMENT ================= */
-
-#colorBox {
-  padding: 30px;
-  overflow: hidden;
 }
 
 #contentBox {
@@ -175,26 +150,24 @@ html, body {
   font-weight: 500;
 }
 
-/* titres et mise en valeur */
-#contentBox strong {
-  font-weight: 700;
-}
-
 #contentBox p {
   margin-bottom: 16px;
 }
 
-/* mobile confort */
-@media (max-width: 767px) {
-  #colorBox {
-    padding: 20px;
-  }
+/* ================= TEXTE BOUTONS ================= */
+.bloc .label {
+  position: absolute;
+  z-index: 3;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  pointer-events: none;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  font-size: clamp(14px, 1.4vw, 22px);
+  padding: 0 10px;
 }
 
-/* ===========================
-   JAUNE – RÉSEAUX SOCIAUX
-=========================== */
-
+/* ================= RÉSEAUX ================= */
 .socials {
   display: flex;
   gap: 20px;
@@ -202,30 +175,22 @@ html, body {
   align-items: center;
 }
 
-/* boutons réseaux */
-.socials button {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-}
-
 .socials img {
   width: 60px;
   height: 60px;
   object-fit: contain;
-}
-
-.socials a {
   transition: transform 0.3s ease;
 }
 
-.socials a:hover {
+.socials a:hover img {
   transform: scale(1.1);
 }
 
-/* responsive mobile */
 @media (max-width: 767px) {
+  #colorBox {
+    padding: 20px;
+  }
+
   .socials img {
     width: 48px;
     height: 48px;
