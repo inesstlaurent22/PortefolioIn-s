@@ -13,82 +13,100 @@ const iphoneBox = document.querySelector(".iphoneBox");
 =========================== */
 const contents = {
 
-  /* ================= BLEU : MON OFFRE ================= */
+  /* ================= MON OFFRE ================= */
   bleu1: `
     <h2 class="presentation-title">Présentation</h2>
 
-    <p><strong>Je m’appelle Inès Saint Laurent</strong>, freelance spécialisée dans le développement d’activités commerciales, aussi bien sur les marchés locaux qu’internationaux.</p>
+    <div class="offre-bubble animate-bubble">
+      <p><strong>
+        Je m’appelle Inès Saint Laurent, freelance spécialisée dans le développement
+        d’activités commerciales, aussi bien sur les marchés locaux qu’internationaux.
+      </strong></p>
 
-    <p>Forte de <strong>5 années d’expérience en commerce international et marketing</strong>, j’accompagne les entreprises — de la startup à la grande structure — dans leurs phases clés de croissance.</p>
+      <p><strong>
+        Forte de plus de cinq années d’expérience en commerce international et marketing,
+        j’accompagne les entreprises — de la startup à la grande structure —
+        dans leurs phases clés de croissance et de structuration.
+      </strong></p>
 
-    <p>J’interviens sur des missions stratégiques telles que le <strong>lancement de nouveaux produits</strong>, l’implantation sur de nouveaux marchés, ainsi que le développement de la visibilité et des performances commerciales des marques, notamment via les réseaux sociaux.</p>
+      <p><strong>
+        J’interviens sur des missions stratégiques telles que le lancement de nouveaux produits,
+        l’implantation sur de nouveaux marchés, la structuration de l’offre,
+        ainsi que le développement de la visibilité et des performances commerciales,
+        notamment via les réseaux sociaux.
+      </strong></p>
 
-    <p>Mon expertise s’appuie sur une connaissance approfondie des <strong>marchés français, européens et asiatiques</strong>, et sur des collaborations dans des secteurs variés tels que le cosmétique, l’alimentation, la musique et l’audiovisuel.</p>
+      <p><strong>
+        Mon approche est humaine, stratégique et orientée résultats.
+        Elle repose sur une vision globale mêlant analyse, organisation,
+        exécution opérationnelle et compréhension fine des enjeux business et digitaux.
+      </strong></p>
+    </div>
 
-    <p>Curieuse et polyvalente, j’ai également développé des compétences en <strong>community management</strong> et en <strong>développement web</strong>, me permettant d’avoir une vision globale, stratégique et opérationnelle des projets que j’accompagne.</p>
-
-    <button class="objectif-btn" id="openObjectif">Mon objectif</button>
+    <button class="objectif-btn objectif-btn-large" id="openObjectif">
+      Mon objectif
+    </button>
   `,
 
-  /* ================= ROSE : MON PROGRAMME ================= */
+  /* ================= MON PROGRAMME ================= */
   rose1: `
     <h2 class="programme-title">Processus d’accompagnement stratégique</h2>
 
     <div class="programme-buttons">
       <button class="step-btn" data-step="1">01 — Diagnostic & Vision</button>
-      <button class="step-btn" data-step="2">02 — Intelligence marché</button>
+      <button class="step-btn" data-step="2">02 — Intelligence marché & Stratégie</button>
       <button class="step-btn" data-step="3">03 — Déploiement & Pilotage</button>
     </div>
 
-    <div class="programme-bubble" id="programmeBubble">
-      <div class="bubble-content" id="bubbleContent"></div>
+    <div class="programme-bubble full-visible" id="programmeBubble">
+      <div class="bubble-content text-left" id="bubbleContent"></div>
     </div>
   `,
 
-  /* ================= VIOLET : CV COMPÉTENCES ================= */
+  /* ================= CV COMPÉTENCES ================= */
   violet1: `
     <h2 class="competences-title">✦ Parcours professionnel — Timeline</h2>
 
     <div class="competences-buttons">
       <button class="competence-btn" data-comp="1">
-        ◉ Consultante en développement d’activité
-        <span>Gearbooker — Audiovisuel & international</span>
+        <span class="competence-title-big">Consultante en développement d’activité</span>
+        <span class="competence-sub">Gearbooker — Audiovisuel & international</span>
       </button>
 
       <button class="competence-btn" data-comp="2">
-        ◉ Commerciale Marketing
-        <span>Pachamamai — Cosmétique & marchés internationaux</span>
+        <span class="competence-title-big">Commerciale Marketing</span>
+        <span class="competence-sub">Pachamamai — Cosmétique & marchés internationaux</span>
       </button>
 
       <button class="competence-btn" data-comp="3">
-        ◉ CEO & Community Manager
-        <span>PUFFRAP — Média & culture musicale</span>
+        <span class="competence-title-big">CEO & Community Manager</span>
+        <span class="competence-sub">PUFFRAP — Média & culture musicale</span>
       </button>
 
       <button class="competence-btn" data-comp="4">
-        ◉ CEO & Développeuse Web
-        <span>KIT IN — Entrepreneuriat & digital</span>
+        <span class="competence-title-big">CEO & Développeuse Web</span>
+        <span class="competence-sub">KIT IN — Entrepreneuriat & digital</span>
       </button>
 
       <button class="competence-btn" data-comp="5">
-        ◉ Stagiaire Comptable
-        <span>Pages Jaunes — Finance</span>
+        <span class="competence-title-big">Stagiaire Comptable</span>
+        <span class="competence-sub">Pages Jaunes — Finance</span>
       </button>
 
       <button class="competence-btn" data-comp="6">
-        ◉ Vendeuse & Ambassadrice de marque
-        <span>Le Perchoir — Galeries Lafayette — Paradis du Fruit</span>
+        <span class="competence-title-big">Vendeuse & Ambassadrice de marque</span>
+        <span class="competence-sub">Le Perchoir — Galeries Lafayette — Paradis du Fruit</span>
       </button>
     </div>
 
-    <div class="competences-bubble" id="competencesBubble">
-      <div class="bubble-content" id="competencesContent"></div>
+    <div class="competences-bubble white-violet" id="competencesBubble">
+      <div class="bubble-content text-left" id="competencesContent"></div>
     </div>
   `,
 
-  /* ================= ORANGE : CV SCOLAIRE ================= */
+  /* ================= CV SCOLAIRE ================= */
   orange1: `
-    <p><strong>✦ Parcours académique</strong></p>
+    <h2 class="scolaire-title animated-title">✦ Parcours académique</h2>
 
     <p><strong>Master Import-Export</strong><br>
     KEDGE Business School — Marseille</p>
@@ -106,102 +124,101 @@ const contents = {
     École Nationale de Commerce — Paris</p>
   `,
 
-  /* ================= JAUNE : RÉSEAUX ================= */
+  /* ================= RÉSEAUX SOCIAUX ================= */
   jaune1: `
-    <div class="socials">
+    <div class="socials socials-small">
       <a href="https://www.instagram.com/" target="_blank">
         <img src="images/Instagram.PNG" alt="Instagram">
       </a>
-      <a href="mailto:contact@tonmail.com">
-        <img src="images/Mail.PNG" alt="Email">
-      </a>
       <a href="https://www.linkedin.com/" target="_blank">
         <img src="images/Linkedin.PNG" alt="LinkedIn">
+      </a>
+      <a href="mailto:contact@tonmail.com">
+        <img src="images/Mail.PNG" alt="Email">
       </a>
     </div>
   `
 };
 
 /* ===========================
-   TEXTES PROGRAMME
+   TEXTES – MON PROGRAMME
 =========================== */
 const programmeTexts = {
   1: `
-    <strong>Diagnostic & Vision</strong><br><br>
-    Un premier rendez-vous stratégique confidentiel permet de poser les bases
-    de votre développement.<br><br>
-    Nous définissons ensemble :
     <ul>
-      <li>votre vision long terme</li>
-      <li>le marché ou pays cible</li>
-      <li>vos objectifs business prioritaires</li>
-      <li>les délais et indicateurs de performance</li>
+      <li>Analyse approfondie de votre vision long terme et de vos ambitions</li>
+      <li>Définition précise du marché ou du pays cible</li>
+      <li>Clarification des objectifs business prioritaires</li>
+      <li>Mise en place des indicateurs de performance et des délais</li>
     </ul>
-    Cette étape garantit un alignement clair avant toute mise en œuvre.
   `,
   2: `
-    <strong>Intelligence marché & Stratégie sur mesure</strong><br><br>
-    <em>(10 à 15 jours après le diagnostic)</em><br><br>
-    Cette phase comprend :
     <ul>
-      <li>études de marché approfondies</li>
-      <li>analyse concurrentielle et positionnement</li>
-      <li>recommandations produits & opportunités</li>
-      <li>stratégie commerciale et marketing</li>
-      <li>projection budgétaire et plan d’action</li>
+      <li>Études de marché approfondies et ciblées</li>
+      <li>Analyse concurrentielle et positionnement stratégique</li>
+      <li>Identification des opportunités produits et business</li>
+      <li>Construction d’une stratégie commerciale et marketing sur mesure</li>
+      <li>Élaboration d’un plan d’action clair et structuré</li>
     </ul>
-    Une réunion de restitution permet d’ajuster et valider la stratégie.
   `,
   3: `
-    <strong>Déploiement & Pilotage stratégique</strong><br><br>
-    Mise en œuvre et suivi de la stratégie via :
     <ul>
-      <li>réunion de pilotage mensuelle</li>
-      <li>analyse des performances et KPI</li>
-      <li>ajustements stratégiques continus</li>
-      <li>suivi des actions et priorités</li>
+      <li>Déploiement opérationnel de la stratégie définie</li>
+      <li>Réunions de pilotage mensuelles et suivi des priorités</li>
+      <li>Analyse continue des performances et des KPI</li>
+      <li>Ajustements stratégiques pour une croissance maîtrisée</li>
     </ul>
-    Objectif : une croissance maîtrisée, mesurable et durable.
   `
 };
 
 /* ===========================
-   TEXTES CV COMPÉTENCES
+   TEXTES – CV COMPÉTENCES
 =========================== */
 const competencesTexts = {
   1: `
-    → Accompagnement d’une entreprise néerlandaise dans son implantation sur le marché français<br>
-    → Élaboration de stratégies de développement commercial<br>
-    → Prospection BtoB & BtoC<br>
-    → Analyse des performances et réunions de pilotage avec les associés
+    <ul>
+      <li><em>Accompagnement d’une entreprise internationale dans son implantation sur le marché français</em></li>
+      <li><em>Élaboration et pilotage de stratégies de développement commercial</em></li>
+      <li><em>Prospection BtoB et BtoC sur des marchés ciblés</em></li>
+      <li><em>Analyse des performances et reporting stratégique</em></li>
+    </ul>
   `,
   2: `
-    → Prospection commerciale et lancement de nouveaux produits<br>
-    → Réalisation d’études de marché (Portugal, Espagne, Asie)<br>
-    → Suivi et fidélisation de la clientèle<br>
-    → Participation à des salons internationaux
+    <ul>
+      <li><em>Lancement et développement de nouveaux produits</em></li>
+      <li><em>Réalisation d’études de marché (Europe et Asie)</em></li>
+      <li><em>Suivi, fidélisation et développement de la clientèle</em></li>
+      <li><em>Participation à des salons professionnels internationaux</em></li>
+    </ul>
   `,
   3: `
-    → Création et développement d’un média musical en ligne<br>
-    → Gestion et croissance des réseaux sociaux (Instagram & TikTok)<br>
-    → Optimisation du SEO et de la visibilité digitale<br>
-    → Mise en place de partenariats stratégiques
+    <ul>
+      <li><em>Création, structuration et développement d’un média musical</em></li>
+      <li><em>Gestion et croissance des réseaux sociaux (Instagram, TikTok)</em></li>
+      <li><em>Optimisation du SEO et de la visibilité digitale</em></li>
+      <li><em>Mise en place de partenariats stratégiques</em></li>
+    </ul>
   `,
   4: `
-    → Conception et développement d’une formation entrepreneuriale<br>
-    → Projet éducatif destiné aux jeunes de 10 à 17 ans<br>
-    → Développement HTML, CSS et JavaScript<br>
-    → Vision globale : produit, pédagogie, business et technologie
+    <ul>
+      <li><em>Conception et développement de projets entrepreneuriaux digitaux</em></li>
+      <li><em>Développement web en HTML, CSS et JavaScript</em></li>
+      <li><em>Vision globale produit, pédagogie et business</em></li>
+    </ul>
   `,
   5: `
-    → Comptabilité clients et fournisseurs<br>
-    → Compréhension des flux financiers<br>
-    → Rigueur, organisation et vision analytique
+    <ul>
+      <li><em>Gestion de la comptabilité clients et fournisseurs</em></li>
+      <li><em>Analyse et compréhension des flux financiers</em></li>
+      <li><em>Rigueur, organisation et fiabilité des données</em></li>
+    </ul>
   `,
   6: `
-    → Représentation et valorisation de l’image de marque<br>
-    → Relation client premium et expérience terrain<br>
-    → Contribution directe à la notoriété des enseignes
+    <ul>
+      <li><em>Représentation et valorisation de l’image de marque</em></li>
+      <li><em>Relation client premium et expérience terrain</em></li>
+      <li><em>Contribution directe à la notoriété des enseignes</em></li>
+    </ul>
   `
 };
 
@@ -210,7 +227,6 @@ const competencesTexts = {
 =========================== */
 buttons.forEach(button => {
   button.addEventListener("click", () => {
-
     buttons.forEach(b => b.classList.remove("active"));
     button.classList.add("active");
 
@@ -219,7 +235,6 @@ buttons.forEach(button => {
 
     contentBox.innerHTML = contents[key];
     colorBox.style.background = button.dataset.color || "transparent";
-
     overlay.classList.add("active");
   });
 });
@@ -231,7 +246,6 @@ overlay.addEventListener("click", () => {
   overlay.classList.remove("active");
   objectifOverlay.classList.remove("active");
   contentBox.innerHTML = "";
-  buttons.forEach(b => b.classList.remove("active"));
 });
 
 colorBox.addEventListener("click", e => e.stopPropagation());
@@ -241,13 +255,11 @@ colorBox.addEventListener("click", e => e.stopPropagation());
 =========================== */
 contentBox.addEventListener("click", e => {
 
-  /* objectif */
   if (e.target.id === "openObjectif") {
     e.stopPropagation();
     objectifOverlay.classList.add("active");
   }
 
-  /* programme */
   if (e.target.classList.contains("step-btn")) {
     e.stopPropagation();
     const step = e.target.dataset.step;
@@ -255,7 +267,6 @@ contentBox.addEventListener("click", e => {
     document.getElementById("programmeBubble").classList.add("active");
   }
 
-  /* compétences */
   if (e.target.closest(".competence-btn")) {
     e.stopPropagation();
     const btn = e.target.closest(".competence-btn");
