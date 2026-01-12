@@ -31,6 +31,7 @@ html, body {
   height: 100%;
   object-fit: cover;
   z-index: 1;
+  pointer-events: none; /* IMPORTANT : laisse passer les clics */
 }
 
 /* ================= BLOCS ================= */
@@ -105,9 +106,10 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
+
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.35s ease;
   z-index: 10;
 }
 
@@ -124,7 +126,7 @@ html, body {
   border-radius: 28px;
   overflow-y: auto;
   transform: scale(0.92);
-  transition: transform 0.4s ease;
+  transition: transform 0.35s ease;
 }
 
 #overlay.active #colorBox {
@@ -186,11 +188,12 @@ html, body {
   color: #FF4FD8;
   font-weight: 700;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .step-btn:hover {
   transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
 }
 
 .programme-result {
@@ -212,7 +215,7 @@ html, body {
 
 /* ================= RÉSEAUX SOCIAUX ================= */
 .socials-card {
-  display: flex;
+  display: inline-flex;
   gap: 20px;
   padding: 20px;
   background: rgba(255,255,255,0.15);
