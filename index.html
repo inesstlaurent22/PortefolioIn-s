@@ -4,70 +4,74 @@
   <meta charset="UTF-8">
   <title>KIT IN – Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="FondPortefolio">
+  <!-- ================= CONTENEUR PRINCIPAL ================= -->
+  <div class="FondPortefolio">
 
-  <!-- Image de fond -->
-  <img src="images/Portefolioin.PNG" class="fondindex" alt="">
+    <!-- Image de fond -->
+    <img src="images/Portefolioin.PNG" class="fondindex" alt="Fond Portfolio">
 
-<!-- Boutons images avec texte -->
-<button class="bloc bleu1" data-color="#3A6EFF">
-  <img src="images/Bleu1.png" alt="Bleu">
-  <span class="label">MON OFFRE</span>
-</button>
+    <!-- ================= BLOCS INTERACTIFS ================= -->
 
-<button class="bloc rose1" data-color="#FF4FD8">
-  <img src="images/Rose1.png" alt="Rose">
-  <span class="label">MON PROGRAMME</span>
-</button>
+    <button class="bloc bleu1" data-color="#3A6EFF">
+      <img src="images/Bleu1.png" alt="Mon offre">
+      <span class="label">MON OFFRE</span>
+    </button>
 
-<button class="bloc violet1" data-color="#7C4DFF">
-  <img src="images/Violet1.png" alt="Violet">
-  <span class="label">CV COMPÉTENCES</span>
-</button>
+    <button class="bloc rose1" data-color="#FF4FD8">
+      <img src="images/Rose1.png" alt="Mon programme">
+      <span class="label">MON PROGRAMME</span>
+    </button>
 
-<button class="bloc violet2" data-color="#9C6BFF">
-  <img src="images/Violet2.png" alt="Violet clair">
-  <span class="label">TARIFS</span>
-</button>
+    <button class="bloc violet1" data-color="#7C4DFF">
+      <img src="images/Violet1.png" alt="CV compétences">
+      <span class="label">CV COMPÉTENCES</span>
+    </button>
 
-<button class="bloc orange1" data-color="#FF8A00">
-  <img src="images/Orange1.png" alt="Orange">
-  <span class="label">CV SCOLAIRE</span>
-</button>
+    <button class="bloc violet2" data-color="#9C6BFF">
+      <img src="images/Violet2.png" alt="Tarifs">
+      <span class="label">TARIFS</span>
+    </button>
 
-<button class="bloc jaune1" data-color="#FFD400">
-  <img src="images/Jaune1.png" alt="Jaune">
-  <span class="label">RÉSEAUX SOCIAUX</span>
-</button>
+    <button class="bloc orange1" data-color="#FF8A00">
+      <img src="images/Orange1.png" alt="CV scolaire">
+      <span class="label">CV SCOLAIRE</span>
+    </button>
 
-</div>
+    <button class="bloc jaune1" data-color="#FFD400">
+      <img src="images/Jaune1.png" alt="Réseaux sociaux">
+      <span class="label">RÉSEAUX SOCIAUX</span>
+    </button>
 
-<!-- Overlay -->
-<div id="overlay">
-  <div id="colorBox">
-    <div id="contentBox"></div>
   </div>
-</div>
 
-  
-<!-- Cadran Objectif -->
-<div id="objectifOverlay">
-  <div class="iphoneBox">
-    <p>
-      transformer une idée ou une activité existante en un projet structuré,
-      visible et rentable.<br><br>
-      Si vous cherchez une approche humaine, stratégique et orientée résultats,
-      échangeons.
-    </p>
+  <!-- ================= OVERLAY PRINCIPAL ================= -->
+  <div id="overlay">
+    <div id="colorBox">
+      <div id="contentBox"></div>
+    </div>
   </div>
-</div>
 
+  <!-- ================= OVERLAY OBJECTIF (IPHONE) ================= -->
+  <div id="objectifOverlay">
+    <div class="iphoneBox">
+      <p>
+        Transformer une idée ou une activité existante en un projet structuré,
+        visible et rentable.<br><br>
+        Si vous cherchez une approche humaine, stratégique et orientée résultats,
+        échangeons.
+      </p>
+    </div>
+  </div>
 
-<script src="script.js"></script>
+  <!-- ================= JS ================= -->
+  <script src="script.js"></script>
+
 </body>
 </html>
