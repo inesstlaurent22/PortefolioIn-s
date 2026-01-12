@@ -38,11 +38,9 @@ html, body {
   background: none;
   border: none;
   padding: 0;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   transition: transform 0.6s ease;
 }
 
@@ -60,15 +58,12 @@ html, body {
   color: white;
   font-weight: bold;
   pointer-events: none;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   width: 100%;
   height: 100%;
   text-align: center;
-
   font-size: clamp(16px, 1.6vw, 24px);
   text-shadow: 0 2px 10px rgba(0,0,0,0.6);
 }
@@ -160,12 +155,10 @@ html, body {
   position: relative;
   width: 100%;
   color: white;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-
   font-size: clamp(14px, 1.2vw, 18px);
   line-height: 1.6;
 }
@@ -184,33 +177,22 @@ html, body {
   padding-left: 0;
 }
 
-/* ================= TITRE PRÉSENTATION ================= */
-.presentation-title {
-  position: relative;
+/* ================= TITRES ================= */
+.presentation-title,
+.programme-title,
+.competences-title {
   font-size: clamp(22px, 2vw, 30px);
   font-weight: bold;
-  margin-bottom: 24px;
-  animation: fadeSlide 0.8s ease forwards;
+  margin-bottom: 30px;
+  animation: slideFade 0.8s ease forwards;
 }
 
-.presentation-title::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 4px;
-  width: 100%;
-  height: 12px;
-  background: rgba(255,255,255,0.25);
-  z-index: -1;
-  border-radius: 6px;
-}
-
-@keyframes fadeSlide {
-  from { opacity: 0; transform: translateY(12px); }
+@keyframes slideFade {
+  from { opacity: 0; transform: translateY(14px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ================= BOUTON OBJECTIF ================= */
+/* ================= OBJECTIF ================= */
 .objectif-btn {
   margin-top: 24px;
   padding: 12px 26px;
@@ -222,7 +204,6 @@ html, body {
   color: #000;
 }
 
-/* ================= OBJECTIF OVERLAY ================= */
 #objectifOverlay {
   position: fixed;
   inset: 0;
@@ -241,40 +222,18 @@ html, body {
   pointer-events: auto;
 }
 
-/* ================= OBJECTIF – BULLE ================= */
+/* bulle objectif */
 .iphoneBox {
-  width: auto;
-  max-width: 360px;
-  background: #ffffff;          /* BLANC */
-  border-radius: 28px;
+  background: #ffffff;
+  color: #3A6EFF;
   padding: 28px 24px;
-  color: #3A6EFF;               /* BLEU */
+  border-radius: 28px;
+  max-width: 360px;
   text-align: center;
-  font-size: 16px;
-  line-height: 1.6;
-
   box-shadow: 0 20px 50px rgba(0,0,0,0.25);
-  animation: iphonePop 0.5s ease forwards;
-}
-
-@keyframes iphonePop {
-  from { transform: scale(0.7) translateY(20px); opacity: 0; }
-  to   { transform: scale(1) translateY(0); opacity: 1; }
 }
 
 /* ================= PROGRAMME ================= */
-.programme-title {
-  font-size: clamp(22px, 2vw, 30px);
-  font-weight: bold;
-  margin-bottom: 30px;
-  animation: slideFade 0.8s ease forwards;
-}
-
-@keyframes slideFade {
-  from { opacity: 0; transform: translateY(14px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
 .programme-buttons {
   display: flex;
   flex-direction: column;
@@ -293,17 +252,16 @@ html, body {
   color: #000;
 }
 
-/* ================= PROGRAMME – BULLE ================= */
 .programme-bubble {
   position: absolute;
   right: -420px;
   top: 50%;
   transform: translateY(-50%);
   width: 380px;
-  background: #ffffff;          /* BLANC */
+  background: #ffffff;
+  color: #FF4FD8;
   border-radius: 24px;
   padding: 24px;
-  color: #FF4FD8;               /* ROSE */
   opacity: 0;
   pointer-events: none;
   transition: all 0.4s ease;
@@ -316,18 +274,58 @@ html, body {
   pointer-events: auto;
 }
 
-.bubble-content {
-  font-size: 15px;
-  line-height: 1.6;
+/* ================= CV COMPÉTENCES ================= */
+.competences-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 30px;
 }
 
-.bubble-content strong {
+.competence-btn {
+  width: 100%;
+  max-width: 520px;
+  padding: 14px 22px;
+  border-radius: 24px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  background: rgba(255,255,255,0.9);
+  color: #000;
+}
+
+.competence-btn span {
   display: block;
-  margin-bottom: 12px;
-  font-size: 17px;
+  font-size: 14px;
+  font-weight: normal;
+  opacity: 0.8;
+  margin-top: 4px;
 }
 
-/* ================= MOBILE PROGRAMME ================= */
+.competences-bubble {
+  position: absolute;
+  right: -420px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 380px;
+  background: #7C4DFF;
+  color: #ffffff;
+  border-radius: 24px;
+  padding: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease;
+  box-shadow: 0 18px 45px rgba(0,0,0,0.35);
+}
+
+.competences-bubble.active {
+  right: -20px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ================= MOBILE ================= */
 @media (max-width: 767px) {
   #colorBox {
     width: 92vw;
@@ -335,7 +333,8 @@ html, body {
     padding: 20px;
   }
 
-  .programme-bubble {
+  .programme-bubble,
+  .competences-bubble {
     position: relative;
     right: 0;
     top: 0;
