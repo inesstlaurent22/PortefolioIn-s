@@ -32,50 +32,17 @@ const contents = {
 
   /* ================= ROSE : MON PROGRAMME ================= */
   rose1: `
-    <p><strong>♟️ Processus d’accompagnement stratégique</strong></p>
+    <h2 class="programme-title">Processus d’accompagnement stratégique</h2>
 
-    <p><strong>01 — Diagnostic & Vision</strong></p>
-    <p>Un premier rendez-vous stratégique confidentiel permet de poser les bases de votre développement.</p>
-
-    <div class="text-left">
-      <p><strong>Nous y définissons :</strong></p>
-      <ul>
-        <li>votre vision long terme,</li>
-        <li>le marché ou pays cible,</li>
-        <li>vos objectifs business prioritaires,</li>
-        <li>les délais et indicateurs de performance.</li>
-      </ul>
-
-      <p>Cette étape garantit un alignement clair et précis avant toute mise en œuvre.</p>
-
-      <p><strong>02 — Intelligence marché & Stratégie sur mesure</strong><br>
-      <em>(10 à 15 jours après le diagnostic)</em></p>
-
-      <ul>
-        <li>études de marché approfondies,</li>
-        <li>analyse concurrentielle et positionnement,</li>
-        <li>recommandations produits & opportunités,</li>
-        <li>stratégie commerciale et marketing,</li>
-        <li>projection budgétaire et plan d’action.</li>
-      </ul>
-
-      <p>Une réunion de restitution permet d’ajuster la stratégie si nécessaire et de valider le périmètre de la mission ainsi que le devis.</p>
-
-      <p><strong>03 — Déploiement & Pilotage stratégique</strong></p>
-
-      <ul>
-        <li>Réunion de pilotage mensuelle</li>
-        <li>Analyse des performances et KPI</li>
-        <li>Ajustements stratégiques continus</li>
-        <li>Suivi des actions et priorités</li>
-      </ul>
+    <div class="programme-buttons">
+      <button class="step-btn" data-step="1">01 — Diagnostic & Vision</button>
+      <button class="step-btn" data-step="2">02 — Intelligence marché</button>
+      <button class="step-btn" data-step="3">03 — Déploiement & Pilotage</button>
     </div>
 
-    <p><strong>📅 Durée & rythme des missions</strong></p>
-    <p>Les accompagnements sont proposés sur des formats de <strong>3 mois, 6 mois ou jusqu’à 12 mois</strong>, selon vos ambitions.</p>
-
-    <p><strong>👉 Vous avez une vision.</strong><br>
-    Je vous aide à la transformer en croissance maîtrisée.</p>
+    <div class="programme-bubble" id="programmeBubble">
+      <div class="bubble-content" id="bubbleContent"></div>
+    </div>
   `,
 
   /* ================= VIOLET : CV COMPÉTENCES ================= */
@@ -84,8 +51,7 @@ const contents = {
 
     <div class="timeline left">
       <p><strong>◉ Consultante en développement d’activité</strong><br>
-      Gearbooker<br>
-      Audiovisuel & international</p>
+      Gearbooker — Audiovisuel & international</p>
 
       <p>→ Accompagnement d’une entreprise néerlandaise dans son implantation sur le marché français<br>
       → Élaboration de stratégies de développement commercial<br>
@@ -95,8 +61,7 @@ const contents = {
 
     <div class="timeline right">
       <p><strong>◉ Commerciale Marketing</strong><br>
-      Pachamamai<br>
-      Cosmétique & marchés internationaux</p>
+      Pachamamai — Cosmétique & marchés internationaux</p>
 
       <p>→ Prospection commerciale et lancement de nouveaux produits<br>
       → Réalisation d’études de marché (Portugal, Espagne, Asie)<br>
@@ -106,8 +71,7 @@ const contents = {
 
     <div class="timeline left">
       <p><strong>◉ CEO & Community Manager</strong><br>
-      PUFFRAP<br>
-      Média & culture musicale</p>
+      PUFFRAP — Média & culture musicale</p>
 
       <p>→ Création et développement du magazine en ligne<br>
       → Gestion et croissance des réseaux sociaux (Instagram & TikTok)<br>
@@ -117,8 +81,7 @@ const contents = {
 
     <div class="timeline right">
       <p><strong>◉ CEO & Développeuse Web</strong><br>
-      KIT IN<br>
-      Entrepreneuriat & digital</p>
+      KIT IN — Entrepreneuriat & digital</p>
 
       <p>→ Conception et développement d’une formation en ligne dédiée à la création d’entreprise<br>
       → Projet éducatif destiné aux jeunes de 10 à 17 ans<br>
@@ -128,8 +91,7 @@ const contents = {
 
     <div class="timeline left">
       <p><strong>◉ Stagiaire Comptable</strong><br>
-      Pages Jaunes<br>
-      Finance & structure d’entreprise</p>
+      Pages Jaunes — Finance</p>
 
       <p>→ Comptabilité clients et fournisseurs<br>
       → Compréhension des flux financiers<br>
@@ -138,10 +100,7 @@ const contents = {
 
     <div class="timeline right">
       <p><strong>◉ Vendeuse & Ambassadrice de marque</strong><br>
-      Le Perchoir<br>
-      Galeries Lafayette<br>
-      Le Paradis du Fruit<br>
-      Retail, restauration & expérience client</p>
+      Le Perchoir — Galeries Lafayette — Le Paradis du Fruit</p>
 
       <p>→ Représentation et valorisation de l’image de marque<br>
       → Relation client premium et expérience terrain<br>
@@ -175,15 +134,56 @@ const contents = {
       <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
         <img src="images/Instagram.PNG" alt="Instagram">
       </a>
-
       <a href="mailto:contact@tonmail.com">
         <img src="images/Mail.PNG" alt="Email">
       </a>
-
       <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
         <img src="images/Linkedin.PNG" alt="LinkedIn">
       </a>
     </div>
+  `
+};
+
+/* ===========================
+   TEXTES DES ÉTAPES PROGRAMME
+=========================== */
+const programmeTexts = {
+  1: `
+    <strong>Diagnostic & Vision</strong><br><br>
+    Un premier rendez-vous stratégique confidentiel permet de poser les bases
+    de votre développement.<br><br>
+    Nous définissons ensemble :
+    <ul>
+      <li>votre vision long terme</li>
+      <li>le marché ou pays cible</li>
+      <li>vos objectifs business prioritaires</li>
+      <li>les délais et indicateurs de performance</li>
+    </ul>
+    Cette étape garantit un alignement clair et précis avant toute mise en œuvre.
+  `,
+  2: `
+    <strong>Intelligence marché & Stratégie sur mesure</strong><br><br>
+    <em>(10 à 15 jours après le diagnostic)</em><br><br>
+    Cette phase comprend :
+    <ul>
+      <li>études de marché approfondies</li>
+      <li>analyse concurrentielle et positionnement</li>
+      <li>recommandations produits & opportunités</li>
+      <li>stratégie commerciale et marketing</li>
+      <li>projection budgétaire et plan d’action</li>
+    </ul>
+    Une réunion de restitution permet d’ajuster et valider la stratégie.
+  `,
+  3: `
+    <strong>Déploiement & Pilotage stratégique</strong><br><br>
+    Mise en œuvre et suivi de la stratégie via :
+    <ul>
+      <li>réunion de pilotage mensuelle</li>
+      <li>analyse des performances et KPI</li>
+      <li>ajustements stratégiques continus</li>
+      <li>suivi des actions et priorités</li>
+    </ul>
+    Objectif : une croissance maîtrisée, mesurable et durable.
   `
 };
 
@@ -202,11 +202,9 @@ buttons.forEach(button => {
     contentBox.innerHTML = contents[key];
     colorBox.style.background = button.dataset.color || "transparent";
 
-    if (key === "jaune1") {
-      colorBox.classList.add("jaune");
-    } else {
-      colorBox.classList.remove("jaune");
-    }
+    key === "jaune1"
+      ? colorBox.classList.add("jaune")
+      : colorBox.classList.remove("jaune");
 
     overlay.classList.add("active");
   });
@@ -225,23 +223,26 @@ overlay.addEventListener("click", () => {
 colorBox.addEventListener("click", e => e.stopPropagation());
 
 /* ===========================
-   OBJECTIF – MODAL IPHONE (FIX FINAL)
+   OBJECTIF – MODAL IPHONE
 =========================== */
-
-// clic sur le bouton injecté
 contentBox.addEventListener("click", e => {
   if (e.target && e.target.id === "openObjectif") {
     e.stopPropagation();
     objectifOverlay.classList.add("active");
   }
+
+  if (e.target.classList.contains("step-btn")) {
+    const step = e.target.dataset.step;
+    const bubble = document.getElementById("programmeBubble");
+    const bubbleContent = document.getElementById("bubbleContent");
+
+    bubbleContent.innerHTML = programmeTexts[step];
+    bubble.classList.add("active");
+  }
 });
 
-// clic dans la bulle = ne ferme pas
-iphoneBox.addEventListener("click", e => {
-  e.stopPropagation();
-});
+iphoneBox.addEventListener("click", e => e.stopPropagation());
 
-// clic autour = fermeture
 objectifOverlay.addEventListener("click", () => {
   objectifOverlay.classList.remove("active");
 });
