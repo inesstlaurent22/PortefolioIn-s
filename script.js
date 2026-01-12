@@ -187,7 +187,7 @@ const contents = {
 };
 
 /* ===========================
-   OUVERTURE OVERLAY
+   OUVERTURE OVERLAY PRINCIPAL
 =========================== */
 buttons.forEach(button => {
   button.addEventListener("click", () => {
@@ -212,10 +212,11 @@ buttons.forEach(button => {
 });
 
 /* ===========================
-   FERMETURE OVERLAY
+   FERMETURE OVERLAY PRINCIPAL
 =========================== */
 overlay.addEventListener("click", () => {
   overlay.classList.remove("active");
+  objectifOverlay.classList.remove("active");
   buttons.forEach(b => b.classList.remove("active"));
   contentBox.innerHTML = "";
 });
@@ -225,12 +226,22 @@ colorBox.addEventListener("click", e => e.stopPropagation());
 /* ===========================
    OBJECTIF – MODAL IPHONE
 =========================== */
+
+// ouverture
 document.addEventListener("click", e => {
   if (e.target && e.target.id === "openObjectif") {
+    e.stopPropagation();
     objectifOverlay.classList.add("active");
   }
 });
 
+// empêche la fermeture au clic dans la bulle
+const iphoneBox = document.querySelector(".iphoneBox");
+iphoneBox.addEventListener("click", e => {
+  e.stopPropagation();
+});
+
+// fermeture en cliquant autour
 objectifOverlay.addEventListener("click", () => {
   objectifOverlay.classList.remove("active");
 });
