@@ -223,15 +223,20 @@ overlay.addEventListener("click", () => {
 colorBox.addEventListener("click", e => e.stopPropagation());
 
 /* ===========================
-   OBJECTIF – MODAL IPHONE
+   INTERACTIONS DANS CONTENTBOX
 =========================== */
 contentBox.addEventListener("click", e => {
+
+  /* ouverture objectif */
   if (e.target && e.target.id === "openObjectif") {
     e.stopPropagation();
     objectifOverlay.classList.add("active");
   }
 
+  /* étapes programme */
   if (e.target.classList.contains("step-btn")) {
+    e.stopPropagation();
+
     const step = e.target.dataset.step;
     const bubble = document.getElementById("programmeBubble");
     const bubbleContent = document.getElementById("bubbleContent");
@@ -241,6 +246,9 @@ contentBox.addEventListener("click", e => {
   }
 });
 
+/* ===========================
+   OBJECTIF OVERLAY
+=========================== */
 iphoneBox.addEventListener("click", e => e.stopPropagation());
 
 objectifOverlay.addEventListener("click", () => {
