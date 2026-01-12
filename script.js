@@ -19,7 +19,6 @@ function showFloatingBubble(html, theme = "default") {
   bubble.innerHTML = html;
 
   bubble.addEventListener("click", e => e.stopPropagation());
-
   contentBox.appendChild(bubble);
 
   requestAnimationFrame(() => {
@@ -85,6 +84,15 @@ const contents = {
   violet1: `
     <h2 class="competences-title">✦ Parcours professionnel — Timeline</h2>
 
+    <div class="competences-intro text-left">
+      <p><strong>Gearbooker</strong> — <em>Audiovisuel</em></p>
+      <p><strong>Pachamamaï</strong> — <em>Cosmétique solide</em></p>
+      <p><strong>PUFFRAP</strong> — <em>Média musique</em></p>
+      <p><strong>KIT IN</strong> — <em>Formation pour la création d’entreprise pour les jeunes à partir de 10 ans</em></p>
+      <p><strong>Pages Jaunes</strong> — <em>Annuaire en ligne</em></p>
+      <p><strong>Galeries Lafayette, Le Perchoir, Le Paradis du Fruit</strong> — <em>Retail & Restauration</em></p>
+    </div>
+
     <div class="competences-buttons">
       <button class="competence-btn" data-comp="1">Consultante en développement d’activité</button>
       <button class="competence-btn" data-comp="2">Commerciale Marketing</button>
@@ -137,42 +145,30 @@ const contents = {
 const programmeTexts = {
   1: `
     <h3>Diagnostic & Vision</h3>
-    <p>
-      Un premier rendez-vous stratégique permet d’analyser votre situation actuelle,
-      de comprendre votre vision long terme et de clarifier vos ambitions.
-    </p>
     <ul>
-      <li>Analyse de votre vision et de vos objectifs</li>
-      <li>Définition du marché ou du pays cible</li>
-      <li>Identification des priorités business</li>
+      <li>Analyse approfondie de votre vision long terme et de vos ambitions</li>
+      <li>Définition précise du marché ou du pays cible</li>
+      <li>Clarification des objectifs business prioritaires</li>
       <li>Mise en place des indicateurs de performance</li>
     </ul>
   `,
   2: `
     <h3>Intelligence marché & Stratégie</h3>
-    <p>
-      Cette phase consiste à construire une stratégie sur mesure,
-      fondée sur une compréhension fine de votre marché et de votre environnement concurrentiel.
-    </p>
     <ul>
       <li>Études de marché approfondies</li>
-      <li>Analyse concurrentielle et positionnement</li>
+      <li>Analyse concurrentielle et positionnement stratégique</li>
       <li>Identification des opportunités business</li>
       <li>Construction de la stratégie commerciale et marketing</li>
-      <li>Élaboration d’un plan d’action structuré</li>
+      <li>Plan d’action structuré</li>
     </ul>
   `,
   3: `
     <h3>Déploiement & Pilotage stratégique</h3>
-    <p>
-      La stratégie est mise en œuvre de manière opérationnelle,
-      avec un suivi régulier afin d’assurer une croissance maîtrisée et durable.
-    </p>
     <ul>
-      <li>Mise en œuvre des actions définies</li>
-      <li>Réunions de pilotage mensuelles</li>
-      <li>Analyse des performances et des KPI</li>
+      <li>Mise en œuvre opérationnelle de la stratégie</li>
+      <li>Suivi des performances et des KPI</li>
       <li>Ajustements stratégiques continus</li>
+      <li>Croissance maîtrisée et durable</li>
     </ul>
   `
 };
@@ -184,58 +180,55 @@ const competencesTexts = {
   1: `
     <h3>Consultante en développement d’activité</h3>
     <ul>
-      <li><em>Accompagnement d’une entreprise internationale dans son implantation sur le marché français</em></li>
-      <li><em>Élaboration et pilotage de stratégies de développement commercial</em></li>
-      <li><em>Prospection BtoB et BtoC sur des marchés ciblés</em></li>
-      <li><em>Analyse des performances et reporting stratégique</em></li>
+      <li><em>Accompagnement stratégique d’une entreprise audiovisuelle internationale</em></li>
+      <li><em>Développement commercial et prospection BtoB / BtoC</em></li>
+      <li><em>Analyse des performances et pilotage des actions</em></li>
     </ul>
   `,
   2: `
     <h3>Commerciale Marketing</h3>
     <ul>
-      <li><em>Lancement et développement de nouveaux produits</em></li>
-      <li><em>Réalisation d’études de marché internationales</em></li>
-      <li><em>Suivi, fidélisation et développement de la clientèle</em></li>
-      <li><em>Participation à des salons professionnels</em></li>
+      <li><em>Lancement et développement de produits cosmétiques solides</em></li>
+      <li><em>Études de marché et expansion internationale</em></li>
+      <li><em>Suivi et fidélisation client</em></li>
     </ul>
   `,
   3: `
     <h3>CEO & Community Manager</h3>
     <ul>
-      <li><em>Création, structuration et développement d’un média musical</em></li>
-      <li><em>Gestion et croissance des réseaux sociaux</em></li>
-      <li><em>Optimisation du SEO et de la visibilité digitale</em></li>
-      <li><em>Mise en place de partenariats stratégiques</em></li>
+      <li><em>Création et développement d’un média musical</em></li>
+      <li><em>Gestion et croissance des communautés digitales</em></li>
+      <li><em>Optimisation de la visibilité et partenariats stratégiques</em></li>
     </ul>
   `,
   4: `
     <h3>CEO & Développeuse Web</h3>
     <ul>
-      <li><em>Conception et développement de projets entrepreneuriaux digitaux</em></li>
-      <li><em>Développement web en HTML, CSS et JavaScript</em></li>
-      <li><em>Vision globale produit, pédagogie et business</em></li>
+      <li><em>Conception de formations entrepreneuriales pour les jeunes</em></li>
+      <li><em>Développement web (HTML, CSS, JavaScript)</em></li>
+      <li><em>Vision produit, pédagogie et structuration business</em></li>
     </ul>
   `,
   5: `
     <h3>Stagiaire Comptable</h3>
     <ul>
       <li><em>Gestion de la comptabilité clients et fournisseurs</em></li>
-      <li><em>Analyse et compréhension des flux financiers</em></li>
-      <li><em>Rigueur, organisation et fiabilité des données</em></li>
+      <li><em>Analyse des flux financiers</em></li>
+      <li><em>Organisation et rigueur comptable</em></li>
     </ul>
   `,
   6: `
     <h3>Vendeuse & Ambassadrice de marque</h3>
     <ul>
-      <li><em>Représentation et valorisation de l’image de marque</em></li>
+      <li><em>Représentation et valorisation de marques en retail et restauration</em></li>
       <li><em>Relation client premium et expérience terrain</em></li>
-      <li><em>Contribution directe à la notoriété des enseignes</em></li>
+      <li><em>Contribution à la notoriété des enseignes</em></li>
     </ul>
   `
 };
 
 /* ===========================
-   OUVERTURE OVERLAY PRINCIPAL
+   OUVERTURE OVERLAY
 =========================== */
 buttons.forEach(button => {
   button.addEventListener("click", () => {
@@ -284,8 +277,8 @@ overlay.addEventListener("click", () => {
 });
 
 colorBox.addEventListener("click", e => e.stopPropagation());
-
 iphoneBox.addEventListener("click", e => e.stopPropagation());
+
 objectifOverlay.addEventListener("click", () => {
   objectifOverlay.classList.remove("active");
 });
