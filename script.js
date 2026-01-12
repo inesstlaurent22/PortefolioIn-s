@@ -1,8 +1,8 @@
 console.log("SCRIPT JS CHARGÉ");
 
-/* ===========================
+/* =====================================================
    CONTENU DES BLOCS
-=========================== */
+===================================================== */
 
 const contents = {
 
@@ -66,15 +66,98 @@ const contents = {
 
     <div class="centered-text">
       <p>
-        Ce bloc présente mon parcours professionnel et mes compétences clés,
-        acquises au fil de mes expériences en entreprise, en entrepreneuriat
-        et en accompagnement stratégique.
+        Mon parcours professionnel s’est construit à travers des expériences
+        en entreprise, en entrepreneuriat et en accompagnement stratégique,
+        me permettant de développer une vision globale des enjeux business,
+        marketing et opérationnels.
       </p>
 
       <p>
-        Il est conçu pour évoluer et accueillir des présentations détaillées
-        par poste, secteur et missions.
+        J’ai évolué dans des secteurs variés tels que l’audiovisuel,
+        le cosmétique, le retail, la restauration, la musique,
+        ainsi que dans des environnements internationaux et digitaux.
       </p>
+    </div>
+  `,
+
+  /* ================= LOGICIELS ACQUIS ================= */
+  violet2: `
+    <h2 class="programme-title animated-title">
+      ✦ Logiciels acquis
+    </h2>
+
+    <div class="logiciels-list">
+
+      <button class="logiciel-btn" data-tool="crm">
+        CRM
+      </button>
+      <div class="logiciel-content" id="crm">
+        Notion, HubSpot, Salesforce
+      </div>
+
+      <button class="logiciel-btn" data-tool="gestion">
+        Gestion de projet
+      </button>
+      <div class="logiciel-content" id="gestion">
+        Trello, Google Workspace
+      </div>
+
+      <button class="logiciel-btn" data-tool="communication">
+        Communication
+      </button>
+      <div class="logiciel-content" id="communication">
+        Mailchimp, Zapier, Make
+      </div>
+
+      <button class="logiciel-btn" data-tool="etude">
+        Étude de marché
+      </button>
+      <div class="logiciel-content" id="etude">
+        TradeMap, Kompass, Euromonitor, World Bank Data
+      </div>
+
+      <button class="logiciel-btn" data-tool="analyse">
+        Analyse
+      </button>
+      <div class="logiciel-content" id="analyse">
+        LinkedIn Sales Navigator, Google Analytics, Google Search Console
+      </div>
+
+      <button class="logiciel-btn" data-tool="ia">
+        Intelligence artificielle
+      </button>
+      <div class="logiciel-content" id="ia">
+        ChatGPT, Claude, MidJourney, Perplexity, Manus
+      </div>
+
+      <button class="logiciel-btn" data-tool="microsoft">
+        Microsoft
+      </button>
+      <div class="logiciel-content" id="microsoft">
+        Azure, Copilot, OneNote
+      </div>
+
+      <button class="logiciel-btn" data-tool="social">
+        Réseaux sociaux & CMS
+      </button>
+      <div class="logiciel-content" id="social">
+        Meta Business Suite, Webflow, Wix, WordPress, Shopify
+      </div>
+
+      <button class="logiciel-btn" data-tool="design">
+        Design & création
+      </button>
+      <div class="logiciel-content" id="design">
+        Canva, Figma, CapCut, Photoshop
+      </div>
+
+      <button class="logiciel-btn" data-tool="dev">
+        Développement web
+      </button>
+      <div class="logiciel-content" id="dev">
+        GitHub
+      </div>
+
     </div>
   `,
 
@@ -128,18 +211,18 @@ const contents = {
   `
 };
 
-/* ===========================
+/* =====================================================
    SÉLECTION DES ÉLÉMENTS
-=========================== */
+===================================================== */
 
-const buttons   = document.querySelectorAll(".bloc");
-const overlay   = document.getElementById("overlay");
-const colorBox  = document.getElementById("colorBox");
+const buttons    = document.querySelectorAll(".bloc");
+const overlay    = document.getElementById("overlay");
+const colorBox   = document.getElementById("colorBox");
 const contentBox = document.getElementById("contentBox");
 
-/* ===========================
+/* =====================================================
    OUVERTURE DES BLOCS
-=========================== */
+===================================================== */
 
 buttons.forEach(button => {
   button.addEventListener("click", e => {
@@ -157,11 +240,13 @@ buttons.forEach(button => {
   });
 });
 
-/* ===========================
-   INTERACTIONS MON PROGRAMME
-=========================== */
+/* =====================================================
+   INTERACTIONS INTERNES
+===================================================== */
 
 contentBox.addEventListener("click", e => {
+
+  /* ----- Programme ----- */
   if (e.target.classList.contains("step-btn")) {
     const step = e.target.dataset.step;
     const result = document.getElementById("programmeResult");
@@ -199,11 +284,23 @@ contentBox.addEventListener("click", e => {
     result.innerHTML = programmeTexts[step];
     result.classList.add("active");
   }
+
+  /* ----- Logiciels acquis ----- */
+  if (e.target.classList.contains("logiciel-btn")) {
+    const id = e.target.dataset.tool;
+    const content = document.getElementById(id);
+
+    document.querySelectorAll(".logiciel-content").forEach(el => {
+      if (el !== content) el.classList.remove("active");
+    });
+
+    content.classList.toggle("active");
+  }
 });
 
-/* ===========================
+/* =====================================================
    FERMETURE OVERLAY
-=========================== */
+===================================================== */
 
 overlay.addEventListener("click", () => {
   overlay.classList.remove("active");
