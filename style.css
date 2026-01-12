@@ -12,7 +12,8 @@ html, body {
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text",
                "Segoe UI", Arial, sans-serif;
   background: #000;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto; /* autorise le scroll si besoin */
 }
 
 /* ================= CONTENEUR ================= */
@@ -34,7 +35,7 @@ html, body {
 
 /* ================= BLOCS ================= */
 .bloc {
-  position: absolute;
+  position: absolute; /* ⚠️ ABSOLU PARTOUT SUR DESKTOP */
   z-index: 2;
   background: none;
   border: none;
@@ -79,25 +80,8 @@ html, body {
   .jaune1  { left:1000px; top:654px; width:393px; height:328px; }
 }
 
-/* ================= TABLETTE ================= */
-@media (min-width: 768px) and (max-width: 1024px) {
-  .FondPortefolio {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-  }
-
-  .bloc {
-    position: relative;
-    width: 40vw;
-    height: 28vh;
-    margin: 2vh;
-  }
-}
-
-/* ================= MOBILE ================= */
-@media (max-width: 767px) {
+/* ================= MOBILE / TABLET ================= */
+@media (max-width: 1024px) {
   .FondPortefolio {
     display: flex;
     flex-direction: column;
@@ -107,7 +91,7 @@ html, body {
   }
 
   .bloc {
-    position: relative;
+    position: relative; /* OK seulement sur mobile */
     width: 85vw;
     height: 18vh;
   }
@@ -199,11 +183,10 @@ html, body {
 }
 
 .iphone-card {
-  background: rgba(255,255,255,0.95);
-  border-radius: 20px;
+  background: rgba(255,255,255,0.96);
+  border-radius: 22px;
   padding: 18px;
   box-shadow: 0 12px 30px rgba(0,0,0,0.25);
-  margin-bottom: 12px;
 }
 
 .competence-btn {
