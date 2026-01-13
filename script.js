@@ -5,45 +5,42 @@ console.log("SCRIPT JS CHARGÉ");
 ===================================================== */
 const programmeTexts = {
   1: `
+    <p><strong>Diagnostic & Vision</strong></p>
     <p>
-      <strong>Diagnostic & Vision</strong><br><br>
-      Un premier rendez-vous stratégique confidentiel permet de poser les bases
-      de votre développement.
+      Un premier rendez-vous stratégique confidentiel permet de poser
+      les bases solides de votre développement.
     </p>
-    <p>
-      Cette phase permet de définir clairement :
-    </p>
-    <ul>
-      <li>votre vision long terme</li>
-      <li>le marché ou pays cible</li>
-      <li>vos objectifs business prioritaires</li>
-      <li>les indicateurs de performance</li>
+    <ul class="left-points">
+      <li>Définition de la vision long terme</li>
+      <li>Identification du marché ou pays cible</li>
+      <li>Clarification des objectifs business prioritaires</li>
+      <li>Détermination des indicateurs de performance</li>
     </ul>
   `,
   2: `
+    <p><strong>Intelligence marché & stratégie sur mesure</strong></p>
     <p>
-      <strong>Intelligence marché & stratégie sur mesure</strong><br><br>
-      Analyse approfondie du marché et de l’environnement concurrentiel afin de
-      construire une stratégie claire, différenciante et alignée avec vos objectifs.
+      Analyse approfondie de votre environnement afin de construire
+      une stratégie claire, cohérente et différenciante.
     </p>
-    <ul>
-      <li>études de marché approfondies</li>
-      <li>analyse concurrentielle</li>
-      <li>positionnement stratégique</li>
-      <li>recommandations produits & opportunités</li>
+    <ul class="left-points">
+      <li>Études de marché détaillées</li>
+      <li>Analyse concurrentielle</li>
+      <li>Positionnement stratégique</li>
+      <li>Recommandations produits & opportunités</li>
     </ul>
   `,
   3: `
+    <p><strong>Déploiement & pilotage stratégique</strong></p>
     <p>
-      <strong>Déploiement & pilotage stratégique</strong><br><br>
-      Mise en œuvre de la stratégie validée avec un suivi rigoureux des actions
-      et des performances.
+      Mise en œuvre opérationnelle de la stratégie avec un suivi rigoureux
+      des actions et des performances.
     </p>
-    <ul>
-      <li>réunions de pilotage mensuelles</li>
-      <li>analyse des KPI</li>
-      <li>ajustements stratégiques continus</li>
-      <li>croissance maîtrisée et durable</li>
+    <ul class="left-points">
+      <li>Réunions de pilotage mensuelles</li>
+      <li>Analyse des KPI et résultats</li>
+      <li>Ajustements stratégiques continus</li>
+      <li>Objectif de croissance durable et maîtrisée</li>
     </ul>
   `
 };
@@ -61,17 +58,18 @@ const contents = {
       <p>
         Je m’appelle Inès Saint Laurent,
         <strong>freelance spécialisée dans le développement d’activités</strong>
-        commerciales, aussi bien sur les marchés locaux qu’internationaux.
+        commerciales, sur les marchés locaux comme internationaux.
       </p>
 
       <p>
         Forte de <strong>cinq années d’expérience</strong>,
         j’accompagne les entreprises
-        <strong>dans leurs phases clés de structuration, de croissance et de positionnement stratégique.</strong>
+        <strong>dans leurs phases clés de structuration, de croissance
+        et de positionnement stratégique.</strong>
       </p>
 
       <p>
-        J’interviens sur
+        J’interviens notamment sur
         <strong>le lancement de nouveaux produits</strong>,
         <strong>l’implantation sur de nouveaux marchés</strong>,
         <strong>la structuration d’offres</strong>
@@ -95,7 +93,7 @@ const contents = {
       <button class="step-btn" data-step="3">3</button>
     </div>
 
-    <div id="programmeBubble" class="programme-bubble center"></div>
+    <div id="programmeBubble" class="programme-bubble"></div>
   `,
 
   /* ================= CV / COMPÉTENCES ================= */
@@ -110,9 +108,9 @@ const contents = {
       </button>
       <div class="job-content" id="job1">
         <ul>
-          <li>Accompagnement stratégique d’entreprises internationales</li>
-          <li>Développement commercial BtoB / BtoC</li>
-          <li>Pilotage des performances</li>
+          <li>Accompagnement stratégique d’une entreprise audiovisuelle internationale</li>
+          <li>Développement commercial et prospection BtoB / BtoC</li>
+          <li>Analyse des performances et pilotage des actions</li>
         </ul>
       </div>
 
@@ -122,9 +120,9 @@ const contents = {
       </button>
       <div class="job-content" id="job2">
         <ul>
-          <li>Lancement de produits à l’international</li>
-          <li>Études de marché</li>
-          <li>Développement de clientèle</li>
+          <li>Lancement de nouveaux produits</li>
+          <li>Réalisation d’études de marché</li>
+          <li>Développement et fidélisation clientèle</li>
         </ul>
       </div>
 
@@ -134,9 +132,9 @@ const contents = {
       </button>
       <div class="job-content" id="job3">
         <ul>
-          <li>Création et développement d’un média musical</li>
+          <li>Création et développement d’un média digital</li>
           <li>Gestion des réseaux sociaux (Instagram & TikTok)</li>
-          <li>Optimisation SEO et visibilité digitale</li>
+          <li>Optimisation SEO et visibilité en ligne</li>
         </ul>
       </div>
 
@@ -160,6 +158,7 @@ const contents = {
         <ul>
           <li>Relation client premium</li>
           <li>Valorisation de l’image de marque</li>
+          <li>Expérience terrain et vente directe</li>
         </ul>
       </div>
 
@@ -173,51 +172,56 @@ const contents = {
     <div class="logiciels-list">
 
       <button class="logiciel-btn" data-tool="crm">CRM</button>
-      <div class="logiciel-content" id="crm">Notion, HubSpot, Salesforce</div>
+      <div class="logiciel-content" id="crm">
+        Notion, HubSpot, Salesforce
+      </div>
 
       <button class="logiciel-btn" data-tool="gestion">Gestion de projet</button>
-      <div class="logiciel-content" id="gestion">Trello, Google Workspace</div>
+      <div class="logiciel-content" id="gestion">
+        Trello, Google Workspace
+      </div>
 
       <button class="logiciel-btn" data-tool="communication">Communication</button>
-      <div class="logiciel-content" id="communication">Mailchimp, Zapier, Make</div>
+      <div class="logiciel-content" id="communication">
+        Mailchimp, Zapier, Make
+      </div>
 
       <button class="logiciel-btn" data-tool="etude">Étude de marché</button>
-      <div class="logiciel-content" id="etude">TradeMap, Kompass, Euromonitor, World Bank Data</div>
+      <div class="logiciel-content" id="etude">
+        TradeMap, Kompass, Euromonitor, World Bank Data
+      </div>
 
       <button class="logiciel-btn" data-tool="analyse">Analyse</button>
-      <div class="logiciel-content" id="analyse">LinkedIn Sales Navigator, Google Analytics, Google Search Console</div>
+      <div class="logiciel-content" id="analyse">
+        LinkedIn Sales Navigator, Google Analytics, Google Search Console
+      </div>
 
       <button class="logiciel-btn" data-tool="ia">Intelligence artificielle</button>
-      <div class="logiciel-content" id="ia">ChatGPT, Claude, MidJourney, Perplexity, Manus</div>
+      <div class="logiciel-content" id="ia">
+        ChatGPT, Claude, MidJourney, Perplexity, Manus
+      </div>
 
       <button class="logiciel-btn" data-tool="microsoft">Microsoft</button>
-      <div class="logiciel-content" id="microsoft">Azure, Copilot, OneNote</div>
+      <div class="logiciel-content" id="microsoft">
+        Azure, Copilot, OneNote
+      </div>
 
       <button class="logiciel-btn" data-tool="design">Design</button>
-      <div class="logiciel-content" id="design">Canva, Figma, CapCut, Photoshop</div>
+      <div class="logiciel-content" id="design">
+        Canva, Figma, CapCut, Photoshop
+      </div>
 
       <button class="logiciel-btn" data-tool="dev">Développement web</button>
-      <div class="logiciel-content" id="dev">GitHub</div>
+      <div class="logiciel-content" id="dev">
+        GitHub
+      </div>
 
-    </div>
-  `,
-
-  /* ================= CV ACADÉMIQUE ================= */
-  orange1: `
-    <h2 class="animated-title">CV Académique</h2>
-
-    <div class="centered-text scolaire-list">
-      <p><strong>Master Import–Export</strong><br>KEDGE Business School — Marseille</p>
-      <p><strong>Bachelor International Business</strong><br>INSEEC Paris Business School — Paris</p>
-      <p><strong>BTS Commerce International</strong><br>Lycée Jean Lurçat — Paris</p>
-      <p><strong>Licence de Gestion</strong><br>Université Paris 1 Panthéon-Sorbonne — Paris</p>
-      <p><strong>Diplôme de Comptabilité et de Gestion (DCG)</strong><br>École Nationale de Commerce — Paris</p>
     </div>
   `,
 
   /* ================= RÉSEAUX SOCIAUX ================= */
   jaune1: `
-    <div class="socials-outline">
+    <div class="socials-outline square">
       <a href="#"><img src="images/Instagram.PNG" alt="Instagram"></a>
       <a href="#"><img src="images/Linkedin.PNG" alt="LinkedIn"></a>
       <a href="mailto:contact@tonmail.com"><img src="images/Mail.PNG" alt="Email"></a>
@@ -226,7 +230,7 @@ const contents = {
 };
 
 /* =====================================================
-   LOGIQUE GÉNÉRALE
+   LOGIQUE GLOBALE
 ===================================================== */
 const buttons = document.querySelectorAll(".bloc");
 const overlay = document.getElementById("overlay");
@@ -266,20 +270,23 @@ contentBox.addEventListener("click", e => {
 
   /* ===== PROGRAMME ===== */
   if (e.target.classList.contains("step-btn")) {
-    const step = e.target.dataset.step;
     const bubble = document.getElementById("programmeBubble");
-    bubble.innerHTML = programmeTexts[step];
+    bubble.innerHTML = programmeTexts[e.target.dataset.step];
     bubble.classList.add("active");
   }
 
-  /* ===== JOBS ===== */
+  /* ===== JOBS : un seul ouvert ===== */
   if (e.target.classList.contains("job-btn")) {
-    document.getElementById(e.target.dataset.job).classList.toggle("active");
+    document.querySelectorAll(".job-content")
+      .forEach(el => el.classList.remove("active"));
+    document.getElementById(e.target.dataset.job).classList.add("active");
   }
 
-  /* ===== LOGICIELS ===== */
+  /* ===== LOGICIELS : un seul ouvert ===== */
   if (e.target.classList.contains("logiciel-btn")) {
-    document.getElementById(e.target.dataset.tool).classList.toggle("active");
+    document.querySelectorAll(".logiciel-content")
+      .forEach(el => el.classList.remove("active"));
+    document.getElementById(e.target.dataset.tool).classList.add("active");
   }
 });
 
