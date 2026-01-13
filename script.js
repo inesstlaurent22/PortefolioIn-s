@@ -1,97 +1,15 @@
-console.log("SCRIPT JS CHARGÉ");
+console.log("SCRIPT JS FINAL – OK");
 
 /* =====================================================
-   LANGUES
+   SÉLECTEURS PRINCIPAUX
 ===================================================== */
-let currentLang = "fr";
-
-const translations = {
-  fr: {
-    objectif: `
-      Transformer une idée ou une activité existante en un projet structuré,
-      visible et rentable.<br><br>
-      Si vous cherchez une approche humaine, stratégique et orientée résultats,
-      échangeons.
-    `
-  },
-  en: {
-    objectif: `
-      Transform an idea or an existing activity into a structured,
-      visible and profitable project.<br><br>
-      If you are looking for a human, strategic and results-oriented approach,
-      let’s connect.
-    `
-  },
-  es: {
-    objectif: `
-      Transformar una idea o actividad existente en un proyecto estructurado,
-      visible y rentable.<br><br>
-      Si buscas un enfoque humano, estratégico y orientado a resultados,
-      hablemos.
-    `
-  },
-  ru: {
-    objectif: `
-      Превратить идею или существующую деятельность в структурированный,
-      заметный и прибыльный проект.<br><br>
-      Если вы ищете человеческий, стратегический и ориентированный на результат подход,
-      давайте обсудим.
-    `
-  },
-  zh: {
-    objectif: `
-      将一个想法或现有活动转化为结构清晰、可见且有盈利能力的项目。<br><br>
-      如果你正在寻找以人为本、战略性和结果导向的方法，欢迎联系。
-    `
-  }
-};
+const buttons = document.querySelectorAll(".bloc");
+const overlay = document.getElementById("overlay");
+const colorBox = document.getElementById("colorBox");
+const contentBox = document.getElementById("contentBox");
 
 /* =====================================================
-   TEXTES – MON PROGRAMME
-===================================================== */
-const programmeTexts = {
-  1: `
-    <p><strong>Diagnostic & Vision</strong></p>
-    <p>
-      Un premier rendez-vous stratégique confidentiel permet de poser
-      les bases solides de votre développement.
-    </p>
-    <ul class="left-points">
-      <li>Définition de la vision long terme</li>
-      <li>Identification du marché ou pays cible</li>
-      <li>Objectifs business prioritaires</li>
-      <li>Indicateurs de performance</li>
-    </ul>
-  `,
-  2: `
-    <p><strong>Intelligence marché & stratégie sur mesure</strong></p>
-    <p>
-      Analyse approfondie de votre environnement afin de construire
-      une stratégie claire et différenciante.
-    </p>
-    <ul class="left-points">
-      <li>Études de marché détaillées</li>
-      <li>Analyse concurrentielle</li>
-      <li>Positionnement stratégique</li>
-      <li>Recommandations produits & opportunités</li>
-    </ul>
-  `,
-  3: `
-    <p><strong>Déploiement & pilotage stratégique</strong></p>
-    <p>
-      Mise en œuvre opérationnelle avec suivi précis des performances.
-    </p>
-    <ul class="left-points">
-      <li>Réunions de pilotage mensuelles</li>
-      <li>Analyse des KPI</li>
-      <li>Ajustements continus</li>
-      <li>Croissance durable et maîtrisée</li>
-    </ul>
-  `
-};
-
-/* =====================================================
-   CONTENU DES BLOCS
+   CONTENUS DES BLOCS
 ===================================================== */
 const contents = {
 
@@ -99,33 +17,29 @@ const contents = {
   bleu1: `
     <h2 class="animated-title">Présentation</h2>
 
-    <div class="centered-text">
-      <p>
-        Je m’appelle Inès Saint Laurent,
-        <strong>freelance spécialisée dans le développement d’activités</strong>
-        commerciales sur les marchés locaux et internationaux.
-      </p>
+    <p>
+      Je m’appelle Inès Saint Laurent,
+      <strong>freelance spécialisée dans le développement d’activités</strong>
+      commerciales sur les marchés locaux et internationaux.
+    </p>
 
-      <p>
-        Forte de <strong>cinq années d’expérience</strong>,
-        j’accompagne les entreprises
-        <strong>dans leurs phases clés de structuration, de croissance
-        et de positionnement stratégique.</strong>
-      </p>
+    <p>
+      Forte de <strong>cinq années d’expérience</strong>, j’accompagne les entreprises
+      <strong>dans leurs phases clés de structuration, de croissance et de positionnement stratégique.</strong>
+    </p>
 
-      <p>
-        J’interviens sur
-        <strong>le lancement de nouveaux produits</strong>,
-        <strong>l’implantation sur de nouveaux marchés</strong>,
-        <strong>la structuration d’offres</strong>
-        et le
-        <strong>développement de la visibilité et des performances commerciales.</strong>
-      </p>
+    <p>
+      J’interviens sur
+      <strong>le lancement de nouveaux produits</strong>,
+      <strong>l’implantation sur de nouveaux marchés</strong>,
+      <strong>la structuration d’offres</strong>
+      et le
+      <strong>développement de la visibilité et des performances commerciales.</strong>
+    </p>
 
-      <button class="objectif-btn-large" id="openObjectif">
-        Mon objectif
-      </button>
-    </div>
+    <button class="objectif-btn-large" id="openObjectif">
+      Mon objectif
+    </button>
   `,
 
   /* ================= MON PROGRAMME ================= */
@@ -141,59 +55,66 @@ const contents = {
     <div id="programmeBubble" class="programme-bubble"></div>
   `,
 
-  /* ================= CV / COMPÉTENCES ================= */
+  /* ================= CV & COMPÉTENCES ================= */
   violet1: `
     <h2 class="animated-title">CV & Compétences</h2>
 
     <div class="jobs-list">
 
-      <button class="job-btn" data-job="job1">
-        Consultante en développement d’activité
-        <span>Gearbooker — Audiovisuel & international</span>
-      </button>
-      <div class="job-content" id="job1">
-        <ul>
-          <li>Accompagnement stratégique d’entreprises internationales</li>
-          <li>Développement commercial BtoB / BtoC</li>
-          <li>Pilotage des performances</li>
-        </ul>
-      </div>
+      ${job(
+        "job1",
+        "Consultante en développement d’activité",
+        "Gearbooker — Audiovisuel & international",
+        [
+          "Accompagnement stratégique d’une entreprise audiovisuelle internationale",
+          "Développement commercial et prospection BtoB / BtoC",
+          "Analyse des performances et pilotage des actions"
+        ]
+      )}
 
-      <button class="job-btn" data-job="job2">
-        Commerciale Marketing
-        <span>Pachamamaï — Cosmétique solide</span>
-      </button>
-      <div class="job-content" id="job2">
-        <ul>
-          <li>Lancement de nouveaux produits</li>
-          <li>Études de marché</li>
-          <li>Fidélisation clientèle</li>
-        </ul>
-      </div>
+      ${job(
+        "job2",
+        "Commerciale Marketing",
+        "Pachamamaï — Cosmétique solide",
+        [
+          "Prospection commerciale et développement clientèle",
+          "Lancement de nouveaux produits",
+          "Réalisation d’études de marché"
+        ]
+      )}
 
-      <button class="job-btn" data-job="job3">
-        CEO & Community Manager
-        <span>PUFFRAP — Média musical</span>
-      </button>
-      <div class="job-content" id="job3">
-        <ul>
-          <li>Création et développement du média</li>
-          <li>Gestion des réseaux sociaux</li>
-          <li>Optimisation SEO</li>
-        </ul>
-      </div>
+      ${job(
+        "job3",
+        "CEO & Community Manager",
+        "PUFFRAP — Média musical",
+        [
+          "Création et développement du média",
+          "Gestion et croissance des réseaux sociaux",
+          "Optimisation SEO et partenariats"
+        ]
+      )}
 
-      <button class="job-btn" data-job="job4">
-        CEO & Développeuse Web
-        <span>KIT IN — Formation entrepreneuriat (10–17 ans)</span>
-      </button>
-      <div class="job-content" id="job4">
-        <ul>
-          <li>Développement web</li>
-          <li>Création de contenus pédagogiques</li>
-          <li>Vision produit & business</li>
-        </ul>
-      </div>
+      ${job(
+        "job4",
+        "CEO & Développeuse Web",
+        "KIT IN — Formation entrepreneuriat (dès 10 ans)",
+        [
+          "Conception de projets web éducatifs",
+          "Développement HTML, CSS, JavaScript",
+          "Vision produit, pédagogie et business"
+        ]
+      )}
+
+      ${job(
+        "job5",
+        "Vendeuse & Ambassadrice de marque",
+        "Galeries Lafayette · Le Perchoir · Le Paradis du Fruit — Retail & restauration",
+        [
+          "Relation client premium",
+          "Représentation et valorisation de l’image de marque",
+          "Vente, conseil et expérience terrain"
+        ]
+      )}
 
     </div>
   `,
@@ -204,25 +125,16 @@ const contents = {
 
     <div class="logiciels-list">
 
-      <button class="logiciel-btn" data-tool="crm">CRM</button>
-      <div class="logiciel-content" id="crm">
-        Notion, HubSpot, Salesforce
-      </div>
-
-      <button class="logiciel-btn" data-tool="gestion">Gestion de projet</button>
-      <div class="logiciel-content" id="gestion">
-        Trello, Google Workspace
-      </div>
-
-      <button class="logiciel-btn" data-tool="communication">Communication</button>
-      <div class="logiciel-content" id="communication">
-        Mailchimp, Zapier, Make
-      </div>
-
-      <button class="logiciel-btn" data-tool="ia">Intelligence artificielle</button>
-      <div class="logiciel-content" id="ia">
-        ChatGPT, Claude, MidJourney, Perplexity, Manus
-      </div>
+      ${tool("crm", "CRM", "Notion, HubSpot, Salesforce")}
+      ${tool("gestion", "Gestion de projet", "Trello, Google Workspace")}
+      ${tool("communication", "Communication", "Mailchimp, Zapier, Make")}
+      ${tool("etude", "Étude de marché", "TradeMap, Kompass, World Bank Data")}
+      ${tool("analyse", "Analyse", "LinkedIn Sales Navigator, Google Analytics, Google Search Console")}
+      ${tool("ia", "Intelligence artificielle", "ChatGPT, Claude, MidJourney, Perplexity, Manus")}
+      ${tool("microsoft", "Microsoft", "Azure, Copilot, OneNote")}
+      ${tool("social", "Réseaux sociaux", "Meta Business Suite, Webflow, Wix, WordPress, Shopify")}
+      ${tool("design", "Design", "Canva, Figma, CapCut, Photoshop")}
+      ${tool("dev", "Développement web", "GitHub")}
 
     </div>
   `,
@@ -242,7 +154,7 @@ const contents = {
 
   /* ================= RÉSEAUX SOCIAUX ================= */
   jaune1: `
-    <div class="socials-outline">
+    <div class="socials-square">
       <a href="#"><img src="images/Instagram.PNG" alt="Instagram"></a>
       <a href="#"><img src="images/Linkedin.PNG" alt="LinkedIn"></a>
       <a href="mailto:contact@tonmail.com"><img src="images/Mail.PNG" alt="Email"></a>
@@ -251,13 +163,70 @@ const contents = {
 };
 
 /* =====================================================
-   LOGIQUE GLOBALE
+   TEXTES – MON PROGRAMME
 ===================================================== */
-const buttons = document.querySelectorAll(".bloc");
-const overlay = document.getElementById("overlay");
-const colorBox = document.getElementById("colorBox");
-const contentBox = document.getElementById("contentBox");
+const programmeTexts = {
+  1: `
+    <p><strong>Diagnostic & Vision</strong></p>
+    <p>Un rendez-vous stratégique pour poser les bases du projet.</p>
+    <ul class="left-points">
+      <li>Vision long terme</li>
+      <li>Marché ou pays cible</li>
+      <li>Objectifs business</li>
+      <li>Indicateurs de performance</li>
+    </ul>
+  `,
+  2: `
+    <p><strong>Intelligence marché & stratégie</strong></p>
+    <p>Analyse approfondie et recommandations sur mesure.</p>
+    <ul class="left-points">
+      <li>Études de marché</li>
+      <li>Analyse concurrentielle</li>
+      <li>Positionnement stratégique</li>
+      <li>Plan d’action</li>
+    </ul>
+  `,
+  3: `
+    <p><strong>Déploiement & pilotage</strong></p>
+    <p>Mise en œuvre et suivi de la stratégie.</p>
+    <ul class="left-points">
+      <li>Réunions de pilotage</li>
+      <li>Analyse des KPI</li>
+      <li>Ajustements continus</li>
+      <li>Croissance durable</li>
+    </ul>
+  `
+};
 
+/* =====================================================
+   FONCTIONS HTML
+===================================================== */
+function job(id, title, meta, items) {
+  return `
+    <div class="job-wrapper" data-id="${id}">
+      <div class="job-btn">
+        <div class="job-title">${title}</div>
+        <div class="job-meta">${meta}</div>
+      </div>
+      <div class="job-bubble">
+        <ul>${items.map(i => `<li>${i}</li>`).join("")}</ul>
+      </div>
+    </div>
+  `;
+}
+
+function tool(id, title, text) {
+  return `
+    <div class="tool-wrapper" data-id="${id}">
+      <div class="logiciel-btn">${title}</div>
+      <div class="logiciel-bubble">${text}</div>
+    </div>
+  `;
+}
+
+/* =====================================================
+   OUVERTURE DES BLOCS PRINCIPAUX
+===================================================== */
 buttons.forEach(button => {
   button.addEventListener("click", e => {
     e.stopPropagation();
@@ -270,39 +239,54 @@ buttons.forEach(button => {
   });
 });
 
+/* =====================================================
+   INTERACTIONS INTERNES
+===================================================== */
 contentBox.addEventListener("click", e => {
 
-  /* ===== OBJECTIF ===== */
+  /* OBJECTIF */
   if (e.target.id === "openObjectif") {
-    const bubble = document.createElement("div");
-    bubble.className = "objectif-bubble";
-    bubble.innerHTML = `<p>${translations[currentLang].objectif}</p>`;
-    contentBox.appendChild(bubble);
+    if (!document.querySelector(".objectif-bubble")) {
+      contentBox.insertAdjacentHTML("beforeend", `
+        <div class="objectif-bubble">
+          Transformer une idée ou une activité existante en un projet structuré,
+          visible et rentable.<br><br>
+          Si vous cherchez une approche humaine, stratégique et orientée résultats,
+          échangeons.
+        </div>
+      `);
+    }
   }
 
-  /* ===== PROGRAMME ===== */
+  /* PROGRAMME */
   if (e.target.classList.contains("step-btn")) {
     const bubble = document.getElementById("programmeBubble");
     bubble.innerHTML = programmeTexts[e.target.dataset.step];
     bubble.classList.add("active");
   }
 
-  /* ===== JOBS (un seul ouvert) ===== */
-  if (e.target.classList.contains("job-btn")) {
-    document.querySelectorAll(".job-content")
-      .forEach(el => el.classList.remove("active"));
-    document.getElementById(e.target.dataset.job).classList.add("active");
+  /* JOBS – TOGGLE */
+  const job = e.target.closest(".job-wrapper");
+  if (job) {
+    job.classList.toggle("open");
+    document.querySelectorAll(".job-wrapper").forEach(j => {
+      if (j !== job) j.classList.remove("open");
+    });
   }
 
-  /* ===== LOGICIELS (un seul ouvert) ===== */
-  if (e.target.classList.contains("logiciel-btn")) {
-    document.querySelectorAll(".logiciel-content")
-      .forEach(el => el.classList.remove("active"));
-    document.getElementById(e.target.dataset.tool).classList.add("active");
+  /* LOGICIELS – TOGGLE */
+  const tool = e.target.closest(".tool-wrapper");
+  if (tool) {
+    tool.classList.toggle("open");
+    document.querySelectorAll(".tool-wrapper").forEach(t => {
+      if (t !== tool) t.classList.remove("open");
+    });
   }
 });
 
-/* ================= FERMETURE ================= */
+/* =====================================================
+   FERMETURE OVERLAY
+===================================================== */
 overlay.addEventListener("click", () => {
   overlay.classList.remove("active");
   contentBox.innerHTML = "";
