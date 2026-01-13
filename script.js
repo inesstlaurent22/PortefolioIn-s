@@ -1,47 +1,49 @@
 console.log("SCRIPT JS CHARGÉ");
 
 /* =====================================================
-   TEXTES DU PROGRAMME
+   TEXTES – MON PROGRAMME
 ===================================================== */
 const programmeTexts = {
   1: `
     <p>
       <strong>Diagnostic & Vision</strong><br><br>
       Un premier rendez-vous stratégique confidentiel permet de poser les bases
-      de votre développement.<br><br>
+      de votre développement.
+    </p>
+    <p>
       Cette phase permet de définir clairement :
     </p>
     <ul>
-      <li>votre vision long terme,</li>
-      <li>le marché ou pays cible,</li>
-      <li>vos objectifs business prioritaires,</li>
-      <li>les indicateurs de performance.</li>
+      <li>votre vision long terme</li>
+      <li>le marché ou pays cible</li>
+      <li>vos objectifs business prioritaires</li>
+      <li>les indicateurs de performance</li>
     </ul>
   `,
   2: `
     <p>
       <strong>Intelligence marché & stratégie sur mesure</strong><br><br>
       Analyse approfondie du marché et de l’environnement concurrentiel afin de
-      construire une stratégie claire et différenciante.
+      construire une stratégie claire, différenciante et alignée avec vos objectifs.
     </p>
     <ul>
-      <li>études de marché approfondies,</li>
-      <li>analyse concurrentielle,</li>
-      <li>positionnement stratégique,</li>
-      <li>recommandations produits & opportunités.</li>
+      <li>études de marché approfondies</li>
+      <li>analyse concurrentielle</li>
+      <li>positionnement stratégique</li>
+      <li>recommandations produits & opportunités</li>
     </ul>
   `,
   3: `
     <p>
       <strong>Déploiement & pilotage stratégique</strong><br><br>
-      Mise en œuvre de la stratégie validée avec un suivi régulier des performances
-      et des actions.
+      Mise en œuvre de la stratégie validée avec un suivi rigoureux des actions
+      et des performances.
     </p>
     <ul>
-      <li>réunions de pilotage mensuelles,</li>
-      <li>analyse des KPI,</li>
-      <li>ajustements stratégiques continus,</li>
-      <li>croissance maîtrisée et durable.</li>
+      <li>réunions de pilotage mensuelles</li>
+      <li>analyse des KPI</li>
+      <li>ajustements stratégiques continus</li>
+      <li>croissance maîtrisée et durable</li>
     </ul>
   `
 };
@@ -93,7 +95,7 @@ const contents = {
       <button class="step-btn" data-step="3">3</button>
     </div>
 
-    <div id="programmeBubble" class="programme-bubble"></div>
+    <div id="programmeBubble" class="programme-bubble center"></div>
   `,
 
   /* ================= CV / COMPÉTENCES ================= */
@@ -103,7 +105,7 @@ const contents = {
     <div class="jobs-list">
 
       <button class="job-btn" data-job="job1">
-        Consultante en développement d’activité<br>
+        Consultante en développement d’activité
         <span>Gearbooker — Audiovisuel & international</span>
       </button>
       <div class="job-content" id="job1">
@@ -115,7 +117,7 @@ const contents = {
       </div>
 
       <button class="job-btn" data-job="job2">
-        Commerciale Marketing<br>
+        Commerciale Marketing
         <span>Pachamamaï — Cosmétique solide</span>
       </button>
       <div class="job-content" id="job2">
@@ -127,10 +129,34 @@ const contents = {
       </div>
 
       <button class="job-btn" data-job="job3">
-        Vendeuse & Ambassadrice de marque<br>
-        <span>Galeries Lafayette, Le Perchoir, Le Paradis du Fruit — Retail & restauration</span>
+        CEO & Community Manager
+        <span>PUFFRAP — Média musical</span>
       </button>
       <div class="job-content" id="job3">
+        <ul>
+          <li>Création et développement d’un média musical</li>
+          <li>Gestion des réseaux sociaux (Instagram & TikTok)</li>
+          <li>Optimisation SEO et visibilité digitale</li>
+        </ul>
+      </div>
+
+      <button class="job-btn" data-job="job4">
+        CEO & Développeuse Web
+        <span>KIT IN — Formation à la création d’entreprise (10–17 ans)</span>
+      </button>
+      <div class="job-content" id="job4">
+        <ul>
+          <li>Conception et développement de plateformes web</li>
+          <li>Création de contenus pédagogiques</li>
+          <li>Vision produit, business et technique</li>
+        </ul>
+      </div>
+
+      <button class="job-btn" data-job="job5">
+        Vendeuse & Ambassadrice de marque
+        <span>Galeries Lafayette, Le Perchoir, Le Paradis du Fruit — Retail & restauration</span>
+      </button>
+      <div class="job-content" id="job5">
         <ul>
           <li>Relation client premium</li>
           <li>Valorisation de l’image de marque</li>
@@ -142,7 +168,7 @@ const contents = {
 
   /* ================= LOGICIELS ================= */
   violet2: `
-    <h2 class="animated-title violet-title">Logiciels</h2>
+    <h2 class="animated-title">Logiciels</h2>
 
     <div class="logiciels-list">
 
@@ -166,9 +192,6 @@ const contents = {
 
       <button class="logiciel-btn" data-tool="microsoft">Microsoft</button>
       <div class="logiciel-content" id="microsoft">Azure, Copilot, OneNote</div>
-
-      <button class="logiciel-btn" data-tool="social">Réseaux sociaux</button>
-      <div class="logiciel-content" id="social">Meta Business Suite, Webflow, Wix, WordPress, Shopify</div>
 
       <button class="logiciel-btn" data-tool="design">Design</button>
       <div class="logiciel-content" id="design">Canva, Figma, CapCut, Photoshop</div>
@@ -224,7 +247,7 @@ buttons.forEach(button => {
 
 contentBox.addEventListener("click", e => {
 
-  /* === OBJECTIF === */
+  /* ===== OBJECTIF ===== */
   if (e.target.id === "openObjectif") {
     const bubble = document.createElement("div");
     bubble.className = "objectif-bubble";
@@ -241,7 +264,7 @@ contentBox.addEventListener("click", e => {
     contentBox.appendChild(bubble);
   }
 
-  /* === PROGRAMME === */
+  /* ===== PROGRAMME ===== */
   if (e.target.classList.contains("step-btn")) {
     const step = e.target.dataset.step;
     const bubble = document.getElementById("programmeBubble");
@@ -249,12 +272,12 @@ contentBox.addEventListener("click", e => {
     bubble.classList.add("active");
   }
 
-  /* === JOBS === */
+  /* ===== JOBS ===== */
   if (e.target.classList.contains("job-btn")) {
     document.getElementById(e.target.dataset.job).classList.toggle("active");
   }
 
-  /* === LOGICIELS === */
+  /* ===== LOGICIELS ===== */
   if (e.target.classList.contains("logiciel-btn")) {
     document.getElementById(e.target.dataset.tool).classList.toggle("active");
   }
