@@ -51,14 +51,6 @@ html, body {
   transition: transform 0.6s cubic-bezier(.4,0,.2,1);
 }
 
-.bloc img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  pointer-events: none;
-  backface-visibility: hidden;
-}
-
 .bloc:hover {
   transform: scale(1.03);
 }
@@ -67,19 +59,25 @@ html, body {
   transform: rotateY(360deg) scale(1.03);
 }
 
+.bloc img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
 /* ================= LABEL ================= */
 .label {
   position: absolute;
   color: #fff;
   font-weight: 700;
-  font-size: clamp(18px, 1.8vw, 26px);
+  font-size: 24px;
   text-shadow: 0 4px 15px rgba(0,0,0,0.7);
   pointer-events: none;
 }
 
 /* ================= POSITIONS DES BLOCS ================= */
 @media (min-width: 1200px) {
-
   .bleu1    { left: -10px; top: 0; }
   .violet1 { left: -30px; top: 333px; }
   .violet2 { left: -20px; top: 666px; }
@@ -89,19 +87,23 @@ html, body {
   .jaune1  { left: 944px; top: 666px; }
 }
 
-/* ================= OVERLAY ================= */
+/* ================= OVERLAY (CORRIGÉ) ================= */
 #overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.65);
-  display: none;
-  justify-content: center;
+  background: rgba(0,0,0,0.75);
+  display: flex;              /* ← IMPORTANT */
   align-items: center;
-  z-index: 50;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 100;
 }
 
 #overlay.active {
-  display: flex;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 /* ================= COLOR BOX ================= */
@@ -111,13 +113,14 @@ html, body {
   padding: 32px;
   border-radius: 28px;
   overflow-y: auto;
-  background: rgba(0,0,0,0.88);
-  animation: pop 0.35s ease forwards;
+  background: #111;          /* ← visible quoi qu’il arrive */
+  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
 }
 
-@keyframes pop {
-  from { opacity: 0; transform: scale(0.94); }
-  to   { opacity: 1; transform: scale(1); }
+#overlay.active #colorBox {
+  transform: scale(1);
 }
 
 /* ================= CONTENU ================= */
@@ -135,196 +138,49 @@ html, body {
   margin-bottom: 26px;
 }
 
-/* animation titres */
 .animate-title {
   animation: titleFade 0.6s ease forwards;
 }
 
 @keyframes titleFade {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
-
-/* ================= TEXTE ================= */
-.left { text-align: left; }
-.strong { font-weight: 700; }
 
 /* ================= LISTES ================= */
 .list-left {
   text-align: left;
   padding-left: 22px;
-  margin: 14px 0 22px;
-}
-
-.list-left li {
-  margin-bottom: 8px;
-}
-
-/* ================= BOUTON PRINCIPAL ================= */
-.primary-btn {
-  margin: 28px auto 0;
-  padding: 14px 34px;
-  border-radius: 999px;
-  border: none;
-  font-weight: 700;
-  background: #fff;
-  color: #3A6EFF;
-  cursor: pointer;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.primary-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
-}
-
-/* ================= PROGRAMME (ROSE) ================= */
-.center-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 18px;
-  margin-bottom: 24px;
-}
-
-.step-btn {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  border: none;
-  font-weight: 700;
-  background: #fff;
-  color: #FF4FD8;
-  cursor: pointer;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.step-btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
-}
-
-/* ================= CARTES (VIOLET 1 & 2) ================= */
-.card-list {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-.card-btn {
-  width: 100%;
-  padding: 18px 22px;
-  border-radius: 22px;
-  border: none;
-  background: rgba(255,255,255,0.95);
-  cursor: pointer;
-  font-weight: 700;
-  font-size: 16px;
-  text-align: left;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.card-btn:hover {
-  transform: scale(1.02);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
-}
-
-/* texte boutons violet2 */
-.skill-btn {
-  color: #9C6BFF;
 }
 
 /* ================= BULLES ================= */
 .bubble {
-  margin-top: 14px;
-  padding: 20px 22px;
-  border-radius: 22px;
-  animation: slideDown 0.3s ease forwards;
-}
-
-/* bulles CV (violet1) */
-.card-btn .bubble {
-  background: #7C4DFF;
-  color: #fff;
-}
-
-/* bulles compétences (violet2) */
-.skill-btn .bubble {
-  background: #9C6BFF;
-  color: #fff;
-}
-
-/* bulle objectif */
-.bubble.objectif {
+  margin-top: 18px;
+  padding: 20px;
+  border-radius: 20px;
   background: #fff;
-  color: #3A6EFF;
+  color: #000;
 }
 
-/* bulle programme */
-#programmeBubble {
-  background: #fff;
-  color: #FF4FD8;
-}
-
-@keyframes slideDown {
-  from { opacity: 0; transform: translateY(-6px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-.hidden {
-  display: none;
-}
-
-/* ================= LANGUAGE SWITCH ================= */
+/* ================= BOUTON LANGUE (EN HAUT À DROITE) ================= */
 #lang-switch {
   position: fixed;
-  bottom: 24px;
-  right: 24px;
+  top: 20px;        /* ← FIX */
+  right: 20px;      /* ← FIX */
+  z-index: 300;
   display: flex;
   gap: 10px;
-  z-index: 200;
 }
 
 #lang-switch button {
   padding: 8px 14px;
-  border-radius: 12px;
+  border-radius: 10px;
   border: none;
   font-weight: 700;
   cursor: pointer;
-  background: rgba(255,255,255,0.9);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: rgba(255,255,255,0.95);
 }
 
 #lang-switch button:hover {
   transform: scale(1.1);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
-}
-
-/* ================= RESPONSIVE ================= */
-@media (max-width: 1199px) {
-  .FondPortefolio {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    gap: 24px;
-    perspective: none;
-  }
-
-  .bloc {
-    position: relative;
-    width: 90vw;
-    max-width: 528px;
-    height: auto;
-    aspect-ratio: 528 / 333;
-  }
-
-  .bloc.rotate {
-    transform: rotateZ(6deg) scale(1.03);
-  }
 }
