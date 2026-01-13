@@ -32,23 +32,22 @@ html, body {
   z-index: 1;
 }
 
-/* ================= BLOCS ================= */
+/* ================= BLOCS (BOUTONS PRINCIPAUX) ================= */
 .bloc {
   position: absolute;
   z-index: 2;
+  width: 528px;
+  height: 333px;
   background: none;
   border: none;
   cursor: pointer;
   padding: 0;
 
-  width: 528px;
-  height: 333px;
-
   display: flex;
   align-items: center;
   justify-content: center;
 
-  transition: transform 0.4s ease;
+  transition: transform 0.35s ease;
 }
 
 .bloc img {
@@ -56,6 +55,10 @@ html, body {
   height: 100%;
   object-fit: cover;
   pointer-events: none;
+}
+
+.bloc:hover {
+  transform: scale(1.03);
 }
 
 .bloc.active {
@@ -73,14 +76,14 @@ html, body {
   pointer-events: none;
 }
 
-/* ================= POSITIONS DES BLOCS (DESKTOP EXACTES) ================= */
-/* Dimensions bloc : 528 x 333 */
+/* ================= POSITIONS EXACTES DES BLOCS (DESKTOP) ================= */
+/* Taille bloc : 528 x 333 */
 
 @media (min-width: 1200px) {
 
   /* COLONNE GAUCHE */
   .bleu1 {
-    left: -50px;
+    left: -70px;
     top: 0px;
   }
 
@@ -90,7 +93,7 @@ html, body {
   }
 
   .violet2 {
-    left: -30px;
+    left: -70px;
     top: 666px;
   }
 
@@ -106,7 +109,7 @@ html, body {
   }
 
   .jaune1 {
-    left: 934px;
+    left: 964px;
     top: 666px;
   }
 }
@@ -115,47 +118,211 @@ html, body {
 #overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.6);
-  display: flex;
-  align-items: center;
+  background: rgba(0,0,0,0.65);
+  display: none;
   justify-content: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.35s ease;
-  z-index: 10;
+  align-items: center;
+  z-index: 50;
 }
 
 #overlay.active {
-  opacity: 1;
-  pointer-events: auto;
+  display: flex;
 }
 
 /* ================= COLOR BOX ================= */
 #colorBox {
-  width: 88vw;
+  width: 82vw;
   max-height: 85vh;
-  padding: 28px;
+  padding: 32px;
   border-radius: 28px;
   overflow-y: auto;
-  transform: scale(0.92);
-  transition: transform 0.4s ease;
+  background: rgba(0,0,0,0.85);
+  animation: pop 0.35s ease forwards;
 }
 
-#overlay.active #colorBox {
-  transform: scale(1);
+@keyframes pop {
+  from {
+    transform: scale(0.92);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 /* ================= CONTENU ================= */
 #contentBox {
   color: #fff;
+  text-align: center;
   font-size: 16px;
+  line-height: 1.65;
+}
+
+/* ================= TITRES ================= */
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 26px;
+}
+
+/* ================= LISTES ================= */
+.list-left {
+  text-align: left;
+  padding-left: 22px;
+  margin: 14px 0 22px;
+}
+
+.list-left li {
+  margin-bottom: 8px;
+}
+
+/* ================= BOUTON OBJECTIF ================= */
+.primary-btn {
+  margin: 28px auto 0;
+  display: block;
+  padding: 14px 34px;
+  border-radius: 999px;
+  border: none;
+  font-size: 16px;
+  font-weight: 700;
+  background: #fff;
+  color: #3A6EFF;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.primary-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+}
+
+/* ================= PROGRAMME ================= */
+.center-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.step-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  background: #fff;
+  color: #000;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.step-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+}
+
+/* ================= CARTES (CV & LOGICIELS) ================= */
+.card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.card {
+  text-align: left;
+}
+
+/* bouton carte */
+.card-btn {
+  width: 100%;
+  padding: 18px 20px;
+  border-radius: 22px;
+  border: none;
+  background: rgba(255,255,255,0.95);
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 16px;
+  text-align: left;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card-btn:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.card-btn span {
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 6px;
+  color: #555;
+}
+
+/* ================= BULLES ================= */
+.bubble {
+  margin-top: 12px;
+  padding: 18px 22px;
+  border-radius: 20px;
+  background: #fff;
+  color: #000;
+  font-size: 15px;
   line-height: 1.6;
+  animation: slideDown 0.3s ease forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* bulle objectif */
+.bubble.objective {
+  margin-top: 26px;
+  text-align: center;
+  color: #3A6EFF;
+  font-weight: 500;
+}
+
+/* cacher */
+.hidden {
+  display: none;
+}
+
+/* ================= CV ACADÉMIQUE ================= */
+.academic-list p {
+  margin-bottom: 18px;
   text-align: center;
 }
 
-/* ================= RESPONSIVE ================= */
+/* ================= RÉSEAUX SOCIAUX ================= */
+.socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 26px;
+}
 
-/* TABLETTE */
+.socials img {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.socials img:hover {
+  transform: scale(1.12);
+}
+
+/* ================= RESPONSIVE ================= */
 @media (max-width: 1199px) {
   .FondPortefolio {
     display: flex;
@@ -174,20 +341,23 @@ html, body {
   }
 }
 
-/* MOBILE */
-@media (max-width: 767px) {
-  .FondPortefolio {
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .bloc {
+@media (max-width: 768px) {
+  #colorBox {
     width: 92vw;
-    height: auto;
-    aspect-ratio: 528 / 333;
+    padding: 24px;
   }
 
-  .label {
-    font-size: 18px;
+  .title {
+    font-size: 24px;
+  }
+
+  .step-btn {
+    width: 48px;
+    height: 48px;
+  }
+
+  .socials img {
+    width: 60px;
+    height: 60px;
   }
 }
