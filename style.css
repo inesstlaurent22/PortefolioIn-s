@@ -32,7 +32,7 @@ html, body {
   z-index: 1;
 }
 
-/* ================= BLOCS PRINCIPAUX ================= */
+/* ================= BLOCS ================= */
 .bloc {
   position: absolute;
   z-index: 2;
@@ -252,6 +252,18 @@ html, body {
   margin-top: 14px;
   padding: 20px 22px;
   border-radius: 22px;
+  animation: slideDown 0.3s ease forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hidden {
