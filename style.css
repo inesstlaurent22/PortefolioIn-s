@@ -15,105 +15,6 @@ html, body {
   overflow: hidden;
 }
 
-/* ================= CONTENEUR ================= */
-.FondPortefolio {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-}
-
-/* ================= FOND ================= */
-.fondindex {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
-}
-
-/* ================= BLOCS (BOUTONS PRINCIPAUX) ================= */
-.bloc {
-  position: absolute;
-  z-index: 2;
-  width: 528px;
-  height: 333px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  transition: transform 0.35s ease;
-}
-
-.bloc img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  pointer-events: none;
-}
-
-.bloc:hover {
-  transform: scale(1.03);
-}
-
-.bloc.active {
-  transform: scale(1.06);
-}
-
-/* ================= LABEL ================= */
-.label {
-  position: absolute;
-  color: #fff;
-  font-weight: 700;
-  text-align: center;
-  font-size: clamp(18px, 1.8vw, 26px);
-  text-shadow: 0 4px 15px rgba(0,0,0,0.7);
-  pointer-events: none;
-}
-
-/* ================= POSITIONS EXACTES DES BLOCS (DESKTOP) ================= */
-/* Taille bloc : 528 x 333 */
-
-@media (min-width: 1200px) {
-
-  /* COLONNE GAUCHE */
-  .bleu1 {
-    left: -70px;
-    top: -20px;
-  }
-
-  .violet1 {
-    left: -70px;
-    top: 313px;
-  }
-
-  .violet2 {
-    left: -70px;
-    top: 656px;
-  }
-
-  /* COLONNE DROITE */
-  .rose1 {
-    left: 912px;
-    top: 0px;
-  }
-
-  .orange1 {
-    left: 912px;
-    top: 333px;
-  }
-
-  .jaune1 {
-    left: 912px;
-    top: 666px;
-  }
-}
-
 /* ================= OVERLAY ================= */
 #overlay {
   position: fixed;
@@ -136,13 +37,13 @@ html, body {
   padding: 32px;
   border-radius: 28px;
   overflow-y: auto;
-  background: rgba(0,0,0,0.85);
+  background: rgba(0,0,0,0.88);
   animation: pop 0.35s ease forwards;
 }
 
 @keyframes pop {
   from {
-    transform: scale(0.92);
+    transform: scale(0.94);
     opacity: 0;
   }
   to {
@@ -164,6 +65,15 @@ html, body {
   font-size: 28px;
   font-weight: 700;
   margin-bottom: 26px;
+}
+
+/* ================= TEXTE ================= */
+.left {
+  text-align: left;
+}
+
+.strong {
+  font-weight: 700;
 }
 
 /* ================= LISTES ================= */
@@ -222,7 +132,7 @@ html, body {
   box-shadow: 0 10px 25px rgba(0,0,0,0.35);
 }
 
-/* ================= CARTES (CV & LOGICIELS) ================= */
+/* ================= CARTES (COMMUN) ================= */
 .card-list {
   display: flex;
   flex-direction: column;
@@ -233,7 +143,7 @@ html, body {
   text-align: left;
 }
 
-/* bouton carte */
+/* ================= BOUTONS CARTE ================= */
 .card-btn {
   width: 100%;
   padding: 18px 20px;
@@ -260,13 +170,21 @@ html, body {
   color: #555;
 }
 
-/* ================= BULLES ================= */
+/* ================= BOUTONS VIOLET1 ================= */
+.violet1-btn {
+  color: #7C4DFF;
+}
+
+/* ================= BOUTONS VIOLET2 ================= */
+.violet2-btn {
+  color: #9C6BFF;
+}
+
+/* ================= BULLES (COMMUN) ================= */
 .bubble {
-  margin-top: 12px;
-  padding: 18px 22px;
-  border-radius: 20px;
-  background: #fff;
-  color: #000;
+  margin-top: 14px;
+  padding: 20px 22px;
+  border-radius: 22px;
   font-size: 15px;
   line-height: 1.6;
   animation: slideDown 0.3s ease forwards;
@@ -283,15 +201,30 @@ html, body {
   }
 }
 
-/* bulle objectif */
+/* ================= BULLE OBJECTIF ================= */
 .bubble.objective {
-  margin-top: 26px;
-  text-align: center;
+  background: #fff;
   color: #3A6EFF;
+  text-align: center;
   font-weight: 500;
+  margin-top: 26px;
 }
 
-/* cacher */
+/* ================= BULLES VIOLET1 ================= */
+.violet1-bubble {
+  background: #7C4DFF;
+  color: #fff;
+  box-shadow: 0 15px 35px rgba(124,77,255,0.45);
+}
+
+/* ================= BULLES VIOLET2 ================= */
+.violet2-bubble {
+  background: #9C6BFF;
+  color: #fff;
+  box-shadow: 0 15px 35px rgba(156,107,255,0.45);
+}
+
+/* ================= MASQUÉ ================= */
 .hidden {
   display: none;
 }
@@ -323,25 +256,8 @@ html, body {
 }
 
 /* ================= RESPONSIVE ================= */
-@media (max-width: 1199px) {
-  .FondPortefolio {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    gap: 24px;
-  }
-
-  .bloc {
-    position: relative;
-    width: 90vw;
-    max-width: 528px;
-    height: auto;
-    aspect-ratio: 528 / 333;
-  }
-}
-
 @media (max-width: 768px) {
+
   #colorBox {
     width: 92vw;
     padding: 24px;
