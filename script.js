@@ -1,4 +1,4 @@
-console.log("SCRIPT JS – VERSION STABLE AVEC TEXTES COMPLETS");
+console.log("SCRIPT JS – PORTFOLIO BASE OFFICIELLE");
 
 /* ================= SÉLECTEURS ================= */
 const blocs = document.querySelectorAll(".bloc");
@@ -9,7 +9,7 @@ const contentBox = document.getElementById("contentBox");
 /* ================= CONTENUS DES BLOCS ================= */
 const contents = {
 
-  /* ========= MON OFFRE ========= */
+  /* ================= MON OFFRE (BLEU) ================= */
   bleu1: `
     <h2 class="title">Présentation</h2>
 
@@ -25,8 +25,8 @@ const contents = {
       <strong>dans leurs phases clés de structuration, de croissance et de positionnement stratégique.</strong>
     </p>
 
-    <p>
-      J’interviens notamment sur :
+    <p class="left strong">
+      <strong>J’interviens notamment sur :</strong>
     </p>
 
     <ul class="list-left">
@@ -39,7 +39,7 @@ const contents = {
     <button class="primary-btn" id="openObjectif">Mon objectif</button>
   `,
 
-  /* ========= MON PROGRAMME ========= */
+  /* ================= MON PROGRAMME (ROSE) ================= */
   rose1: `
     <h2 class="title">Processus d’accompagnement stratégique</h2>
 
@@ -52,7 +52,7 @@ const contents = {
     <div id="programmeBubble" class="bubble hidden"></div>
   `,
 
-  /* ========= CV / COMPÉTENCES ========= */
+  /* ================= CV & COMPÉTENCES (VIOLET1) ================= */
   violet1: `
     <h2 class="title">CV & Compétences</h2>
 
@@ -111,7 +111,7 @@ const contents = {
     </div>
   `,
 
-  /* ========= LOGICIELS ========= */
+  /* ================= LOGICIELS (VIOLET2) ================= */
   violet2: `
     <h2 class="title">Logiciels</h2>
 
@@ -129,7 +129,7 @@ const contents = {
     </div>
   `,
 
-  /* ========= CV ACADÉMIQUE ========= */
+  /* ================= CV ACADÉMIQUE (ORANGE) ================= */
   orange1: `
     <h2 class="title">CV Académique</h2>
 
@@ -142,7 +142,7 @@ const contents = {
     </div>
   `,
 
-  /* ========= RÉSEAUX SOCIAUX ========= */
+  /* ================= RÉSEAUX SOCIAUX (JAUNE) ================= */
   jaune1: `
     <div class="socials">
       <img src="images/Instagram.PNG" alt="Instagram">
@@ -156,7 +156,7 @@ const contents = {
 const programmeTexts = {
   1: `
     <strong>01 — Diagnostic & Vision</strong>
-    <p>Analyse globale de votre projet afin de poser des bases solides.</p>
+    <p>Analyse globale du projet afin de poser des bases solides.</p>
     <ul class="list-left">
       <li>Vision long terme</li>
       <li>Marché ou pays cible</li>
@@ -190,11 +190,11 @@ const programmeTexts = {
 function job(title, meta, items) {
   return `
     <div class="card">
-      <button class="card-btn">
+      <button class="card-btn violet1-btn">
         ${title}
         <span>${meta}</span>
       </button>
-      <div class="bubble hidden">
+      <div class="bubble violet1-bubble hidden">
         <ul>${items.map(i => `<li>${i}</li>`).join("")}</ul>
       </div>
     </div>
@@ -204,8 +204,8 @@ function job(title, meta, items) {
 function tool(title, text) {
   return `
     <div class="card">
-      <button class="card-btn">${title}</button>
-      <div class="bubble hidden">${text}</div>
+      <button class="card-btn violet2-btn">${title}</button>
+      <div class="bubble violet2-bubble hidden">${text}</div>
     </div>
   `;
 }
@@ -246,12 +246,14 @@ contentBox.addEventListener("click", e => {
     bubble.classList.remove("hidden");
   }
 
-  /* CARTES (CV & LOGICIELS) */
+  /* CARTES VIOLET1 & VIOLET2 */
   if (e.target.classList.contains("card-btn")) {
     const bubble = e.target.nextElementSibling;
+
     document.querySelectorAll(".bubble").forEach(b => {
       if (b !== bubble) b.classList.add("hidden");
     });
+
     bubble.classList.toggle("hidden");
   }
 });
