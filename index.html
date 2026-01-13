@@ -2,8 +2,12 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>KIT IN – Portfolio</title>
+
+  <title>KIT IN – Portfolio | Stratégie, Business & Digital</title>
+
+  <meta name="description" content="Consultante en développement d’activité, stratégie commerciale et marketing international. Portfolio de Inès Saint Laurent.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
 
   <!-- CSS -->
   <link rel="stylesheet" href="style.css">
@@ -12,56 +16,57 @@
 <body>
 
   <!-- ================= CONTENEUR PRINCIPAL ================= -->
-  <div class="FondPortefolio">
+  <main class="FondPortefolio">
 
     <!-- Image de fond -->
-    <img src="images/Portefolioin.png" class="fondindex" alt="Fond Portfolio">
+    <img src="images/Portefolioin.png"
+         class="fondindex"
+         alt="Portfolio Inès Saint Laurent"
+         loading="eager">
 
-    <!-- ================= BLOCS INTERACTIFS ================= -->
+    <!-- ================= BLOCS ================= -->
 
     <button class="bloc bleu1" data-color="#3A6EFF" aria-label="Présentation">
-      <img src="images/Bleu1.png" alt="">
+      <img src="images/Bleu1.png" alt="" loading="lazy">
       <span class="label">PRÉSENTATION</span>
     </button>
 
-    <button class="bloc rose1" data-color="#FF4FD8" aria-label="Mon offre">
-      <img src="images/Rose1.png" alt="">
-      <span class="label">MON OFFRE</span>
+    <button class="bloc rose1" data-color="#FF4FD8" aria-label="Mon programme">
+      <img src="images/Rose1.png" alt="" loading="lazy">
+      <span class="label">MON PROGRAMME</span>
     </button>
 
     <button class="bloc violet1" data-color="#7C4DFF" aria-label="CV compétences">
-      <img src="images/Violet1.png" alt="">
+      <img src="images/Violet1.png" alt="" loading="lazy">
       <span class="label">CV COMPÉTENCES</span>
     </button>
 
     <button class="bloc violet2" data-color="#9C6BFF" aria-label="Logiciels">
-      <img src="images/Violet2.png" alt="">
+      <img src="images/Violet2.png" alt="" loading="lazy">
       <span class="label">LOGICIELS</span>
     </button>
 
     <button class="bloc orange1" data-color="#FF8A00" aria-label="CV académique">
-      <img src="images/Orange1.png" alt="">
+      <img src="images/Orange1.png" alt="" loading="lazy">
       <span class="label">CV ACADÉMIQUE</span>
     </button>
 
     <button class="bloc jaune1" data-color="#FFD400" aria-label="Réseaux sociaux">
-      <img src="images/Jaune1.png" alt="">
+      <img src="images/Jaune1.png" alt="" loading="lazy">
       <span class="label">RÉSEAUX SOCIAUX</span>
     </button>
 
-  </div>
+  </main>
 
-  <!-- ================= OVERLAY PRINCIPAL ================= -->
+  <!-- ================= OVERLAY ================= -->
   <div id="overlay" aria-hidden="true">
     <div id="colorBox">
-      <div id="contentBox">
-        <!-- Contenu injecté dynamiquement par script.js -->
-      </div>
+      <div id="contentBox"></div>
     </div>
   </div>
 
   <!-- ================= LANGUAGE SWITCH ================= -->
-  <div id="lang-switch">
+  <div id="lang-switch" aria-label="Language switch">
     <button data-lang="fr">FR</button>
     <button data-lang="en">EN</button>
     <button data-lang="es">ES</button>
@@ -69,7 +74,7 @@
   </div>
 
   <!-- ================= JS ================= -->
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 
 </body>
 </html>
