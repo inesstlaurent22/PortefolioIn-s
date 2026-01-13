@@ -1,14 +1,59 @@
 console.log("SCRIPT JS CHARGÉ");
 
 /* =====================================================
+   TEXTES DU PROGRAMME
+===================================================== */
+const programmeTexts = {
+  1: `
+    <p>
+      <strong>Diagnostic & Vision</strong><br><br>
+      Un premier rendez-vous stratégique confidentiel permet de poser les bases
+      de votre développement.<br><br>
+      Cette phase permet de définir clairement :
+    </p>
+    <ul>
+      <li>votre vision long terme,</li>
+      <li>le marché ou pays cible,</li>
+      <li>vos objectifs business prioritaires,</li>
+      <li>les indicateurs de performance.</li>
+    </ul>
+  `,
+  2: `
+    <p>
+      <strong>Intelligence marché & stratégie sur mesure</strong><br><br>
+      Analyse approfondie du marché et de l’environnement concurrentiel afin de
+      construire une stratégie claire et différenciante.
+    </p>
+    <ul>
+      <li>études de marché approfondies,</li>
+      <li>analyse concurrentielle,</li>
+      <li>positionnement stratégique,</li>
+      <li>recommandations produits & opportunités.</li>
+    </ul>
+  `,
+  3: `
+    <p>
+      <strong>Déploiement & pilotage stratégique</strong><br><br>
+      Mise en œuvre de la stratégie validée avec un suivi régulier des performances
+      et des actions.
+    </p>
+    <ul>
+      <li>réunions de pilotage mensuelles,</li>
+      <li>analyse des KPI,</li>
+      <li>ajustements stratégiques continus,</li>
+      <li>croissance maîtrisée et durable.</li>
+    </ul>
+  `
+};
+
+/* =====================================================
    CONTENU DES BLOCS
 ===================================================== */
-
 const contents = {
 
   /* ================= MON OFFRE ================= */
   bleu1: `
-    <h2 class="presentation-title animated-title">Présentation</h2>
+    <h2 class="animated-title">Présentation</h2>
 
     <div class="centered-text">
       <p>
@@ -40,30 +85,28 @@ const contents = {
 
   /* ================= MON PROGRAMME ================= */
   rose1: `
-    <h2 class="programme-title animated-title">
-      Processus d’accompagnement stratégique
-    </h2>
+    <h2 class="animated-title">Processus d’accompagnement stratégique</h2>
 
     <div class="programme-buttons">
-      <button class="step-btn" data-step="1">01</button>
-      <button class="step-btn" data-step="2">02</button>
-      <button class="step-btn" data-step="3">03</button>
+      <button class="step-btn" data-step="1">1</button>
+      <button class="step-btn" data-step="2">2</button>
+      <button class="step-btn" data-step="3">3</button>
     </div>
 
-    <div id="programmeResult" class="programme-result"></div>
+    <div id="programmeBubble" class="programme-bubble"></div>
   `,
 
   /* ================= CV / COMPÉTENCES ================= */
   violet1: `
-    <h2 class="programme-title animated-title">CV & Compétences</h2>
+    <h2 class="animated-title">CV & Compétences</h2>
 
     <div class="jobs-list">
 
-      <button class="job-btn" data-job="consultante">
-        Consultante en développement d’activité
+      <button class="job-btn" data-job="job1">
+        Consultante en développement d’activité<br>
+        <span>Gearbooker — Audiovisuel & international</span>
       </button>
-      <div class="job-content" id="consultante">
-        <p><strong>Gearbooker</strong> — <em>Audiovisuel & international</em></p>
+      <div class="job-content" id="job1">
         <ul>
           <li>Accompagnement stratégique d’entreprises internationales</li>
           <li>Développement commercial BtoB / BtoC</li>
@@ -71,26 +114,23 @@ const contents = {
         </ul>
       </div>
 
-      <button class="job-btn" data-job="commerciale">
-        Commerciale Marketing
+      <button class="job-btn" data-job="job2">
+        Commerciale Marketing<br>
+        <span>Pachamamaï — Cosmétique solide</span>
       </button>
-      <div class="job-content" id="commerciale">
-        <p><strong>Pachamamaï</strong> — <em>Cosmétique solide</em></p>
+      <div class="job-content" id="job2">
         <ul>
           <li>Lancement de produits à l’international</li>
           <li>Études de marché</li>
-          <li>Développement clients</li>
+          <li>Développement de clientèle</li>
         </ul>
       </div>
 
-      <button class="job-btn" data-job="vendeuse">
-        Vendeuse & Ambassadrice de marque
+      <button class="job-btn" data-job="job3">
+        Vendeuse & Ambassadrice de marque<br>
+        <span>Galeries Lafayette, Le Perchoir, Le Paradis du Fruit — Retail & restauration</span>
       </button>
-      <div class="job-content" id="vendeuse">
-        <p>
-          <strong>Galeries Lafayette, Le Perchoir, Le Paradis du Fruit</strong><br>
-          <em>Retail & restauration</em>
-        </p>
+      <div class="job-content" id="job3">
         <ul>
           <li>Relation client premium</li>
           <li>Valorisation de l’image de marque</li>
@@ -102,93 +142,59 @@ const contents = {
 
   /* ================= LOGICIELS ================= */
   violet2: `
-    <h2 class="programme-title animated-title">Logiciels</h2>
+    <h2 class="animated-title violet-title">Logiciels</h2>
 
     <div class="logiciels-list">
 
       <button class="logiciel-btn" data-tool="crm">CRM</button>
-      <div class="logiciel-content" id="crm">
-        Notion, HubSpot, Salesforce
-      </div>
+      <div class="logiciel-content" id="crm">Notion, HubSpot, Salesforce</div>
 
       <button class="logiciel-btn" data-tool="gestion">Gestion de projet</button>
-      <div class="logiciel-content" id="gestion">
-        Trello, Google Workspace
-      </div>
+      <div class="logiciel-content" id="gestion">Trello, Google Workspace</div>
 
       <button class="logiciel-btn" data-tool="communication">Communication</button>
-      <div class="logiciel-content" id="communication">
-        Mailchimp, Zapier, Make
-      </div>
+      <div class="logiciel-content" id="communication">Mailchimp, Zapier, Make</div>
 
       <button class="logiciel-btn" data-tool="etude">Étude de marché</button>
-      <div class="logiciel-content" id="etude">
-        TradeMap, Kompass, Euromonitor, World Bank Data
-      </div>
+      <div class="logiciel-content" id="etude">TradeMap, Kompass, Euromonitor, World Bank Data</div>
 
       <button class="logiciel-btn" data-tool="analyse">Analyse</button>
-      <div class="logiciel-content" id="analyse">
-        LinkedIn Sales Navigator, Google Analytics, Google Search Console
-      </div>
+      <div class="logiciel-content" id="analyse">LinkedIn Sales Navigator, Google Analytics, Google Search Console</div>
 
       <button class="logiciel-btn" data-tool="ia">Intelligence artificielle</button>
-      <div class="logiciel-content" id="ia">
-        ChatGPT, Claude, MidJourney, Perplexity, Manus
-      </div>
+      <div class="logiciel-content" id="ia">ChatGPT, Claude, MidJourney, Perplexity, Manus</div>
 
       <button class="logiciel-btn" data-tool="microsoft">Microsoft</button>
-      <div class="logiciel-content" id="microsoft">
-        Azure, Copilot, OneNote
-      </div>
+      <div class="logiciel-content" id="microsoft">Azure, Copilot, OneNote</div>
 
       <button class="logiciel-btn" data-tool="social">Réseaux sociaux</button>
-      <div class="logiciel-content" id="social">
-        Meta Business Suite, Webflow, Wix, WordPress, Shopify
-      </div>
+      <div class="logiciel-content" id="social">Meta Business Suite, Webflow, Wix, WordPress, Shopify</div>
 
       <button class="logiciel-btn" data-tool="design">Design</button>
-      <div class="logiciel-content" id="design">
-        Canva, Figma, CapCut, Photoshop
-      </div>
+      <div class="logiciel-content" id="design">Canva, Figma, CapCut, Photoshop</div>
 
       <button class="logiciel-btn" data-tool="dev">Développement web</button>
-      <div class="logiciel-content" id="dev">
-        GitHub
-      </div>
+      <div class="logiciel-content" id="dev">GitHub</div>
 
     </div>
   `,
 
   /* ================= CV ACADÉMIQUE ================= */
   orange1: `
-    <h2 class="scolaire-title animated-title">CV Académique</h2>
+    <h2 class="animated-title">CV Académique</h2>
 
     <div class="centered-text scolaire-list">
-      <p>
-        <strong>Master Import–Export</strong><br>
-        KEDGE Business School — Marseille
-      </p>
-
-      <p>
-        <strong>Bachelor International Business</strong><br>
-        INSEEC Paris Business School — Paris
-      </p>
-
-      <p>
-        <strong>BTS Commerce International</strong><br>
-        Lycée Jean Lurçat — Paris
-      </p>
-
-      <p>
-        <strong>Licence de Gestion</strong><br>
-        Université Paris 1 Panthéon-Sorbonne — Paris
-      </p>
+      <p><strong>Master Import–Export</strong><br>KEDGE Business School — Marseille</p>
+      <p><strong>Bachelor International Business</strong><br>INSEEC Paris Business School — Paris</p>
+      <p><strong>BTS Commerce International</strong><br>Lycée Jean Lurçat — Paris</p>
+      <p><strong>Licence de Gestion</strong><br>Université Paris 1 Panthéon-Sorbonne — Paris</p>
+      <p><strong>Diplôme de Comptabilité et de Gestion (DCG)</strong><br>École Nationale de Commerce — Paris</p>
     </div>
   `,
 
   /* ================= RÉSEAUX SOCIAUX ================= */
   jaune1: `
-    <div class="socials-card compact">
+    <div class="socials-outline">
       <a href="#"><img src="images/Instagram.PNG" alt="Instagram"></a>
       <a href="#"><img src="images/Linkedin.PNG" alt="LinkedIn"></a>
       <a href="mailto:contact@tonmail.com"><img src="images/Mail.PNG" alt="Email"></a>
@@ -197,47 +203,29 @@ const contents = {
 };
 
 /* =====================================================
-   SÉLECTION DES ÉLÉMENTS
+   LOGIQUE GÉNÉRALE
 ===================================================== */
-
-const buttons    = document.querySelectorAll(".bloc");
-const overlay    = document.getElementById("overlay");
-const colorBox   = document.getElementById("colorBox");
+const buttons = document.querySelectorAll(".bloc");
+const overlay = document.getElementById("overlay");
+const colorBox = document.getElementById("colorBox");
 const contentBox = document.getElementById("contentBox");
-
-/* =====================================================
-   OUVERTURE DES BLOCS
-===================================================== */
 
 buttons.forEach(button => {
   button.addEventListener("click", e => {
     e.stopPropagation();
-
     const key = [...button.classList].find(c => contents[c]);
     if (!key) return;
 
     contentBox.innerHTML = contents[key];
     colorBox.style.background = button.dataset.color || "#111";
-
     overlay.classList.add("active");
-    overlay.style.opacity = "1";
-    overlay.style.pointerEvents = "auto";
   });
 });
 
-/* =====================================================
-   INTERACTIONS INTERNES
-===================================================== */
-
 contentBox.addEventListener("click", e => {
 
-  /* ===== MON OBJECTIF ===== */
+  /* === OBJECTIF === */
   if (e.target.id === "openObjectif") {
-    e.stopPropagation();
-
-    const existing = document.querySelector(".objectif-bubble");
-    if (existing) existing.remove();
-
     const bubble = document.createElement("div");
     bubble.className = "objectif-bubble";
     bubble.innerHTML = `
@@ -250,31 +238,30 @@ contentBox.addEventListener("click", e => {
         échangeons.
       </p>
     `;
-
     contentBox.appendChild(bubble);
   }
 
-  /* ===== JOBS ===== */
-  if (e.target.classList.contains("job-btn")) {
-    const id = e.target.dataset.job;
-    document.getElementById(id).classList.toggle("active");
+  /* === PROGRAMME === */
+  if (e.target.classList.contains("step-btn")) {
+    const step = e.target.dataset.step;
+    const bubble = document.getElementById("programmeBubble");
+    bubble.innerHTML = programmeTexts[step];
+    bubble.classList.add("active");
   }
 
-  /* ===== LOGICIELS ===== */
+  /* === JOBS === */
+  if (e.target.classList.contains("job-btn")) {
+    document.getElementById(e.target.dataset.job).classList.toggle("active");
+  }
+
+  /* === LOGICIELS === */
   if (e.target.classList.contains("logiciel-btn")) {
-    const id = e.target.dataset.tool;
-    document.getElementById(id).classList.toggle("active");
+    document.getElementById(e.target.dataset.tool).classList.toggle("active");
   }
 });
 
-/* =====================================================
-   FERMETURE OVERLAY
-===================================================== */
-
 overlay.addEventListener("click", () => {
   overlay.classList.remove("active");
-  overlay.style.opacity = "0";
-  overlay.style.pointerEvents = "none";
   contentBox.innerHTML = "";
 });
 
