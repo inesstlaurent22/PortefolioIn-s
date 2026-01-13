@@ -1,4 +1,4 @@
-console.log("SCRIPT JS – PORTFOLIO MULTILANGUE FINAL");
+console.log("SCRIPT JS – PORTFOLIO MULTILANGUE STABLE");
 
 /* ================= LANGUE ================= */
 let currentLang = "fr";
@@ -23,7 +23,7 @@ const T = {
       </p>
     `,
 
-    /* ===== PRÉSENTATION (BLEU) ===== */
+    /* ===== PRÉSENTATION ===== */
     presentation: `
       <h2 class="title animate-title">Présentation</h2>
 
@@ -51,7 +51,7 @@ const T = {
       <button class="primary-btn" id="openObjectif">Mon objectif</button>
     `,
 
-    /* ===== MON OFFRE (ROSE) ===== */
+    /* ===== MON OFFRE (EX MON PROGRAMME) ===== */
     offreTitle: "Processus d’accompagnement stratégique",
     offre: {
       1: `
@@ -92,8 +92,7 @@ const T = {
       `
     },
 
-    /* ===== CV COMPÉTENCES (VIOLET 1) ===== */
-    competencesTitle: "CV & Compétences",
+    /* ===== CV & COMPÉTENCES ===== */
     competences: `
       <h2 class="title animate-title">CV & Compétences</h2>
 
@@ -142,8 +141,7 @@ const T = {
       </div>
     `,
 
-    /* ===== COMPÉTENCES (VIOLET 2) ===== */
-    skillsTitle: "Compétences",
+    /* ===== COMPÉTENCES (EX LOGICIELS) ===== */
     skills: `
       <h2 class="title animate-title">Compétences</h2>
 
@@ -166,18 +164,22 @@ const T = {
 
         <button class="card-btn skill-btn">
           Analyse & data
-          <div class="bubble hidden">Google Analytics, Search Console</div>
+          <div class="bubble hidden">
+            Google Analytics, Google Search Console
+          </div>
         </button>
 
         <button class="card-btn skill-btn">
           Intelligence artificielle
-          <div class="bubble hidden">ChatGPT, Claude, Midjourney</div>
+          <div class="bubble hidden">
+            ChatGPT, Claude, Midjourney
+          </div>
         </button>
 
       </div>
     `,
 
-    /* ===== PARCOURS ACADÉMIQUE (ORANGE) ===== */
+    /* ===== PARCOURS ACADÉMIQUE ===== */
     academic: `
       <h2 class="title animate-title">Parcours Académique</h2>
 
@@ -188,9 +190,9 @@ const T = {
       <p><strong>Diplôme de Comptabilité et de Gestion</strong></p>
     `,
 
-    /* ===== RÉSEAUX ===== */
+    /* ===== RÉSEAUX SOCIAUX ===== */
     socials: `
-      <h2 class="title">Réseaux sociaux</h2>
+      <h2 class="title animate-title">Réseaux sociaux</h2>
       <p>Instagram · LinkedIn · Email</p>
     `
   }
@@ -205,12 +207,10 @@ blocs.forEach(bloc => {
 
     setTimeout(() => {
 
-      /* BLEU */
       if (bloc.classList.contains("bleu1")) {
         contentBox.innerHTML = T[currentLang].presentation;
       }
 
-      /* ROSE */
       if (bloc.classList.contains("rose1")) {
         contentBox.innerHTML = `
           <h2 class="title animate-title">${T[currentLang].offreTitle}</h2>
@@ -221,32 +221,30 @@ blocs.forEach(bloc => {
             <button class="step-btn" data-step="3">03</button>
           </div>
 
-          <div id="programmeBubble" class="bubble hidden" style="color:#FF4FD8"></div>
+          <div id="programmeBubble" class="bubble hidden"></div>
         `;
       }
 
-      /* VIOLET 1 */
       if (bloc.classList.contains("violet1")) {
         contentBox.innerHTML = T[currentLang].competences;
       }
 
-      /* VIOLET 2 */
       if (bloc.classList.contains("violet2")) {
         contentBox.innerHTML = T[currentLang].skills;
       }
 
-      /* ORANGE */
       if (bloc.classList.contains("orange1")) {
         contentBox.innerHTML = T[currentLang].academic;
       }
 
-      /* JAUNE */
       if (bloc.classList.contains("jaune1")) {
         contentBox.innerHTML = T[currentLang].socials;
       }
 
-      colorBox.style.background = bloc.dataset.color;
+      colorBox.style.background = bloc.dataset.color || "#111";
+
       overlay.classList.add("active");
+      contentBox.scrollTop = 0;
 
     }, 450);
   });
@@ -259,26 +257,24 @@ contentBox.addEventListener("click", e => {
   if (e.target.id === "openObjectif") {
     contentBox.insertAdjacentHTML(
       "beforeend",
-      `<div class="bubble" style="color:#3A6EFF">${T[currentLang].objectif}</div>`
+      `<div class="bubble objectif">${T[currentLang].objectif}</div>`
     );
   }
 
-  /* BULLES PROGRAMME */
+  /* BULLES MON OFFRE */
   if (e.target.classList.contains("step-btn")) {
     const bubble = document.getElementById("programmeBubble");
     bubble.innerHTML = T[currentLang].offre[e.target.dataset.step];
     bubble.classList.remove("hidden");
   }
 
-  /* CARTES (CV & COMPÉTENCES + SKILLS) */
-  if (e.target.closest(".card-btn")) {
-    const btn = e.target.closest(".card-btn");
-    const bubble = btn.querySelector(".bubble");
-
+  /* BULLES CARTES */
+  const card = e.target.closest(".card-btn");
+  if (card) {
+    const bubble = card.querySelector(".bubble");
     document.querySelectorAll(".card-btn .bubble").forEach(b => {
       if (b !== bubble) b.classList.add("hidden");
     });
-
     bubble.classList.toggle("hidden");
   }
 });
