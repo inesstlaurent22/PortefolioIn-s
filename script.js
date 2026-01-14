@@ -18,7 +18,7 @@ const CONTENT = {
     </p>
 
     <p>
-      Forte de 5 années d’expérience en commerce international et marketing,
+      Suite à mes 5 années d’expérience en commerce international et marketing,
       j’accompagne les entreprises dans leurs phases clés de croissance.
     </p>
 
