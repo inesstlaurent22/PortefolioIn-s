@@ -237,7 +237,9 @@ function toolCard(title, tools) {
   return `
     <button class="card-btn" style="color:#9C6BFF;font-weight:700">
       <strong>${title}</strong>
-      <div class="bubble hidden bubble-violet2">${tools}</div>
+      <div class="bubble hidden bubble-violet2" style="font-weight:400">
+        ${tools}
+      </div>
     </button>
   `;
 }
