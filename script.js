@@ -297,27 +297,29 @@ let currentLang = "fr";
 const langBtn = document.getElementById("lang-current");
 const langMenu = document.getElementById("lang-menu");
 
+/* ouverture / fermeture */
 langBtn.addEventListener("click", e => {
   e.stopPropagation();
-  langMenu.classList.toggle("hidden");
+  langMenu.classList.toggle("active");
 });
 
+/* clic extérieur = fermeture */
 document.addEventListener("click", () => {
-  langMenu.classList.add("hidden");
+  langMenu.classList.remove("active");
 });
 
+/* sélection langue */
 langMenu.querySelectorAll("button").forEach(btn => {
   btn.addEventListener("click", () => {
     currentLang = btn.dataset.lang;
 
-    // fermeture menu
-    langMenu.classList.add("hidden");
+    console.log("Langue active :", currentLang);
+
+    langMenu.classList.remove("active");
 
     // reset overlay
     overlay.classList.remove("active");
     contentBox.innerHTML = "";
-
-    console.log("Langue sélectionnée :", currentLang);
   });
 });
 
