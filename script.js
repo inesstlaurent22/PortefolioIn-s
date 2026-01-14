@@ -1,10 +1,44 @@
-console.log("SCRIPT JS – PORTFOLIO FINAL STABLE (CORRIGÉ)");
+console.log("SCRIPT JS – PORTFOLIO FINAL STABLE (LANG SWITCH FIXED)");
 
 /* ================= SÉLECTEURS ================= */
 const blocs = document.querySelectorAll(".bloc");
 const overlay = document.getElementById("overlay");
 const colorBox = document.getElementById("colorBox");
 const contentBox = document.getElementById("contentBox");
+
+/* ================= LANGUAGE SWITCH ================= */
+const langBtn = document.getElementById("lang-current");
+const langMenu = document.getElementById("lang-menu");
+let currentLang = "fr";
+
+/* Sécurité : si le menu existe */
+if (langBtn && langMenu) {
+
+  // Ouvrir / fermer le menu
+  langBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    langMenu.classList.toggle("active");
+  });
+
+  // Fermer au clic extérieur
+  document.addEventListener("click", () => {
+    langMenu.classList.remove("active");
+  });
+
+  // Sélection langue (préparation multilingue)
+  langMenu.querySelectorAll("button").forEach(btn => {
+    btn.addEventListener("click", () => {
+      currentLang = btn.dataset.lang;
+      console.log("Langue active :", currentLang);
+
+      langMenu.classList.remove("active");
+
+      // Reset overlay à chaque changement de langue
+      overlay.classList.remove("active");
+      contentBox.innerHTML = "";
+    });
+  });
+}
 
 /* ================= HELPERS ================= */
 function experienceCard(role, company, sector, tasks) {
@@ -34,7 +68,6 @@ function toolCard(title, tools) {
 /* ================= CONTENUS ================= */
 const CONTENT = {
 
-  /* ===== PRÉSENTATION ===== */
   presentation: `
     <h2 class="title animate-title">Présentation</h2>
 
@@ -66,7 +99,6 @@ const CONTENT = {
     </p>
   `,
 
-  /* ===== MON OFFRE ===== */
   offre: `
     <h2 class="title animate-title">🤝 Processus d’accompagnement stratégique</h2>
 
@@ -110,12 +142,10 @@ const CONTENT = {
     `
   },
 
-  /* ===== PARCOURS PROFESSIONNEL ===== */
   experience: `
     <h2 class="title animate-title">💻 Parcours professionnel</h2>
 
     <div class="card-list">
-
       ${experienceCard(
         "Consultante en développement d’activité",
         "Gearbooker",
@@ -170,11 +200,9 @@ const CONTENT = {
           "Notoriété de marque"
         ]
       )}
-
     </div>
   `,
 
-  /* ===== LOGICIELS ===== */
   tools: `
     <h2 class="title animate-title">🧠 Logiciels</h2>
 
@@ -189,49 +217,22 @@ const CONTENT = {
     </div>
   `,
 
-  /* ===== PARCOURS ACADÉMIQUE (CORRIGÉ) ===== */
   academic: `
     <h2 class="title animate-title">🎓 Parcours Académique</h2>
 
-    <p style="margin-bottom:20px;">
-      <strong>Master Import-Export</strong><br>
-      KEDGE Business School — Marseille
-    </p>
-
-    <p style="margin-bottom:20px;">
-      <strong>Bachelor International Business</strong><br>
-      INSEEC Paris Business School
-    </p>
-
-    <p style="margin-bottom:20px;">
-      <strong>BTS Commerce International</strong><br>
-      Lycée Jean Lurçat — Paris
-    </p>
-
-    <p style="margin-bottom:20px;">
-      <strong>Licence de Gestion</strong><br>
-      Université Paris 1 Panthéon-Sorbonne
-    </p>
-
-    <p style="margin-bottom:10px;">
-      <strong>Diplôme de Comptabilité et de Gestion</strong><br>
-      École Nationale de Commerce — Paris
-    </p>
+    <p style="margin-bottom:20px;"><strong>Master Import-Export</strong><br>KEDGE Business School — Marseille</p>
+    <p style="margin-bottom:20px;"><strong>Bachelor International Business</strong><br>INSEEC Paris</p>
+    <p style="margin-bottom:20px;"><strong>BTS Commerce International</strong><br>Lycée Jean Lurçat</p>
+    <p style="margin-bottom:20px;"><strong>Licence de Gestion</strong><br>Paris 1 Panthéon-Sorbonne</p>
+    <p style="margin-bottom:10px;"><strong>Diplôme de Comptabilité et de Gestion</strong><br>École Nationale de Commerce — Paris</p>
   `,
 
-  /* ===== RÉSEAUX SOCIAUX ===== */
   socials: `
     <h2 class="title animate-title">Réseaux sociaux</h2>
     <div class="socials">
-      <a href="https://www.instagram.com/" target="_blank">
-        <img src="images/Instagram.PNG">
-      </a>
-      <a href="https://www.linkedin.com/" target="_blank">
-        <img src="images/Linkedin.PNG">
-      </a>
-      <a href="mailto:contact@email.com">
-        <img src="images/Mail.PNG">
-      </a>
+      <a href="https://www.instagram.com/" target="_blank"><img src="images/Instagram.PNG"></a>
+      <a href="https://www.linkedin.com/" target="_blank"><img src="images/Linkedin.PNG"></a>
+      <a href="mailto:contact@email.com"><img src="images/Mail.PNG"></a>
     </div>
   `
 };
