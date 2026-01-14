@@ -118,8 +118,8 @@ const CONTENT = {
     <div style="margin-top:40px">
       <p class="center-text"><strong>🗓️ Durée & rythme des missions</strong></p>
       <p class="center-text">Accompagnements de 3 à 12 mois selon vos ambitions</p>
-      <p class="center-text">J +15 : restitution stratégique et validation du plan d’action</p>
-      <p class="center-text">Pilotage mensuel & ajustements continus</p>
+      <p class="center-text"><strong>J +15 </strong>: restitution stratégique et validation du plan d’action</p>
+      <p class="center-text"><strong>Pilotage mensuel & ajustements continus</strong></p>
     </div>
   `,
 
