@@ -1,4 +1,4 @@
-console.log("SCRIPT JS – PORTFOLIO CORRIGÉ V2");
+console.log("SCRIPT JS – PORTFOLIO FINAL STABLE");
 
 /* ================= SÉLECTEURS ================= */
 const blocs = document.querySelectorAll(".bloc");
@@ -53,17 +53,16 @@ const CONTENT = {
 
     <div id="programmeBubble" class="bubble hidden center-text"></div>
 
-    <div class="offer-footer" style="margin-top:32px">
+    <div style="margin-top:32px">
       <p class="center-text"><strong>🗓️ Durée & rythme des missions</strong></p>
       <p class="center-text">
-        Les accompagnements sont proposés sur des formats de 3 mois, 6 mois
-        ou jusqu’à 12 mois selon vos ambitions.
+        Accompagnements de 3 mois, 6 mois ou jusqu’à 12 mois selon vos ambitions.
       </p>
       <p class="center-text">
-        J +15 : restitution stratégique, validation du plan d’action et fixation des objectifs.
+        J +15 : restitution stratégique, validation du plan d’action.
       </p>
       <p class="center-text">
-        Chaque mois : comité de pilotage, suivi des performances et ajustements.
+        Suivi mensuel, ajustements continus et pilotage de la performance.
       </p>
     </div>
   `,
@@ -72,7 +71,7 @@ const CONTENT = {
     1: `
       <strong>Diagnostic & Vision</strong><br><br>
       Vision long terme<br>
-      Marché cible<br>
+      Marché ou pays cible<br>
       Objectifs business prioritaires<br>
       Indicateurs de performance
     `,
@@ -96,49 +95,74 @@ const CONTENT = {
   experience: `
     <h2 class="title animate-title">💻 Parcours professionnel</h2>
 
-    <div class="card-list violet1-buttons">
+    <div class="card-list">
 
-      ${[
-        ["Consultante en développement d’activité", "Gearbooker", "Audiovisuel & international",
-        "Accompagnement stratégique international<br>Développement commercial BtoB / BtoC<br>Pilotage de la performance"],
+      ${experienceCard(
+        "Consultante en développement d’activité",
+        "Gearbooker",
+        "Audiovisuel & international",
+        [
+          "Accompagnement stratégique international",
+          "Développement commercial BtoB / BtoC",
+          "Pilotage de la performance"
+        ]
+      )}
 
-        ["Commerciale Marketing", "Pachamamaï", "Cosmétique & marchés internationaux",
-        "Prospection & lancements produits<br>Études de marché Europe & Asie<br>Fidélisation client"],
+      ${experienceCard(
+        "Commerciale Marketing",
+        "Pachamamaï",
+        "Cosmétique & marchés internationaux",
+        [
+          "Prospection commerciale et lancements produits",
+          "Études de marché Europe & Asie",
+          "Fidélisation client"
+        ]
+      )}
 
-        ["CEO & Community Manager", "PUFFRAP", "Média & culture musicale",
-        "Création de média digital<br>Gestion Instagram & TikTok<br>SEO & visibilité"],
+      ${experienceCard(
+        "CEO & Community Manager",
+        "PUFFRAP",
+        "Média & culture musicale",
+        [
+          "Création de média digital",
+          "Gestion Instagram & TikTok",
+          "SEO & visibilité"
+        ]
+      )}
 
-        ["CEO & Développeuse Web", "KIT IN", "Entrepreneuriat & digital",
-        "Plateforme éducative<br>HTML / CSS / JavaScript<br>Vision produit & business"],
+      ${experienceCard(
+        "CEO & Développeuse Web",
+        "KIT IN",
+        "Entrepreneuriat & digital",
+        [
+          "Plateforme éducative",
+          "HTML / CSS / JavaScript",
+          "Vision produit & business"
+        ]
+      )}
 
-        ["Stagiaire Comptable", "Pages Jaunes", "Finance & structure d’entreprise",
-        "Comptabilité clients & fournisseurs<br>Analyse des flux financiers<br>Organisation & rigueur"],
+      ${experienceCard(
+        "Stagiaire Comptable",
+        "Pages Jaunes",
+        "Finance & structure d’entreprise",
+        [
+          "Comptabilité clients & fournisseurs",
+          "Analyse des flux financiers",
+          "Organisation & rigueur"
+        ]
+      )}
 
-        ["Vendeuse & Ambassadrice de marque", "Le Perchoir", "Restauration & événementiel",
-        "Valorisation de l’image de marque<br>Relation client terrain<br>Développement de la notoriété"]
-      ].map(job => `
-        <button class="card-btn violet1-btn">
-          ${job[0]}<br>
-          <strong>${job[1]}</strong><br>
-          <em>${job[2]}</em>
-          <div class="bubble hidden bubble-violet">${job[3]}</div>
-        </button>
-      `).join("")}
+      ${experienceCard(
+        "Vendeuse & Ambassadrice de marque",
+        "Le Perchoir",
+        "Restauration & événementiel",
+        [
+          "Valorisation de l’image de marque",
+          "Relation client terrain",
+          "Développement de la notoriété"
+        ]
+      )}
 
-    </div>
-  `,
-
-  /* ===== PARCOURS ACADÉMIQUE ===== */
-  academic: `
-    <h2 class="title animate-title">🎓 Parcours Académique</h2>
-
-    <div class="academic-list">
-      <p><strong>Master Import-Export</strong><br>KEDGE Business School — Marseille</p>
-      <p><strong>Bachelor International Business</strong><br>INSEEC Paris Business School</p>
-      <p><strong>BTS Commerce International</strong><br>Lycée Jean Lurçat — Paris</p>
-      <p><strong>Licence de Gestion</strong><br>Université Paris 1 Panthéon-Sorbonne</p>
-      <p><strong>Diplôme de Comptabilité et de Gestion (DCG)</strong><br>
-        École Nationale de Commerce — Paris</p>
     </div>
   `,
 
@@ -146,33 +170,42 @@ const CONTENT = {
   tools: `
     <h2 class="title animate-title">🧠 Logiciels</h2>
 
-    <div class="card-list violet2-buttons">
-
-      ${[
-        ["CRM", "Notion, HubSpot, Salesforce"],
-        ["Gestion de projet", "Trello, Google Workspace"],
-        ["Communication", "Mailchimp, Zapier, Make"],
-        ["Design", "Canva, Figma, CapCut, Photoshop"],
-        ["IA", "ChatGPT, Claude, MidJourney, Gemini"],
-        ["Développement Web", "GitHub"],
-        ["Sites en ligne", "Webflow, WordPress, Shopify, Wix"],
-        ["Analyse", "Google Analytics, Search Console, Meta Business Suite, LinkedIn Navigator"],
-        ["Études de marché", "TradeMap, Kompass, Euromonitor, Statista, World Bank Data"]
-      ].map(tool => `
-        <button class="card-btn violet2-btn">
-          <strong>${tool[0]}</strong>
-          <div class="bubble hidden bubble-violet2">${tool[1]}</div>
-        </button>
-      `).join("")}
-
+    <div class="card-list">
+      ${toolCard("CRM", "Notion, HubSpot, Salesforce")}
+      ${toolCard("Gestion de projet", "Trello, Google Workspace")}
+      ${toolCard("Communication", "Mailchimp, Zapier, Make")}
+      ${toolCard("Design", "Canva, Figma, CapCut, Photoshop")}
+      ${toolCard("IA", "ChatGPT, Claude, MidJourney, Gemini")}
+      ${toolCard("Développement Web", "GitHub")}
+      ${toolCard("Sites en ligne", "Webflow, WordPress, Shopify, Wix")}
+      ${toolCard(
+        "Analyse",
+        "Google Analytics, Search Console, Meta Business Suite, LinkedIn Navigator"
+      )}
+      ${toolCard(
+        "Études de marché",
+        "TradeMap, Kompass, Euromonitor, Statista, World Bank Data"
+      )}
     </div>
+  `,
+
+  /* ===== PARCOURS ACADÉMIQUE ===== */
+  academic: `
+    <h2 class="title animate-title">🎓 Parcours Académique</h2>
+
+    <p><strong>Master Import-Export</strong><br>KEDGE Business School — Marseille</p>
+    <p><strong>Bachelor International Business</strong><br>INSEEC Paris Business School</p>
+    <p><strong>BTS Commerce International</strong><br>Lycée Jean Lurçat — Paris</p>
+    <p><strong>Licence de Gestion</strong><br>Université Paris 1 Panthéon-Sorbonne</p>
+    <p><strong>Diplôme de Comptabilité et de Gestion (DCG)</strong><br>
+       École Nationale de Commerce — Paris</p>
   `,
 
   /* ===== RÉSEAUX SOCIAUX ===== */
   socials: `
     <h2 class="title animate-title">Réseaux sociaux</h2>
 
-    <div class="socials socials-fixed">
+    <div class="socials">
       <a href="https://www.instagram.com/" target="_blank">
         <img src="images/Instagram.PNG" alt="Instagram">
       </a>
@@ -185,6 +218,29 @@ const CONTENT = {
     </div>
   `
 };
+
+/* ================= HELPERS ================= */
+function experienceCard(role, company, sector, tasks) {
+  return `
+    <button class="card-btn" style="color:#7C4DFF">
+      ${role}<br>
+      <strong>${company}</strong><br>
+      <em>${sector}</em>
+      <div class="bubble hidden bubble-violet">
+        ${tasks.join("<br>")}
+      </div>
+    </button>
+  `;
+}
+
+function toolCard(title, tools) {
+  return `
+    <button class="card-btn" style="color:#9C6BFF;font-weight:700">
+      <strong>${title}</strong>
+      <div class="bubble hidden bubble-violet2">${tools}</div>
+    </button>
+  `;
+}
 
 /* ================= OUVERTURE BLOCS ================= */
 blocs.forEach(bloc => {
