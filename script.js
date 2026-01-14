@@ -1,7 +1,4 @@
-console.log("SCRIPT JS – PORTFOLIO FINAL CORRIGÉ");
-
-/* ================= LANGUE ================= */
-let currentLang = "fr";
+console.log("SCRIPT JS – PORTFOLIO FINAL STABLE");
 
 /* ================= SÉLECTEURS ================= */
 const blocs = document.querySelectorAll(".bloc");
@@ -9,10 +6,9 @@ const overlay = document.getElementById("overlay");
 const colorBox = document.getElementById("colorBox");
 const contentBox = document.getElementById("contentBox");
 
-/* ================= TEXTES ================= */
-const T = {
+/* ================= CONTENUS ================= */
+const CONTENT = {
 
-  /* ================= PRÉSENTATION ================= */
   presentation: `
     <h2 class="title animate-title">Présentation</h2>
 
@@ -49,7 +45,6 @@ const T = {
     </p>
   `,
 
-  /* ================= MON OFFRE ================= */
   offre: `
     <h2 class="title animate-title">🤝 Processus d’accompagnement stratégique</h2>
 
@@ -61,10 +56,18 @@ const T = {
 
     <div id="programmeBubble" class="bubble hidden center-text"></div>
 
-    <p class="center-text"><strong>🗓️ Durée & rythme des missions</strong></p>
-    <p class="center-text">Formats de 3, 6 ou jusqu’à 12 mois selon vos ambitions</p>
-    <p class="center-text">J +15 restitution stratégique et validation du plan d’action</p>
-    <p class="center-text">Suivi mensuel et ajustements continus</p>
+    <div style="margin-top:32px">
+      <p class="center-text"><strong>🗓️ Durée & rythme des missions</strong></p>
+      <p class="center-text">
+        Formats de 3 mois, 6 mois ou jusqu’à 12 mois selon vos ambitions.
+      </p>
+      <p class="center-text">
+        J +15 restitution stratégique et validation du plan d’action.
+      </p>
+      <p class="center-text">
+        Suivi mensuel et ajustements continus.
+      </p>
+    </div>
   `,
 
   offreSteps: {
@@ -76,22 +79,21 @@ const T = {
       Indicateurs de performance
     `,
     2: `
-      <strong>Intelligence marché & Stratégie sur mesure</strong><br><br>
+      <strong>Intelligence marché & Stratégie</strong><br><br>
       Études de marché approfondies<br>
-      Analyse concurrentielle et positionnement<br>
-      Recommandations produits et opportunités<br>
-      Projection budgétaire et plan d’action
+      Analyse concurrentielle<br>
+      Recommandations produits<br>
+      Plan d’action structuré
     `,
     3: `
-      <strong>Déploiement & Pilotage stratégique</strong><br><br>
-      Réunions de pilotage mensuelles<br>
-      Analyse des performances et KPI<br>
-      Ajustements stratégiques continus<br>
-      Suivi des actions et priorités
+      <strong>Déploiement & Pilotage</strong><br><br>
+      Réunions mensuelles<br>
+      Analyse KPI<br>
+      Ajustements continus<br>
+      Croissance durable
     `
   },
 
-  /* ================= PARCOURS PROFESSIONNEL ================= */
   experience: `
     <h2 class="title animate-title">💻 Parcours professionnel</h2>
 
@@ -114,9 +116,32 @@ const T = {
         <em>Cosmétique & marchés internationaux</em>
         <div class="bubble hidden bubble-violet">
           Prospection commerciale et lancement de nouveaux produits<br>
-          Réalisation d’études de marché Portugal Espagne Asie<br>
-          Suivi et fidélisation de la clientèle<br>
-          Participation à des salons internationaux
+          Études de marché Portugal Espagne Asie<br>
+          Fidélisation clientèle<br>
+          Salons internationaux
+        </div>
+      </button>
+
+      <button class="card-btn">
+        CEO & Community Manager<br>
+        <strong>PUFFRAP</strong><br>
+        <em>Média & culture musicale</em>
+        <div class="bubble hidden bubble-violet">
+          Création de média digital<br>
+          Gestion Instagram et TikTok<br>
+          SEO et visibilité digitale<br>
+          Partenariats stratégiques
+        </div>
+      </button>
+
+      <button class="card-btn">
+        CEO & Développeuse Web<br>
+        <strong>KIT IN</strong><br>
+        <em>Entrepreneuriat & digital</em>
+        <div class="bubble hidden bubble-violet">
+          Conception de plateforme éducative<br>
+          HTML CSS JavaScript<br>
+          Vision produit et business
         </div>
       </button>
 
@@ -125,9 +150,9 @@ const T = {
         <strong>Pages Jaunes</strong><br>
         <em>Finance & structure d’entreprise</em>
         <div class="bubble hidden bubble-violet">
-          Comptabilité clients et fournisseurs<br>
-          Compréhension des flux financiers<br>
-          Rigueur organisation et vision analytique
+          Comptabilité clients fournisseurs<br>
+          Analyse des flux financiers<br>
+          Rigueur et organisation
         </div>
       </button>
 
@@ -136,87 +161,52 @@ const T = {
         <strong>Le Perchoir</strong><br>
         <em>Restauration & événementiel</em>
         <div class="bubble hidden bubble-violet">
-          Représentation et valorisation de l’image de marque<br>
-          Relation client et expérience terrain<br>
-          Contribution à la notoriété de l’enseigne
+          Valorisation de l’image de marque<br>
+          Relation client terrain<br>
+          Notoriété de l’enseigne
         </div>
       </button>
 
     </div>
   `,
 
-  /* ================= LOGICIELS ================= */
-  tools: `
-    <h2 class="title animate-title">🧠 Logiciels</h2>
+  academic: `
+    <h2 class="title animate-title">🎓 Parcours Académique</h2>
 
-    <div class="card-list">
+    <p><strong>Master Import-Export</strong><br>KEDGE Business School — Marseille</p>
+    <p><strong>Bachelor International Business</strong><br>INSEEC Paris Business School</p>
+    <p><strong>BTS Commerce International</strong><br>Lycée Jean Lurçat — Paris</p>
+    <p><strong>Licence de Gestion</strong><br>Université Paris 1 Panthéon-Sorbonne</p>
+    <p><strong>Diplôme de Comptabilité et de Gestion (DCG)</strong><br>
+       École Nationale de Commerce — Paris</p>
+  `,
 
-      <button class="card-btn"><strong>CRM</strong>
-        <div class="bubble hidden bubble-violet2">
-          Notion Hubspot Salesforce
-        </div>
-      </button>
+  socials: `
+    <h2 class="title animate-title">Réseaux sociaux</h2>
 
-      <button class="card-btn"><strong>Gestion de projet</strong>
-        <div class="bubble hidden bubble-violet2">
-          Trello Google Workspace
-        </div>
-      </button>
-
-      <button class="card-btn"><strong>Analyse</strong>
-        <div class="bubble hidden bubble-violet2">
-          Google Analytics Google Search Console LinkedIn Sales Navigator Meta Business Suite
-        </div>
-      </button>
-
-      <button class="card-btn"><strong>Microsoft</strong>
-        <div class="bubble hidden bubble-violet2">
-          Azure Copilot Microsoft 360
-        </div>
-      </button>
-
-      <button class="card-btn"><strong>Étude de marché</strong>
-        <div class="bubble hidden bubble-violet2">
-          TradeMap Kompass Euromonitor Statista World Bank Data
-        </div>
-      </button>
-
-      <button class="card-btn"><strong>Communication</strong>
-        <div class="bubble hidden bubble-violet2">
-          Mailchimp Zapier Make
-        </div>
-      </button>
-
-      <button class="card-btn"><strong>Design</strong>
-        <div class="bubble hidden bubble-violet2">
-          Canva Figma Capcut Photoshop
-        </div>
-      </button>
-
-      <button class="card-btn"><strong>IA</strong>
-        <div class="bubble hidden bubble-violet2">
-          ChatGPT Claude Manus MidJourney Google Gemini
-        </div>
-      </button>
-
-      <button class="card-btn"><strong>Développement Web</strong>
-        <div class="bubble hidden bubble-violet2">
-          GitHub
-        </div>
-      </button>
-
+    <div class="socials">
+      <a href="https://www.instagram.com/" target="_blank">
+        <img src="images/Instagram.png" alt="Instagram">
+      </a>
+      <a href="https://www.linkedin.com/" target="_blank">
+        <img src="images/Linkedin.png" alt="LinkedIn">
+      </a>
+      <a href="mailto:contact@email.com">
+        <img src="images/Mail.png" alt="Email">
+      </a>
     </div>
   `
 };
 
-/* ================= OUVERTURE DES BLOCS ================= */
+/* ================= OUVERTURE BLOCS ================= */
 blocs.forEach(bloc => {
   bloc.addEventListener("click", () => {
 
-    if (bloc.classList.contains("bleu1")) contentBox.innerHTML = T.presentation;
-    if (bloc.classList.contains("rose1")) contentBox.innerHTML = T.offre;
-    if (bloc.classList.contains("violet1")) contentBox.innerHTML = T.experience;
-    if (bloc.classList.contains("violet2")) contentBox.innerHTML = T.tools;
+    if (bloc.classList.contains("bleu1")) contentBox.innerHTML = CONTENT.presentation;
+    if (bloc.classList.contains("rose1")) contentBox.innerHTML = CONTENT.offre;
+    if (bloc.classList.contains("violet1")) contentBox.innerHTML = CONTENT.experience;
+    if (bloc.classList.contains("orange1")) contentBox.innerHTML = CONTENT.academic;
+    if (bloc.classList.contains("jaune1")) contentBox.innerHTML = CONTENT.socials;
 
     colorBox.style.background = bloc.dataset.color || "#111";
     overlay.classList.add("active");
@@ -230,15 +220,15 @@ contentBox.addEventListener("click", e => {
   if (e.target.id === "openEngagement") {
     contentBox.insertAdjacentHTML(
       "beforeend",
-      `<div class="bubble" style="background:#fff;color:#3A6EFF;">
-        ${T.engagement}
+      `<div class="bubble" style="background:#fff;color:#3A6EFF;margin-top:20px;">
+        ${CONTENT.engagement}
       </div>`
     );
   }
 
   if (e.target.classList.contains("step-btn")) {
     const bubble = document.getElementById("programmeBubble");
-    bubble.innerHTML = T.offreSteps[e.target.dataset.step];
+    bubble.innerHTML = CONTENT.offreSteps[e.target.dataset.step];
     bubble.style.background = "#fff";
     bubble.style.color = "#FF4FD8";
     bubble.classList.remove("hidden");
