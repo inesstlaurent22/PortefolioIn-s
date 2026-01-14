@@ -86,11 +86,6 @@ const CONTENT = {
       et le développement de la visibilité et des performances commerciales</strong>.
     </p>
 
-    <p>
-      Mon expertise s’appuie sur une connaissance approfondie des marchés <strong>français, européens et asiatiques,</strong>
-      et sur des <strong>collaborations</strong> dans des <strong>secteurs variés</strong> tels que le cosmétique, l’alimentation, la musique et l’audiovisuel.
-    </p>
-
       <p>
       <strong>Curieuse et polyvalente,</strong> j’ai également développé des compétences en <strong>community management</strong> et <strong>en développement web,</strong> 
       me permettant d’avoir <strong>une vision globale, stratégique et opérationnelle</strong> des projets que j’accompagne.
