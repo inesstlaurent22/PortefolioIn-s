@@ -291,3 +291,60 @@ html, body {
   transform: scale(1.15);
   filter: brightness(1.1);
 }
+
+/* ================= MOBILE LAYOUT ================= */
+@media (max-width: 768px) {
+
+  /* Conteneur mobile */
+  .FondPortefolio {
+    background: url("images/Fondportefolioinmobile.PNG") center / cover no-repeat;
+  }
+
+  /* Cache l’image desktop */
+  .fondindex {
+    display: none;
+  }
+
+  /* Dimensions communes des blocs */
+  .bloc {
+    width: 203px;
+    height: 128px;
+  }
+
+  /* POSITIONS EXACTES */
+
+  .bleu1 {
+    left: 12px;
+    top: 356px;
+  }
+
+  .rose1 {
+    left: 215px;
+    top: 356px;
+  }
+
+  .violet1 {
+    left: 12px;
+    top: 479px;
+  }
+
+  .orange1 {
+    left: 215px;
+    top: 479px;
+  }
+
+  .violet2 {
+    left: 12px;
+    top: 607px;
+  }
+
+  .jaune1 {
+    left: 215px;
+    top: 607px;
+  }
+
+  /* Ajustement du texte */
+  .label {
+    font-size: 14px;
+  }
+}
