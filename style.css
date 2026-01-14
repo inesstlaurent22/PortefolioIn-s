@@ -87,12 +87,12 @@ html, body {
   .jaune1  { left: 944px; top: 666px; }
 }
 
-/* ================= OVERLAY (CORRIGÉ) ================= */
+/* ================= OVERLAY ================= */
 #overlay {
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,0.75);
-  display: flex;              /* ← IMPORTANT */
+  display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
@@ -113,7 +113,7 @@ html, body {
   padding: 32px;
   border-radius: 28px;
   overflow-y: auto;
-  background: #111;          /* ← visible quoi qu’il arrive */
+  background: #111;
   box-shadow: 0 30px 80px rgba(0,0,0,0.6);
   transform: scale(0.95);
   transition: transform 0.3s ease;
@@ -147,26 +147,116 @@ html, body {
   to   { opacity: 1; transform: translateY(0); }
 }
 
+/* ================= TEXTE ================= */
+.left {
+  text-align: left;
+}
+
 /* ================= LISTES ================= */
 .list-left {
   text-align: left;
   padding-left: 22px;
+  margin: 12px 0 18px;
+}
+
+.list-left li {
+  margin-bottom: 8px;
+}
+
+/* ================= BOUTON OBJECTIF ================= */
+.primary-btn {
+  margin: 26px auto 0;
+  padding: 14px 34px;
+  border-radius: 999px;
+  border: none;
+  background: #fff;
+  color: #3A6EFF;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.primary-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+}
+
+/* ================= PROGRAMME ================= */
+.center-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin: 22px 0;
+}
+
+.step-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  background: #fff;
+  color: #000;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.step-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+}
+
+/* ================= CARTES ================= */
+.card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.card-btn {
+  position: relative;
+  width: 100%;
+  padding: 18px 20px;
+  border-radius: 22px;
+  border: none;
+  background: rgba(255,255,255,0.95);
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 16px;
+  text-align: left;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-btn:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
 }
 
 /* ================= BULLES ================= */
 .bubble {
-  margin-top: 18px;
-  padding: 20px;
-  border-radius: 20px;
+  margin-top: 14px;
+  padding: 18px;
+  border-radius: 18px;
   background: #fff;
   color: #000;
+  font-size: 15px;
+  animation: slideDown 0.3s ease forwards;
 }
 
-/* ================= BOUTON LANGUE (EN HAUT À DROITE) ================= */
+.hidden {
+  display: none;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ================= LANGUAGE SWITCH ================= */
 #lang-switch {
   position: fixed;
-  top: 20px;        /* ← FIX */
-  right: 20px;      /* ← FIX */
+  top: 20px;
+  right: 20px;
   z-index: 300;
   display: flex;
   gap: 10px;
@@ -179,8 +269,34 @@ html, body {
   font-weight: 700;
   cursor: pointer;
   background: rgba(255,255,255,0.95);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 #lang-switch button:hover {
   transform: scale(1.1);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1199px) {
+  .FondPortefolio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    gap: 24px;
+    perspective: none;
+  }
+
+  .bloc {
+    position: relative;
+    width: 90vw;
+    max-width: 528px;
+    height: auto;
+    aspect-ratio: 528 / 333;
+  }
+
+  .bloc.rotate {
+    transform: rotateZ(6deg) scale(1.03);
+  }
 }
