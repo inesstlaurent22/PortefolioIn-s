@@ -37,8 +37,8 @@ html, body {
   position: absolute;
   width: 528px;
   height: 333px;
-  border: none;
   background: none;
+  border: none;
   cursor: pointer;
   z-index: 2;
 
@@ -46,7 +46,7 @@ html, body {
   align-items: center;
   justify-content: center;
 
-  transition: transform 0.25s ease;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .bloc:hover {
@@ -60,14 +60,15 @@ html, body {
   pointer-events: none;
 }
 
-/* ================= TITRE DES BLOCS ================= */
+/* ================= LABELS (TITRES DES BLOCS) ================= */
 .label {
   position: absolute;
-  color: #fff; /* TOUJOURS BLANC */
-  font-weight: 700;
+  color: #fff; /* TOUS LES TITRES EN BLANC */
+  font-weight: 800;
   font-size: 24px;
   text-align: center;
-  text-shadow: 0 4px 18px rgba(0,0,0,0.75);
+  letter-spacing: 1px;
+  text-shadow: 0 6px 18px rgba(0,0,0,0.7);
   pointer-events: none;
 }
 
@@ -110,12 +111,12 @@ html, body {
   overflow-y: auto;
   background: #111;
   box-shadow: 0 30px 80px rgba(0,0,0,0.6);
-  transform: scale(0.96);
-  transition: transform 0.3s ease;
+  animation: scaleIn 0.35s ease forwards;
 }
 
-#overlay.active #colorBox {
-  transform: scale(1);
+@keyframes scaleIn {
+  from { transform: scale(0.94); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
 }
 
 /* ================= CONTENU ================= */
@@ -128,10 +129,9 @@ html, body {
 
 /* ================= TITRES ================= */
 .title {
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 26px;
-  color: #fff;
+  font-size: 30px;
+  font-weight: 800;
+  margin-bottom: 28px;
 }
 
 .animate-title {
@@ -144,20 +144,22 @@ html, body {
 }
 
 /* ================= LISTES ================= */
-ul {
-  margin-top: 12px;
+.list-left {
+  text-align: left;
+  padding-left: 22px;
+  margin: 16px auto;
+  max-width: 520px;
 }
 
-ul li {
+.list-left li {
   margin-bottom: 8px;
-  text-align: left;
 }
 
 /* ================= BOUTON ENGAGEMENT ================= */
 .primary-btn {
   margin: 28px auto 0;
-  display: inline-block;
-  padding: 14px 34px;
+  display: block;
+  padding: 14px 36px;
   border-radius: 999px;
   border: none;
   background: #fff;
@@ -165,104 +167,101 @@ ul li {
   font-weight: 700;
   font-size: 16px;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.primary-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
-}
-
-/* ================= BOUTONS ÉTAPES ================= */
+/* ================= MON OFFRE ================= */
 .center-buttons {
   display: flex;
   justify-content: center;
-  gap: 18px;
-  margin-bottom: 26px;
+  gap: 20px;
+  margin-bottom: 28px;
 }
 
+/* boutons 01 02 03 */
 .step-btn {
-  width: 56px;
-  height: 56px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
   border: none;
   background: #fff;
-  font-weight: 700;
+  font-size: 18px;
+  font-weight: 800;
   cursor: pointer;
-  transition: transform 0.2s ease;
 }
 
-.step-btn:hover {
-  transform: scale(1.1);
+/* couleur ROSE pour MON OFFRE */
+.step-rose {
+  color: #FF4FD8;
 }
 
-/* ================= CARTES (CV / LOGICIELS) ================= */
+/* ================= CARTES ================= */
 .card-list {
   display: flex;
   flex-direction: column;
   gap: 18px;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
+/* boutons expériences & logiciels */
 .card-btn {
   width: 100%;
-  padding: 18px 22px;
+  padding: 18px 20px;
   border-radius: 22px;
   border: none;
   background: rgba(255,255,255,0.95);
-  font-weight: 700;
   font-size: 16px;
-  text-align: left;
   cursor: pointer;
-  position: relative;
+  text-align: left;
+  color: #7C4DFF; /* violet1 par défaut */
 }
 
 /* ================= BULLES ================= */
 .bubble {
   margin-top: 14px;
   padding: 18px 20px;
-  border-radius: 20px;
+  border-radius: 18px;
+  animation: bubbleIn 0.3s ease forwards;
+}
+
+/* bulles violet1 */
+.bubble-violet {
+  background: #7C4DFF;
+  color: #fff;
+}
+
+/* bulles violet2 */
+.bubble-violet2 {
+  background: #9C6BFF;
+  color: #fff;
+}
+
+/* bulles rose (Mon offre) */
+.bubble-rose {
   background: #fff;
-  font-size: 15px;
-  line-height: 1.6;
-  animation: fadeUp 0.35s ease forwards;
+  color: #FF4FD8;
 }
 
 .hidden {
   display: none;
 }
 
-/* ================= RÉSEAUX SOCIAUX ================= */
-.socials {
-  display: flex;
-  justify-content: center;
-  gap: 28px;
-  margin-top: 26px;
+@keyframes bubbleIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-.socials img {
-  width: 56px;
-  height: 56px;
-  object-fit: contain;
-}
-
-/* ================= LANGUAGE SWITCH ================= */
+/* ================= BOUTON LANGUE ================= */
 #lang-switch {
   position: fixed;
   top: 20px;
   right: 20px;
   z-index: 300;
   padding: 10px 16px;
-  border-radius: 999px;
+  border-radius: 14px;
   border: none;
   background: rgba(255,255,255,0.95);
-  font-weight: 700;
+  font-weight: 800;
   cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-#lang-switch:hover {
-  transform: scale(1.08);
 }
 
 /* ================= RESPONSIVE ================= */
