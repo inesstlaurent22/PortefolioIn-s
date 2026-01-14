@@ -81,12 +81,12 @@ html, body {
 
 /* ================= POSITIONS ================= */
 @media (min-width: 1200px) {
-  .bleu1    { left: -80px; top: 0; }
-  .violet1 { left: -80px; top: 333px; }
-  .violet2 { left: -80px; top: 666px; }
+  .bleu1    { left: -75px; top: 0; }
+  .violet1 { left: -75px; top: 333px; }
+  .violet2 { left: -75px; top: 666px; }
 
-  .rose1   { left: 918px; top: 0; }
-  .orange1 { left: 916px; top: 333px; }
+  .rose1   { left: 919px; top: 0; }
+  .orange1 { left: 919px; top: 333px; }
   .jaune1  { left: 919px; top: 666px; }
 }
 
