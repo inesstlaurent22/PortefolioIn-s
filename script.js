@@ -1034,6 +1034,7 @@ overlay.addEventListener("click", () => {
 
 colorBox.addEventListener("click", e => e.stopPropagation());
 
-});
-
+// Initialisation des labels au chargement
 updateBlockLabels();
+
+});
