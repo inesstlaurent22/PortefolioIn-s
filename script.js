@@ -923,12 +923,23 @@ zh: {
 blocs.forEach(bloc => {
   bloc.addEventListener("click", () => {
 
-    if (bloc.classList.contains("bleu1")) contentBox.innerHTML = CONTENT.presentation;
-    if (bloc.classList.contains("rose1")) contentBox.innerHTML = CONTENT.offre;
-    if (bloc.classList.contains("violet1")) contentBox.innerHTML = CONTENT.experience;
-    if (bloc.classList.contains("violet2")) contentBox.innerHTML = CONTENT.tools;
-    if (bloc.classList.contains("orange1")) contentBox.innerHTML = CONTENT.academic;
-    if (bloc.classList.contains("jaune1")) contentBox.innerHTML = CONTENT.socials;
+    if (bloc.classList.contains("bleu1"))
+      contentBox.innerHTML = CONTENT[currentLang].presentation;
+
+    if (bloc.classList.contains("rose1"))
+      contentBox.innerHTML = CONTENT[currentLang].offre;
+
+    if (bloc.classList.contains("violet1"))
+      contentBox.innerHTML = CONTENT[currentLang].experience;
+
+    if (bloc.classList.contains("violet2"))
+      contentBox.innerHTML = CONTENT[currentLang].tools;
+
+    if (bloc.classList.contains("orange1"))
+      contentBox.innerHTML = CONTENT[currentLang].academic;
+
+    if (bloc.classList.contains("jaune1"))
+      contentBox.innerHTML = CONTENT[currentLang].socials;
 
     colorBox.style.background = bloc.dataset.color || "#111";
     overlay.classList.add("active");
