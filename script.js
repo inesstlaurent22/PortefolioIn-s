@@ -154,8 +154,7 @@ const CONTENT = {
       <strong>Ajustements stratégiques</strong><br>
       <strong>Valider l’évolution par rapport aux objectifs fixés.</strong>
     `
-  }
-
+  },
 
   experience: `
     <h2 class="title animate-title">💻 Parcours professionnel</h2>
@@ -369,7 +368,7 @@ en: {
       <strong>Strategic adjustments</strong><br>
       <strong>Validate progress against defined objectives.</strong>
     `
-  }
+  },
 
   experience: `
     <h2 class="title animate-title">💻 Professional Experience</h2>
@@ -797,7 +796,7 @@ zh: {
       <strong>战略调整</strong><br>
       <strong>验证目标达成情况。</strong>
     `
-  }
+  },
 
   experience: `
     <h2 class="title animate-title">💻 职业经历</h2>
@@ -923,23 +922,24 @@ zh: {
 blocs.forEach(bloc => {
   bloc.addEventListener("click", () => {
 
-    if (bloc.classList.contains("bleu1"))
+    if (bloc.classList.contains("bleu1")) {
       contentBox.innerHTML = CONTENT[currentLang].presentation;
-
-    if (bloc.classList.contains("rose1"))
+    } 
+    else if (bloc.classList.contains("rose1")) {
       contentBox.innerHTML = CONTENT[currentLang].offre;
-
-    if (bloc.classList.contains("violet1"))
+    } 
+    else if (bloc.classList.contains("violet1")) {
       contentBox.innerHTML = CONTENT[currentLang].experience;
-
-    if (bloc.classList.contains("violet2"))
+    } 
+    else if (bloc.classList.contains("violet2")) {
       contentBox.innerHTML = CONTENT[currentLang].tools;
-
-    if (bloc.classList.contains("orange1"))
+    } 
+    else if (bloc.classList.contains("orange1")) {
       contentBox.innerHTML = CONTENT[currentLang].academic;
-
-    if (bloc.classList.contains("jaune1"))
+    } 
+    else if (bloc.classList.contains("jaune1")) {
       contentBox.innerHTML = CONTENT[currentLang].socials;
+    }
 
     colorBox.style.background = bloc.dataset.color || "#111";
     overlay.classList.add("active");
@@ -950,26 +950,29 @@ blocs.forEach(bloc => {
 /* ================= INTERACTIONS ================= */
 contentBox.addEventListener("click", e => {
 
-if (e.target.id === "openEngagement") {
-  contentBox.insertAdjacentHTML(
-    "beforeend",
-    `<div class="bubble" style="background:#fff;color:#3A6EFF;margin-top:20px;">
-      ${CONTENT[currentLang].engagement}
-    </div>`
-  );
-}
+  if (e.target.id === "openEngagement") {
+    contentBox.insertAdjacentHTML(
+      "beforeend",
+      `<div class="bubble" style="background:#fff;color:#3A6EFF;margin-top:20px;">
+        ${CONTENT[currentLang].engagement}
+      </div>`
+    );
+  }
 
-if (e.target.classList.contains("step-btn")) {
-  const bubble = document.getElementById("programmeBubble");
-  if (!bubble) return;
+  if (
+    e.target.classList.contains("step-btn") &&
+    CONTENT[currentLang]?.offreSteps?.[e.target.dataset.step]
+  ) {
+    const bubble = document.getElementById("programmeBubble");
+    if (!bubble) return;
 
-  bubble.innerHTML =
-    CONTENT[currentLang].offreSteps[e.target.dataset.step];
+    bubble.innerHTML =
+      CONTENT[currentLang].offreSteps[e.target.dataset.step];
 
-  bubble.style.background = "#fff";
-  bubble.style.color = "#FF4FD8";
-  bubble.classList.remove("hidden");
-}
+    bubble.style.background = "#fff";
+    bubble.style.color = "#FF4FD8";
+    bubble.classList.remove("hidden");
+  }
 });
 
 /* ================= FERMETURE ================= */
@@ -977,6 +980,5 @@ overlay.addEventListener("click", () => {
   overlay.classList.remove("active");
   contentBox.innerHTML = "";
 });
-colorBox.addEventListener("click", e => e.stopPropagation());
 
-});
+colorBox.addEventListener("click", e => e.stopPropagation());
