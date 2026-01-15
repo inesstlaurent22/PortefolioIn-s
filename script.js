@@ -126,24 +126,29 @@ const CONTENT = {
   offreSteps: {
     1: `
       <strong>Diagnostic & Vision</strong><br><br>
-      Vision long terme<br>
-      Marché cible<br>
-      Objectifs business<br>
-      Indicateurs clés
+      <strong>Un premier rendez-vous stratégique confidentiel permet de poser les bases de votre développement.</strong><br>
+      Cette étape permet de définir :<br>
+      Vision <strong>long terme</strong><br>
+      Marché <strong>cible</strong><br>
+      <strong>Objectifs</strong> business<br>
+      <strong>Délai et indicateurs de performances</strong>
     `,
     2: `
       <strong>Intelligence marché & Stratégie</strong><br><br>
-      Études de marché<br>
-      Analyse concurrentielle<br>
-      Recommandations<br>
-      Plan d’action
+      (10 à 15 jours après le diagnostic)
+      À l’issue de la phase d’analyse, je vous livre :<br>
+      <strong>Études de marché approfondis</strong><br>
+      <strong>Analyse concurrentielle et position</strong><br>
+      <strong>Recommandations produits & opportunités</strong><br>
+      <strong>Projection budgétaire et plan d’action</strong>
     `,
     3: `
       <strong>Déploiement & Pilotage</strong><br><br>
-      Réunions mensuelles<br>
-      KPI & performance<br>
-      Ajustements<br>
-      Croissance durable
+      Après validation, la mission est lancée avec un accompagnement structuré et progressif.
+      Un point de suivi mensuel est organisé afin de :<br>
+      <strong>Analyser les résultats (KPI & performance)</strong><br>
+      <strong>Ajustements stratégiques</strong><br>
+      <strong>Valider l’évolution par rapport aux objectifs fixés.</strong>
     `
   },
 
@@ -156,9 +161,10 @@ const CONTENT = {
         "Gearbooker",
         "Audiovisuel & international",
         [
-          "Accompagnement stratégique international",
-          "Développement commercial BtoB / BtoC",
-          "Pilotage de la performance"
+          "→ Accompagnement d’une entreprise <strong>néerlandaise</strong> dans son implantation sur le marché français"
+          "→ Élaboration de stratégies de développement commercial"
+          "→ Prospection BtoB & BtoC"
+          "→ Analyse des performances et réunions de pilotage avec les associés"
         ]
       )}
 
@@ -167,9 +173,10 @@ const CONTENT = {
         "Pachamamaï",
         "Cosmétique & marchés internationaux",
         [
-          "Prospection commerciale",
-          "Études de marché Europe & Asie",
-          "Fidélisation client"
+          "→ Prospection commerciale et lancement de nouveaux produits"
+          "→ Réalisation d’études de marché (Portugal, Espagne, Asie)"
+          "→ Suivi et fidélisation de la clientèle"
+          "→ Participation à des salons internationaux"
         ]
       )}
 
@@ -178,9 +185,10 @@ const CONTENT = {
         "PUFFRAP",
         "Média musical",
         [
-          "Création de média",
-          "Gestion réseaux sociaux",
-          "SEO & partenariats"
+          "→ Création et développement du magazine en ligne"
+          "→ Gestion et croissance des réseaux sociaux (Instagram & TikTok)"
+          "→ Optimisation du SEO et de la visibilité digitale"
+          "→ Mise en place de partenariats stratégiques"
         ]
       )}
 
@@ -189,20 +197,34 @@ const CONTENT = {
         "KIT IN",
         "Entrepreneuriat & digital",
         [
-          "Plateforme éducative",
-          "HTML / CSS / JavaScript",
-          "Vision produit"
+          "→ Conception et développement d’une formation en ligne dédiée à la création d’entreprise"
+          "→ Projet éducatif destiné aux jeunes de 10 à 17 ans"
+          "→ Développement technique en HTML, CSS et JavaScript"
+          "→ Vision globale : produit, pédagogie, business et technologie"
+        ]
+      )}
+
+      ${experienceCard(
+        "Stagiaire Comptable",
+        "Pages Jaunes",
+        "Annuaires digitaux",
+        [
+          "→ Comptabilité clients et fournisseurs"
+          "→ Compréhension des flux financiers"
+          "→ Rigueur, organisation et vision analytique"
+
         ]
       )}
 
       ${experienceCard(
         "Vendeuse & Ambassadrice de marque",
-        "Le Perchoir",
-        "Restauration & événementiel",
+        "Galeries Lafayette - Le Paradis du fruit - Le Perchoir",
+        "Restauration & Retail",
         [
-          "Relation client",
-          "Valorisation de l’image",
-          "Notoriété de marque"
+          "→ Représentation et valorisation de l’image de marque"
+          "→ Relation client et expérience terrain"
+          "→ Contribution à la notoriété de l’enseigne"
+
         ]
       )}
     </div>
@@ -214,11 +236,13 @@ const CONTENT = {
     <div class="card-list">
       ${toolCard("CRM", "Notion, HubSpot, Salesforce")}
       ${toolCard("Gestion de projet", "Trello, Google Workspace")}
+      ${toolCard("Analyse", "Google Analytics, Search Console, LinkedIn Navigator")}
       ${toolCard("Communication", "Mailchimp, Zapier, Make")}
       ${toolCard("Design", "Canva, Figma, CapCut, Photoshop")}
       ${toolCard("IA", "ChatGPT, Claude, MidJourney, Gemini")}
       ${toolCard("Développement Web", "GitHub")}
-      ${toolCard("Analyse", "Google Analytics, Search Console, LinkedIn Navigator")}
+      ${toolCard("Etude de marché", "TradeMap, Kompass, World Bank Data, Statista, Euromonitor")}
+      ${toolCard("Microsoft", "Azur, Microsoft360, Microsoft Copilot")}
     </div>
   `,
 
