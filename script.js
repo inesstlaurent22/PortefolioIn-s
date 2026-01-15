@@ -950,24 +950,26 @@ blocs.forEach(bloc => {
 /* ================= INTERACTIONS ================= */
 contentBox.addEventListener("click", e => {
 
-  if (e.target.id === "openEngagement") {
-    contentBox.insertAdjacentHTML(
-      "beforeend",
-      `<div class="bubble" style="background:#fff;color:#3A6EFF;margin-top:20px;">
-        ${CONTENT.engagement}
-      </div>`
-    );
-  }
+if (e.target.id === "openEngagement") {
+  contentBox.insertAdjacentHTML(
+    "beforeend",
+    `<div class="bubble" style="background:#fff;color:#3A6EFF;margin-top:20px;">
+      ${CONTENT[currentLang].engagement}
+    </div>`
+  );
+}
 
-  if (e.target.classList.contains("step-btn")) {
-    const bubble = document.getElementById("programmeBubble");
-    if (!bubble) return;
+if (e.target.classList.contains("step-btn")) {
+  const bubble = document.getElementById("programmeBubble");
+  if (!bubble) return;
 
-    bubble.innerHTML = CONTENT.offreSteps[e.target.dataset.step];
-    bubble.style.background = "#fff";
-    bubble.style.color = "#FF4FD8";
-    bubble.classList.remove("hidden");
-  }
+  bubble.innerHTML =
+    CONTENT[currentLang].offreSteps[e.target.dataset.step];
+
+  bubble.style.background = "#fff";
+  bubble.style.color = "#FF4FD8";
+  bubble.classList.remove("hidden");
+}
 });
 
 /* ================= FERMETURE ================= */
