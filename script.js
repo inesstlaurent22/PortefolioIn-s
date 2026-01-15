@@ -265,13 +265,13 @@ const CONTENT = {
     <h2 class="title animate-title">Réseaux sociaux</h2>
 
     <div class="socials">
-      <a href="https://www.instagram.com/" target="_blank">
+      <a href="https://www.instagram.com/isl.freelance?igsh=MTdyZDhraTA1cnRmcA%3D%3D&utm_source=qr" target="_blank">
         <img src="images/Instagram.PNG" alt="Instagram">
       </a>
-      <a href="https://www.linkedin.com/" target="_blank">
+      <a href="https://www.linkedin.com/in/inesstlaurent?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank">
         <img src="images/Linkedin.PNG" alt="LinkedIn">
       </a>
-      <a href="mailto:contact@email.com">
+      <a href="mailto:inessaintlaurent@hotmail.com">
         <img src="images/Mail.PNG" alt="Email">
       </a>
     </div>
@@ -479,13 +479,13 @@ en: {
     <h2 class="title animate-title">Social Media</h2>
 
     <div class="socials">
-      <a href="https://www.instagram.com/" target="_blank">
+      <a href="https://www.instagram.com/isl.freelance?igsh=MTdyZDhraTA1cnRmcA%3D%3D&utm_source=qr" target="_blank">
         <img src="images/Instagram.PNG" alt="Instagram">
       </a>
-      <a href="https://www.linkedin.com/" target="_blank">
+      <a href="https://www.linkedin.com/in/inesstlaurent?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank">
         <img src="images/Linkedin.PNG" alt="LinkedIn">
       </a>
-      <a href="mailto:contact@email.com">
+      <a href="mailto:inessaintlaurent@hotmail.com">
         <img src="images/Mail.PNG" alt="Email">
       </a>
     </div>
@@ -693,13 +693,13 @@ es: {
     <h2 class="title animate-title">Redes sociales</h2>
 
     <div class="socials">
-      <a href="https://www.instagram.com/" target="_blank">
+      <a href="https://www.instagram.com/isl.freelance?igsh=MTdyZDhraTA1cnRmcA%3D%3D&utm_source=qr" target="_blank">
         <img src="images/Instagram.PNG" alt="Instagram">
       </a>
-      <a href="https://www.linkedin.com/" target="_blank">
+      <a href="https://www.linkedin.com/in/inesstlaurent?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank">
         <img src="images/Linkedin.PNG" alt="LinkedIn">
       </a>
-      <a href="mailto:contact@email.com">
+      <a href="mailto:inessaintlaurent@hotmail.com">
         <img src="images/Mail.PNG" alt="Email">
       </a>
     </div>
@@ -907,13 +907,13 @@ zh: {
     <h2 class="title animate-title">社交网络</h2>
 
     <div class="socials">
-      <a href="https://www.instagram.com/" target="_blank">
+      <a href="https://www.instagram.com/isl.freelance?igsh=MTdyZDhraTA1cnRmcA%3D%3D&utm_source=qr" target="_blank">
         <img src="images/Instagram.PNG" alt="Instagram">
       </a>
-      <a href="https://www.linkedin.com/" target="_blank">
+      <a href="https://www.linkedin.com/in/inesstlaurent?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank">
         <img src="images/Linkedin.PNG" alt="LinkedIn">
       </a>
-      <a href="mailto:contact@email.com">
+      <a href="mailto:inessaintlaurent@hotmail.com">
         <img src="images/Mail.PNG" alt="Email">
       </a>
     </div>
