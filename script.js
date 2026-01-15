@@ -23,14 +23,17 @@ if (langBtn && langMenu) {
     langMenu.classList.remove("active");
   });
 
-  langMenu.querySelectorAll("button").forEach(btn => {
-    btn.addEventListener("click", () => {
-      currentLang = btn.dataset.lang;
-      langMenu.classList.remove("active");
-      overlay.classList.remove("active");
-      contentBox.innerHTML = "";
-    });
+langMenu.querySelectorAll("button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    currentLang = btn.dataset.lang;
+
+    updateBlockLabels(); // 👈 ICI ⭐⭐⭐
+
+    langMenu.classList.remove("active");
+    overlay.classList.remove("active");
+    contentBox.innerHTML = "";
   });
+});
 }
 
 /* ================= HELPERS ================= */
@@ -918,6 +921,54 @@ zh: {
 }
 };
 
+/* ================= LABELS BLOCS ================= */
+const BLOCK_LABELS = {
+  fr: {
+    presentation: "PRÉSENTATION",
+    offre: "MON OFFRE",
+    experience: "PARCOURS PROFESSIONNEL",
+    tools: "LOGICIELS & COMPÉTENCES",
+    academic: "PARCOURS ACADÉMIQUE",
+    socials: "RÉSEAUX SOCIAUX"
+  },
+  en: {
+    presentation: "PRESENTATION",
+    offre: "MY OFFER",
+    experience: "PROFESSIONAL EXPERIENCE",
+    tools: "TOOLS & SKILLS",
+    academic: "ACADEMIC BACKGROUND",
+    socials: "SOCIAL MEDIA"
+  },
+  es: {
+    presentation: "PRESENTACIÓN",
+    offre: "MI OFERTA",
+    experience: "TRAYECTORIA PROFESIONAL",
+    tools: "HERRAMIENTAS Y COMPETENCIAS",
+    academic: "FORMACIÓN ACADÉMICA",
+    socials: "REDES SOCIALES"
+  },
+  zh: {
+    presentation: "个人介绍",
+    offre: "我的服务",
+    experience: "职业经历",
+    tools: "工具与技能",
+    academic: "学术背景",
+    socials: "社交网络"
+  }
+};
+  
+function updateBlockLabels() {
+  document.querySelectorAll(".bloc").forEach(bloc => {
+    const key = bloc.dataset.key;
+    const label = bloc.querySelector(".label");
+
+    if (key && label && BLOCK_LABELS[currentLang]?.[key]) {
+      label.textContent = BLOCK_LABELS[currentLang][key];
+      bloc.setAttribute("aria-label", BLOCK_LABELS[currentLang][key]);
+    }
+  });
+}
+
 /* ================= OUVERTURE BLOCS ================= */
 blocs.forEach(bloc => {
   bloc.addEventListener("click", () => {
@@ -984,3 +1035,5 @@ overlay.addEventListener("click", () => {
 colorBox.addEventListener("click", e => e.stopPropagation());
 
 });
+
+updateBlockLabels();
