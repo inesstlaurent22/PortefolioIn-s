@@ -1001,6 +1001,19 @@ blocs.forEach(bloc => {
 /* ================= INTERACTIONS ================= */
 contentBox.addEventListener("click", e => {
 
+  // 🔒 Empêche la fermeture quand on clique sur une card
+  const cardBtn = e.target.closest(".card-btn");
+  if (cardBtn) {
+    e.stopPropagation();
+
+    const bubble = cardBtn.querySelector(".bubble");
+    if (bubble) {
+      bubble.classList.toggle("hidden");
+    }
+    return;
+  }
+
+  // Engagement
   if (e.target.id === "openEngagement") {
     contentBox.insertAdjacentHTML(
       "beforeend",
@@ -1010,6 +1023,7 @@ contentBox.addEventListener("click", e => {
     );
   }
 
+  // Offre steps
   if (
     e.target.classList.contains("step-btn") &&
     CONTENT[currentLang]?.offreSteps?.[e.target.dataset.step]
@@ -1017,9 +1031,7 @@ contentBox.addEventListener("click", e => {
     const bubble = document.getElementById("programmeBubble");
     if (!bubble) return;
 
-    bubble.innerHTML =
-      CONTENT[currentLang].offreSteps[e.target.dataset.step];
-
+    bubble.innerHTML = CONTENT[currentLang].offreSteps[e.target.dataset.step];
     bubble.style.background = "#fff";
     bubble.style.color = "#FF4FD8";
     bubble.classList.remove("hidden");
